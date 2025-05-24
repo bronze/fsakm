@@ -7,9 +7,12 @@ module.exports={
   academias: {
     title: "Academias",
     type: "page",
+    theme: {
+      collapsed: true,
+    }
   },
   'krav-maga': {
-    title: "Krav-Maga",
+    title: "Krav Maga",
     type: "page"
   },
   federacao: {
