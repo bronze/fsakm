@@ -1,19 +1,26 @@
 {
   "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
-  "about": {
-    "title": "About",
+  "krav-maga": {
+    "title": "Krav Maga",
+    "type": "page"
+  },
+  "federacao": {
+    "title": "Federação",
+    "type": "page"
+  },
+  "academias": {
+    "title": "Academias",
     "type": "page"
   },
   "posts": {
     "title": "Posts",
     "type": "page"
   },
-  "contact": {
-    "title": "Contact ↗",
+  "contato": "Contato",
+  "area-do-aluno": {
+    "title": "Área do Aluno ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://intranetfsakm.com.br/",
     "newWindow": true
   }
 }
