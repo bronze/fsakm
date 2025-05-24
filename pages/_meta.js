@@ -6,7 +6,8 @@ module.exports={
   },
   academias: {
     title: "Academias",
-    type: "page"
+    type: "page",
+    academias: ""
   },
   'krav-maga': {
     title: "Krav-Maga",
