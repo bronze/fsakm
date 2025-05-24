@@ -18,14 +18,14 @@ const config: DocsThemeConfig = {
     ),
   },
   footer: {
-    text: "Site Template",
+    text: "FSAKM Test",
   },
   project: {
-    link: "https://github.com/ObservedObserver/nextra-docs-tailwind-shadcn-template",
+    link: "https://github.com/bronze/fsakm",
   },
-  banner: {
-    text: "This is a template based on nextra + tailwind + shadcn-ui",
-  },
+  // banner: {
+  //   text: "This is a template based on nextra + tailwind + shadcn-ui",
+  // },
   docsRepositoryBase: "https://github.com/ObservedObserver/nextra-docs-tailwind-shadcn-template",
   head: () => {
     const {asPath, defaultLocale, locale, basePath} = useRouter();

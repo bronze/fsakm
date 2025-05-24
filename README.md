@@ -1,7 +1,8 @@
-# Nextra Docs Template 
+# Nextra Docs Template
 
-This is a template for creating documentation with [Nextra](https://nextra.site).
+This is a template for creating documentation with [Nextra](https://nextra.site) + Shadcn UI + TailwindCSS.
 
+[Inspired by ObservedObserver/nextra-docs-tailwind-shadcn-template](https://github.com/ObservedObserver/nextra-docs-tailwind-shadcn-template/)
 [**Live Demo →**](https://nextra-docs-template.vercel.app)
 
 [![](.github/screenshot.png)](https://nextra-docs-template.vercel.app)

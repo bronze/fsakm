@@ -6,6 +6,10 @@
     "title": "About",
     "type": "page"
   },
+  "posts": {
+    "title": "Posts",
+    "type": "page"
+  },
   "contact": {
     "title": "Contact ↗",
     "type": "page",
