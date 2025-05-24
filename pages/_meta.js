@@ -7,7 +7,6 @@ module.exports={
   academias: {
     title: "Academias",
     type: "page",
-    academias: ""
   },
   'krav-maga': {
     title: "Krav-Maga",
@@ -19,6 +18,10 @@ module.exports={
   },
   posts: {
     title: "Posts",
+    type: "page"
+  },
+  advanced: {
+    title: "Advanced",
     type: "page"
   },
   contato: {
