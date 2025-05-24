@@ -1,0 +1,51 @@
+{
+  "index": {
+    "title": "Academias",
+    "theme": {
+      "collapsed": "true"
+    }
+  },
+  "_": {
+    "type": "separator",
+    "title": "Países"
+  },
+  "argentina": {
+    "title": "Argentina",
+    "theme": {
+      "collapsed": "true"
+    }
+  },
+  "brasil": {
+    "title": "Brasil",
+    "items": {
+      "index": {
+        "title": "index",
+        "display": "hidden"
+      }
+    }
+  },
+  "canada": {
+    "title": "Canada",
+    "theme": {
+      "collapsed": "false"
+    }
+  },
+  "mexico": {
+    "title": "México",
+    "theme": {
+      "collapsed": "false"
+    }
+  },
+  "portugal": {
+    "title": "Portugal",
+    "theme": {
+      "collapsed": "false"
+    }
+  },
+  "usa": {
+    "title": "USA",
+    "theme": {
+      "collapsed": "false"
+    }
+  }
+}

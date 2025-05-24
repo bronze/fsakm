@@ -1,5 +1,8 @@
 {
-  "index": "Introduction",
+  "index": {
+    "title": "Introdução",
+    "display": "hidden"
+  },
   "krav-maga": {
     "title": "Krav Maga",
     "type": "page"
@@ -16,7 +19,10 @@
     "title": "Posts",
     "type": "page"
   },
-  "contato": "Contato",
+  "contato": {
+    "title": "Contato",
+    "type": "page"
+  },
   "area-do-aluno": {
     "title": "Área do Aluno ↗",
     "type": "page",
