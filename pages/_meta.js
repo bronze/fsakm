@@ -1,4 +1,3 @@
-const {title}=require("process");
 
 module.exports={
   index: {
@@ -6,83 +5,12 @@ module.exports={
     display: "hidden"
   },
   academias: {
-    type: "page",
     title: "Academias",
-    index: "",
-    _4: {
-      type: 'separator',
-      title: 'Top-Level Files'
-    },
-    items: {
-      _1: {
-        type: "separator",
-        title: "Países"
-      },
-      argentina: {
-        index: "Argentina",
-        title: "Argentina",
-        items: {
-          Belgrano: ""
-        }
-      },
-      _4: {
-        type: 'separator',
-        title: 'Top-Level Files'
-      },
-      brasil: {
-        title: "Brasil",
-        items: {
-          index: ""
-        }
-      },
-      canada: {
-        title: "Canada",
-        theme: {
-          collapsed: "false"
-        },
-        items: {
-          index: ""
-        }
-      },
-      mexico: {
-        title: "México",
-        theme: {
-          collapsed: "false"
-        },
-        items: {
-          index: ""
-        }
-      },
-      portugal: {
-        title: "Portugal",
-        theme: {
-          collapsed: "false"
-        },
-        items: {
-          index: ""
-        }
-      },
-      usa: {
-        title: "USA",
-        theme: {
-          collapsed: "false"
-        },
-        items: {
-          index: ""
-        }
-      }
-    }
+    type: "page"
   },
-  "krav-maga": {
-    index: "",
-    title: "Krav Maga",
-    type: "page",
-    items: {
-      criador: "",
-      historia: "",
-      israel: "",
-      'linha-do-tempo': ""
-    }
+  'krav-maga': {
+    title: "Krav-Maga",
+    type: "page"
   },
   federacao: {
     title: "Federação",
