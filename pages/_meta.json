@@ -6,8 +6,8 @@
     "title": "About",
     "type": "page"
   },
-  "posts": {
-    "title": "Posts",
+  "pages": {
+    "title": "Pages",
     "type": "page"
   },
   "contact": {

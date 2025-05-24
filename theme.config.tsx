@@ -45,7 +45,7 @@ const config: DocsThemeConfig = {
     const {asPath} = useRouter();
     if (asPath !== "/") {
       return {
-        titleTemplate: "%s – My Site",
+        titleTemplate: "%s – FSAKM",
       };
     }
   },
