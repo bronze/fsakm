@@ -36,22 +36,22 @@ const footer = (
             href="https://www.instagram.com/kravmaga_mestrekobi/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded-full">
-            <Instagram className="w-6 h-6 hover:text-fuchsia-500" />
+            className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded-full group">
+            <Instagram className="w-6 h-6 group-hover:text-fuchsia-500" />
           </a>
           <a
             href="https://www.facebook.com/kravmagamestrekobi/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded-full">
-            <Facebook className="w-6 h-6 hover:text-blue-500" />
+            className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded-full group">
+            <Facebook className="w-6 h-6 group-hover:text-blue-500" />
           </a>
           <a
             href="https://www.youtube.com/@kravmagamestrekobi/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded-full">
-            <Youtube className="w-6 h-6 hover:text-red-500" />
+            className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded-full group ">
+            <Youtube className="w-6 h-6 group-hover:text-red-500" />
           </a>
         </div>
       </div>
