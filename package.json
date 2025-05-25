@@ -28,7 +28,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.511.0",
-    "next": "^13.0.6",
+    "next": "^13.1.6",
     "next-sitemap": "^4.2.3",
     "nextra": "latest",
     "nextra-theme-blog": "^4.2.17",
