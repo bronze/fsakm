@@ -1,6 +1,7 @@
 import {Footer, Layout, Navbar} from "nextra-theme-docs";
 import {Banner, Head} from "nextra/components";
 import {getPageMap} from "nextra/page-map";
+import {Instagram, Facebook, Youtube} from "lucide-react"; // Import icons from Lucide
 import "../styles/global.css";
 import "nextra-theme-docs/style.css";
 import Link from "next/link";
@@ -18,11 +19,47 @@ const banner = (
 //<img src="/images/general/logo.svg" alt="Logo" width={100} height={20} />
 const navbar = (
   <Navbar
-    logo={<span>FSAKM NextJS</span>}
-    // ... Your additional navbar options
+    logo={
+      <div>
+        <b>FSAKM</b> <span style={{opacity: "60%"}}>Federação Sul Americana de Krav-Maga</span>
+      </div>
+    }
   />
 );
-const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>;
+const footer = (
+  <Footer>
+    <div className="w-full grid sm:grid-cols-2 gap-4 ">
+      <div className="flex place-content-center lg:place-content-start">MIT {new Date().getFullYear()} © Nextra.</div>
+      <div className="flex place-content-center lg:place-content-end">
+        <div className="grid grid-cols-3 gap-4">
+          <a
+            href="https://www.instagram.com/kravmaga_mestrekobi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded-full">
+            <Instagram className="w-6 h-6 hover:text-fuchsia-500" />
+          </a>
+          <a
+            href="https://www.facebook.com/kravmagamestrekobi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded-full">
+            <Facebook className="w-6 h-6 hover:text-blue-500" />
+          </a>
+          <a
+            href="https://www.youtube.com/@kravmagamestrekobi/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded-full">
+            <Youtube className="w-6 h-6 hover:text-red-500" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </Footer>
+);
+
+// Removed searchProps because the search prop expects a ReactNode, not an object
 
 export default async function RootLayout({children}) {
   return (
@@ -44,6 +81,8 @@ export default async function RootLayout({children}) {
           // banner={banner}
           sidebar={{autoCollapse: true}}
           navbar={navbar}
+          // Example: To customize the search input placeholder
+          search={<input placeholder="Busque no site..." />}
           editLink={null}
           feedback={{
             content: null,

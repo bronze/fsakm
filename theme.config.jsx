@@ -5,4 +5,7 @@ export default {
     {locale: "pt", name: "Português"},
     {locale: "es", name: "Español"},
   ],
+  search: {
+    placeholder: "Busque no site...",
+  },
 };
