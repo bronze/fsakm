@@ -7,6 +7,9 @@ const config: DocsThemeConfig = {
   logo: <span>FSAKM NextJS</span>,
   logoLink: "/",
   chat: {},
+  sidebar: {
+    toggleButton: true,
+  },
   footer: {
     text: "FSAKM Test",
   },

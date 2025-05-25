@@ -7,7 +7,6 @@
     "build": "next build",
     "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
     "start": "next start",
-    "postinstall": "pnpm build",
     "prettier": "pnpm lint:prettier --write"
   },
   "repository": {
@@ -29,10 +28,9 @@
     "clsx": "^2.1.1",
     "inter-ui": "^4.1.0",
     "lucide-react": "^0.511.0",
-    "next": "^13.2.4",
+    "next": "^13.1.6",
     "next-sitemap": "^4.2.3",
-    "nextra": "latest",
-    "nextra-theme-blog": "^4.2.17",
+    "nextra": "^2.2.14",
     "nextra-theme-docs": "latest",
     "postcss": "^8.4.41",
     "prettier": "^3.5.3",
