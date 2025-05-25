@@ -1,4 +1,4 @@
-module.exports = {
+module.exports={
   index: {
     type: "page",
     display: "hidden",
@@ -6,6 +6,9 @@ module.exports = {
   "grao-mestre-kobi": {
     title: "Grão Mestre Kobi",
     type: "page",
+    theme: {
+      layout: 'full'
+    }
   },
   "krav-maga": {
     title: "Krav Maga",
