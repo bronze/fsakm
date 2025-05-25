@@ -1,10 +1,12 @@
-import {Footer, Layout, Navbar} from "nextra-theme-docs";
-import {Banner, Head} from "nextra/components";
+import type {ReactNode} from "react";
+import {Footer, Layout, Navbar, LastUpdated} from "nextra-theme-docs";
+import {Banner, Head, Search} from "nextra/components";
 import {getPageMap} from "nextra/page-map";
 import {Instagram, Facebook, Youtube} from "lucide-react"; // Import icons from Lucide
 import "../styles/global.css";
 import "nextra-theme-docs/style.css";
 import Link from "next/link";
+import {SearchParamsContext} from "next/dist/shared/lib/hooks-client-context.shared-runtime";
 
 export const metadata = {
   // Define your metadata here
@@ -26,6 +28,9 @@ const navbar = (
     }
   />
 );
+
+const searchConfig = <Search placeholder="Busque no site..." />;
+
 const footer = (
   <Footer>
     <div className="w-full grid sm:grid-cols-2 gap-4 ">
@@ -79,16 +84,22 @@ export default async function RootLayout({children}) {
       <body>
         <Layout
           // banner={banner}
-          sidebar={{autoCollapse: true}}
           navbar={navbar}
           // Example: To customize the search input placeholder
-          search={<input placeholder="Busque no site..." />}
+          search={searchConfig}
           editLink={null}
           feedback={{
             content: null,
           }}
+          sidebar={{
+            defaultMenuCollapseLevel: 1,
+            autoCollapse: true,
+          }}
           pageMap={await getPageMap()}
-          docsRepositoryBase="https://github.com/phucbm/nextra-docs-starter/tree/main"
+          // docsRepositoryBase="https://github.com/phucbm/nextra-docs-starter/tree/main"
+          toc={{
+            backToTop: true,
+          }}
           footer={footer}
           // ... Your additional layout options
         >
