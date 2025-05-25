@@ -43,6 +43,10 @@ export default async function RootLayout({children}) {
           // banner={banner}
           sidebar={{autoCollapse: true}}
           navbar={navbar}
+          editLink={null}
+          feedback={{
+            content: null,
+          }}
           pageMap={await getPageMap()}
           docsRepositoryBase="https://github.com/phucbm/nextra-docs-starter/tree/main"
           footer={footer}

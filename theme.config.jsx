@@ -5,9 +5,12 @@ export default {
     {locale: "pt", name: "Português"},
     {locale: "es", name: "Español"},
   ],
-  sidebar: {
-    autoCollapse: true,
-    defaultMenuCollapseLevel: 1,
-    toggleButton: false,
+  feedback: {
+    content: null,
+    // You can also set useLink or other feedback options here
+  },
+  editLink: {
+    content: null,
+    component: null,
   },
 };
