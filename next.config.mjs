@@ -1,15 +1,15 @@
 import nextra from "nextra";
 
 const withNextra=nextra({
-  theme: "nextra-theme-docs",
-  themeConfig: "./theme.config.tsx",
-  staticImage: true,
+  search: true,
   defaultShowCopyCode: true,
 });
 
 export default withNextra({
-  i18n: {
-    locales: ['pt', 'en', 'es'],
-    defaultLocale: 'pt'
-  }
-})
+  // ... Other Next.js config options
+  // output: 'export'
+  // i18n: {
+  //   locales: ['pt', 'en', 'es'],
+  //   defaultLocale: 'pt'
+  // }
+});
