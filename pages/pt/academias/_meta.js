@@ -4,12 +4,9 @@ module.exports={
     title: "Brasil",
     theme: {
       collapsed: false,
-      defaultOpen: true,
-      defaultopen: true
+      collapsed: "false",
     },
-    sidebar: {
-      defaultOpen: true,
-    }
+
   },
   _4: {
     type: "separator",
