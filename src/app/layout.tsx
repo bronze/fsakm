@@ -1,4 +1,4 @@
-import {Footer, Layout, Navbar} from "nextra-theme-docs";
+import {Footer, Layout, Navbar, ThemeSwitch} from "nextra-theme-docs";
 import {Banner, Head, Search} from "nextra/components";
 import {getPageMap} from "nextra/page-map";
 import {Instagram, Facebook, Youtube} from "lucide-react"; // Import icons from Lucide
@@ -7,6 +7,7 @@ import "../styles/global.css";
 import "nextra-theme-docs/style.css";
 import Link from "next/link";
 import {SearchParamsContext} from "next/dist/shared/lib/hooks-client-context.shared-runtime";
+import {ThemeToggle} from "@/src/components/ThemeToggle";
 
 export const metadata = {
   // Define your metadata here
@@ -25,6 +26,13 @@ const navbar = (
       <div>
         <b>FSAKM</b> <span style={{opacity: "60%"}}>Federação Sul Americana de Krav-Maga</span>
       </div>
+    }
+    children={
+      <>
+        <ThemeToggle />
+        {/* <ThemeSwitch /> */}
+        {/* Add your second component here */}
+      </>
     }
   />
 );
@@ -68,18 +76,9 @@ const footer = (
 
 export default async function RootLayout({children}) {
   return (
-    <html
-      // Not required, but good for SEO
-      lang="en"
-      // Required to be set
-      dir="ltr"
-      // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
-      suppressHydrationWarning>
-      <Head
-      // ... Your additional head options
-      >
+    <html lang="en" dir="ltr" suppressHydrationWarning>
+      <Head>
         <link rel="shortcut icon" href="/images/general/icon.svg" />
-        {/* Your additional tags should be passed as `children` of `<Head>` element */}
       </Head>
       <BodyWithPageClass>
         <Layout
