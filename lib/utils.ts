@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export function resolveUrl(siteURL: string, ...paths: (string | undefined)[]) {
   return paths
-    .filter((p) => Boolean(p))
+    .filter(p => Boolean(p))
     .reduce((acc, path) => {
       if (acc.endsWith("/")) {
         acc = acc.slice(0, -1);

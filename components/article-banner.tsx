@@ -18,21 +18,23 @@ export default function ArticleBanner() {
 
   const authors = author
     ?.split(/,\s*/g)
-    .map((name) => name.trim())
+    .map(name => name.trim())
     .filter(Boolean) as ValidAuthorName[] | undefined;
-  const validAuthors = (authors?.map((nickname) => allAuthors.find((author) => author.nickname === nickname)!).filter(Boolean) ?? []) as Author[];
+  const validAuthors = (authors
+    ?.map(nickname => allAuthors.find(author => author.nickname === nickname)!)
+    .filter(Boolean) ?? []) as Author[];
 
   const tags =
     (tag
       ?.split(/,\s*/g)
-      .map((name) => name.trim())
+      .map(name => name.trim())
       .filter(Boolean) as string[] | undefined) ?? [];
 
   return (
     <div className="w-full border-b border-gray-200 dark:border-gray-800 pb-8">
       {(date || validAuthors.length > 0) && (
         <div className="flex items-center justify-center mt-8 mb-6">
-          {validAuthors.map((val) => (
+          {validAuthors.map(val => (
             <AuthorAvatar key={val.name} author={val} />
           ))}
         </div>

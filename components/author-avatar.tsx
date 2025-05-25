@@ -24,7 +24,11 @@ const AuthorAvatar = ({author: {name, picture, url}}: AuthorAvatarProps) => {
         <dt className="sr-only">Name</dt>
         <dd className="text-gray-900 dark:text-white font-medium">
           {url ? (
-            <Link href={url.href} className="text-blue-500 no-underline hover:text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+            <Link
+              href={url.href}
+              className="text-blue-500 no-underline hover:text-blue-600 hover:underline"
+              target="_blank"
+              rel="noopener noreferrer">
               {name}
             </Link>
           ) : (

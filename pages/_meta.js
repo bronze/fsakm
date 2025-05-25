@@ -1,40 +1,36 @@
-
-module.exports={
+module.exports = {
   index: {
     type: "page",
-    display: "hidden"
+    display: "hidden",
+  },
+  "grao-mestre-kobi": {
+    title: "Grão Mestre Kobi",
+    type: "page",
+  },
+  "krav-maga": {
+    title: "Krav Maga",
+    type: "page",
+  },
+  federacao: {
+    title: "Federação",
+    type: "page",
   },
   academias: {
     title: "Academias",
     type: "page",
-    theme: {
-      collapsed: true,
-    }
   },
-  'krav-maga': {
-    title: "Krav Maga",
-    type: "page"
-  },
-  federacao: {
-    title: "Federação",
-    type: "page"
-  },
-  posts: {
-    title: "Posts",
-    type: "page"
-  },
-  advanced: {
-    title: "Advanced",
-    type: "page"
+  blog: {
+    title: "Blog",
+    type: "page",
   },
   contato: {
     title: "Contato",
-    type: "page"
+    type: "page",
   },
   "area-do-aluno": {
     title: "Área do Aluno ↗",
     type: "page",
     href: "https://intranetfsakm.com.br/",
-    newWindow: true
-  }
-}
+    newWindow: true,
+  },
+};

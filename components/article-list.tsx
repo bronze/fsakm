@@ -7,9 +7,9 @@ import {getAuthor} from "@/lib/author";
 export function ArticleList({postsRoute = "/blog"}: {postsRoute: string}) {
   const {basePath} = useRouter();
   const articles: MdxFile[] = getPagesUnderRoute(postsRoute)
-    .filter((page) => page.kind === "MdxPage")
-    .filter((page) => page.name !== "index")
-    .filter((page) => (page as MdxFile).frontMatter)
+    .filter(page => page.kind === "MdxPage")
+    .filter(page => page.name !== "index")
+    .filter(page => (page as MdxFile).frontMatter)
     .sort((a: MdxFile, b: MdxFile) => {
       return new Date(b.frontMatter.date).getTime() - new Date(a.frontMatter.date).getTime();
     })
@@ -22,7 +22,9 @@ export function ArticleList({postsRoute = "/blog"}: {postsRoute: string}) {
         {articles.map((article, index) => {
           const author = getAuthor(article.frontMatter.author);
           return (
-            <article key={index} className="border-b border-gray-200 dark:border-gray-700 p-8 hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer">
+            <article
+              key={index}
+              className="border-b border-gray-200 dark:border-gray-700 p-8 hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer">
               <a href={`${basePath}${article.route}`}>
                 <h3 className="text-2xl font-semibold mb-2">{article.frontMatter.title}</h3>
                 <p className="text-gray-600 dark:text-gray-400 mb-4">{article.frontMatter.description}</p>

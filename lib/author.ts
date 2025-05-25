@@ -9,5 +9,5 @@ export const allAuthors = [
 export type ValidAuthorName = (typeof allAuthors)[number]["nickname"];
 
 export function getAuthor(nickname: string) {
-  return allAuthors.find((author) => author.nickname === nickname);
+  return allAuthors.find(author => author.nickname === nickname);
 }
