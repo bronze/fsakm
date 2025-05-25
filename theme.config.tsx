@@ -13,7 +13,9 @@ export default {
   logoLink: "/",
   chat: {},
   sidebar: {
-    toggleButton: true,
+    autoCollapse: true,
+    defaultMenuCollapseLevel: 1,
+    toggleButton: false,
   },
   i18n: [
     {locale: "pt", name: "Português"},
