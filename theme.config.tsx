@@ -2,7 +2,6 @@ import {DocsThemeConfig, Navbar, ThemeSwitch, useConfig} from "nextra-theme-docs
 import {ComponentProps} from "react";
 
 import {useRouter} from "next/router";
-import {resolveUrl} from "./lib/utils";
 
 import config from "./config";
 
