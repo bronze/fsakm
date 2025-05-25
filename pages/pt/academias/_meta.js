@@ -1,10 +1,15 @@
-module.exports = {
+module.exports={
   index: "",
   brasil: {
     title: "Brasil",
     theme: {
       collapsed: false,
+      defaultOpen: true,
+      defaultopen: true
     },
+    sidebar: {
+      defaultOpen: true,
+    }
   },
   _4: {
     type: "separator",
@@ -12,33 +17,23 @@ module.exports = {
   },
   argentina: {
     title: "Argentina",
-    theme: {
-      collapsed: true,
-    },
+
   },
 
   canada: {
     title: "Canada",
-    theme: {
-      collapsed: true,
-    },
+
   },
   mexico: {
     title: "México",
-    theme: {
-      collapsed: true,
-    },
+
   },
   portugal: {
     title: "Portugal",
-    theme: {
-      collapsed: true,
-    },
+
   },
   usa: {
     title: "USA",
-    theme: {
-      collapsed: true,
-    },
+
   },
 };
