@@ -1,9 +1,14 @@
-import React from "react";
-import {DocsThemeConfig, ThemeSwitch, useConfig} from "nextra-theme-docs";
+import {DocsThemeConfig, Navbar, ThemeSwitch, useConfig} from "nextra-theme-docs";
+import {ComponentProps} from "react";
+
 import {useRouter} from "next/router";
 import {resolveUrl} from "./lib/utils";
 
-const config: DocsThemeConfig = {
+import config from "./config";
+
+export const TITLE_TEMPLATE_SUFFIX = " – " + config.description;
+
+export default {
   logo: <span>FSAKM NextJS</span>,
   logoLink: "/",
   chat: {},
@@ -11,12 +16,12 @@ const config: DocsThemeConfig = {
     toggleButton: true,
   },
   i18n: [
-    {locale: "pt", text: "Português"},
-    {locale: "en", text: "English"},
-    {locale: "es", text: "Español"},
+    {locale: "pt", name: "Português"},
+    {locale: "en", name: "English"},
+    {locale: "es", name: "Español"},
   ],
   footer: {
-    text: "FSAKM Test",
+    content: "FSAKM Test",
   },
   toc: {
     backToTop: null,
@@ -29,43 +34,11 @@ const config: DocsThemeConfig = {
   },
   feedback: {
     content: "",
-    useLink: null,
+    useLink: undefined,
   },
   editLink: {
-    text: null,
+    content: null,
     component: null,
-  },
-  head: () => {
-    const {asPath, defaultLocale, locale, basePath} = useRouter();
-    const {frontMatter} = useConfig();
-
-    // Replace with your website's base URL
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://example.com";
-
-    const url = resolveUrl(baseUrl, basePath, defaultLocale === locale ? undefined : locale, asPath);
-    const ogImage = frontMatter.ogImage;
-
-    const title = frontMatter.title || "Your Default Title";
-    const description = frontMatter.description || "Your Default Description";
-
-    return (
-      <>
-        <meta property="og:url" content={url} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <link rel="canonical" href={url} />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        {ogImage && <meta property="og:image" content={ogImage} />}
-      </>
-    );
-  },
-  useNextSeoProps() {
-    const {asPath} = useRouter();
-    if (asPath !== "/") {
-      return {
-        titleTemplate: "%s – FSAKM",
-      };
-    }
   },
   navbar: {
     extraContent: () => (
@@ -75,6 +48,46 @@ const config: DocsThemeConfig = {
       </>
     ),
   },
-};
+  head: function Head() {
+    const pageConfig = useConfig();
+    const {route} = useRouter();
+    const isDefault = route === "/" || !pageConfig.title;
 
-export default config;
+    const ogPayload = {
+      title: isDefault ? config.description : pageConfig.title,
+      subtitle: pageConfig.frontMatter.subtitle,
+    };
+    const ogImageUrl = new URL("/api/og-image", config.baseUrl);
+    ogImageUrl.search = new URLSearchParams({
+      params: JSON.stringify(ogPayload),
+    }).toString();
+
+    const description = pageConfig.frontMatter.description || "Internationalization (i18n) for Next.js";
+    const title = pageConfig.title + TITLE_TEMPLATE_SUFFIX;
+
+    return (
+      <>
+        <title>{title}</title>
+        <meta content={title} name="og:title" />
+        <meta content={title} name="twitter:title" />
+
+        <meta content={description} name="description" />
+        <meta content={description} name="og:description" />
+        <meta content={description} name="twitter:description" />
+
+        <meta content={ogImageUrl.toString()} name="og:image" />
+
+        <link href="/favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+        <link href="/favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png" />
+        <link href="/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
+        <link href="/favicon/site.webmanifest" rel="manifest" />
+        <link color="#5bbad5" href="/favicon/safari-pinned-tab.svg" rel="mask-icon" />
+        <meta content="#da532c" name="msapplication-TileColor" />
+        <meta content="#ffffff" name="theme-color" />
+
+        <meta content="jamannnnnn" name="twitter:site" />
+        <meta content="summary_large_image" name="twitter:card" />
+      </>
+    );
+  },
+} satisfies DocsThemeConfig;
