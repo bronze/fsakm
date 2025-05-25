@@ -1,5 +1,4 @@
-import type {ReactNode} from "react";
-import {Footer, Layout, Navbar, LastUpdated} from "nextra-theme-docs";
+import {Footer, Layout, Navbar} from "nextra-theme-docs";
 import {Banner, Head, Search} from "nextra/components";
 import {getPageMap} from "nextra/page-map";
 import {Instagram, Facebook, Youtube} from "lucide-react"; // Import icons from Lucide
@@ -98,7 +97,7 @@ export default async function RootLayout({children}) {
           pageMap={await getPageMap()}
           // docsRepositoryBase="https://github.com/phucbm/nextra-docs-starter/tree/main"
           toc={{
-            backToTop: true,
+            backToTop: "Rolagem para cima...",
           }}
           footer={footer}
           // ... Your additional layout options

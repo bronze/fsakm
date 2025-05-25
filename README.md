@@ -28,3 +28,5 @@ references:
 https://bratislava.github.io/
 
 https://github.com/bratislava/bratislava.github.io/
+
+https://aicybr.com/blog/nextra-docs-setup

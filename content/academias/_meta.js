@@ -2,7 +2,7 @@ module.exports={
   brasil: {
     title: "Brasil",
     theme: {
-      collapsed: false,
+
     },
   },
   _4: {
