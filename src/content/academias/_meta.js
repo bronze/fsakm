@@ -1,9 +1,7 @@
-module.exports={
+module.exports = {
   brasil: {
     title: "Brasil",
-    theme: {
-
-    },
+    theme: {},
   },
   _4: {
     type: "separator",

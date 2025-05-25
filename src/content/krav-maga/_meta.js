@@ -1,11 +1,11 @@
-module.exports={
+module.exports = {
   criador: "",
   historia: "",
   israel: "",
-  'linha-do-tempo': "",
+  "linha-do-tempo": "",
   militar: "",
   faixas: "",
-  'tecnicas-especiais': "",
+  "tecnicas-especiais": "",
   galeria: "",
   midia: "",
 };

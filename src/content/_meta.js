@@ -1,4 +1,4 @@
-module.exports={
+module.exports = {
   index: {
     type: "page",
     display: "hidden",
@@ -21,9 +21,7 @@ module.exports={
   academias: {
     title: "Academias",
     type: "page",
-    theme: {
-
-    }
+    theme: {},
   },
   blog: {
     title: "Blog",
@@ -40,6 +38,6 @@ module.exports={
   "area-do-aluno": {
     title: "Área do Aluno",
     type: "page",
-    href: "https://intranetfsakm.com.br/"
+    href: "https://intranetfsakm.com.br/",
   },
 };
