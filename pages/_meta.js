@@ -1,4 +1,4 @@
-module.exports = {
+module.exports={
   index: {
     type: "page",
     display: "hidden",
@@ -8,7 +8,6 @@ module.exports = {
     type: "page",
     theme: {
       sidebar: false, // Hide navbar on this page
-      layout: "full",
     },
   },
   "krav-maga": {
