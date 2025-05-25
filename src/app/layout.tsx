@@ -2,7 +2,7 @@ import {Footer, Layout, Navbar} from "nextra-theme-docs";
 import {Banner, Head, Search} from "nextra/components";
 import {getPageMap} from "nextra/page-map";
 import {Instagram, Facebook, Youtube} from "lucide-react"; // Import icons from Lucide
-import BodyWithPageClass from "@/components/bodypageclass";
+import BodyWithPageClass from "@/src/components/bodypageclass";
 import "../styles/global.css";
 import "nextra-theme-docs/style.css";
 import Link from "next/link";
