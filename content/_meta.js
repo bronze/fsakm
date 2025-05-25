@@ -38,7 +38,7 @@ module.exports={
     },
   },
   "area-do-aluno": {
-    title: "Área do Aluno ↗",
+    title: "Área do Aluno",
     type: "page",
     href: "https://intranetfsakm.com.br/"
   },
