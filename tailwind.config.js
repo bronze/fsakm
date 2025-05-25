@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const defaultTheme=require('tailwindcss/defaultTheme');
+
+module.exports={
   darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -18,6 +20,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', ...defaultTheme.fontFamily.sans], // Replace default sans-serif
+        inter: ['Inter', 'sans-serif'], // Add as a new option
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

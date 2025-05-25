@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@import 'inter-ui/inter.css'; /* se ainda quiser importar esse pacote */
+@import 'inter-ui'; /* provavelmente desnecessário se já estiver usando fonte local */
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
