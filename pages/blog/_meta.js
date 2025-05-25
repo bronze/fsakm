@@ -4,7 +4,7 @@ export default {
     title: "Blog Posts",
     theme: {
       typesetting: "article",
-      layout: "full"
-    }
-  }
+      layout: "full",
+    },
+  },
 };

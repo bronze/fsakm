@@ -6,7 +6,7 @@ import {resolveUrl} from "./lib/utils";
 
 import config from "./config";
 
-export const TITLE_TEMPLATE_SUFFIX = " – " + config.description;
+export const TITLE_TEMPLATE_SUFFIX = " – " + config.title;
 
 export default {
   logo: <span>FSAKM NextJS</span>,
@@ -62,7 +62,7 @@ export default {
       params: JSON.stringify(ogPayload),
     }).toString();
 
-    const description = pageConfig.frontMatter.description || "Internationalization (i18n) for Next.js";
+    const description = pageConfig.frontMatter.description || config.description;
     const title = pageConfig.title + TITLE_TEMPLATE_SUFFIX;
 
     return (
