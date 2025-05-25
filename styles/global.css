@@ -2,14 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'inter-ui'; /* provavelmente desnecessário se já estiver usando fonte local */
-@import 'inter-ui/inter.css'; /* se ainda quiser importar esse pacote */
-
 @font-face {
-  font-family: 'Inter';
-  src: url('/Inter/InterVariable.ttf') format('ttf');
-  font-weight: 400;
+  font-family: InterVariable;
   font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/Inter/web/InterVariable.woff2') format('woff2');
+}
+@font-face {
+  font-family: InterVariable;
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/Inter/web/InterVariable-Italic.woff2') format('woff2');
 }
 
 @layer base {
