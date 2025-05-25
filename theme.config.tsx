@@ -10,8 +10,16 @@ const config: DocsThemeConfig = {
   sidebar: {
     toggleButton: true,
   },
+  i18n: [
+    {locale: "pt", text: "Português"},
+    {locale: "en", text: "English"},
+    {locale: "es", text: "Español"},
+  ],
   footer: {
     text: "FSAKM Test",
+  },
+  toc: {
+    backToTop: null,
   },
   project: {
     link: "https://github.com/bronze/fsakm",
@@ -19,10 +27,14 @@ const config: DocsThemeConfig = {
   search: {
     placeholder: "Busque no site...",
   },
-  // banner: {
-  //   text: "This is a template based on nextra + tailwind + shadcn-ui",
-  // },
-  docsRepositoryBase: "https://github.com/ObservedObserver/nextra-docs-tailwind-shadcn-template",
+  feedback: {
+    content: "",
+    useLink: null,
+  },
+  editLink: {
+    text: null,
+    component: null,
+  },
   head: () => {
     const {asPath, defaultLocale, locale, basePath} = useRouter();
     const {frontMatter} = useConfig();
@@ -56,9 +68,12 @@ const config: DocsThemeConfig = {
     }
   },
   navbar: {
-    extraContent: () => {
-      return <ThemeSwitch />;
-    },
+    extraContent: () => (
+      <>
+        <ThemeSwitch />
+        {/* Add your second component here */}
+      </>
+    ),
   },
 };
 
