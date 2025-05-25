@@ -119,7 +119,7 @@
 
 /* hack da poha */
 
-body.page-,
+body.page-home,
 body.page-grao-mestre-kobi {
   .x\:mx-auto.x\:flex.x\:max-w-\(--nextra-content-width\) > div.x\:w-64 {
     /* your styles here */
