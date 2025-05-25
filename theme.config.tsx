@@ -23,7 +23,7 @@ export default {
     content: "FSAKM Test",
   },
   toc: {
-    backToTop: null,
+    // backToTop: null,
   },
   project: {
     link: "https://github.com/bronze/fsakm",
