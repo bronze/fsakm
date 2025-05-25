@@ -7,7 +7,8 @@ module.exports={
     title: "Grão Mestre Kobi",
     type: "page",
     theme: {
-      layout: 'full'
+      sidebar: false, // Hide navbar on this page
+      layout: 'full',
     }
   },
   "krav-maga": {
@@ -29,6 +30,10 @@ module.exports={
   contato: {
     title: "Contato",
     type: "page",
+    theme: {
+      sidebar: false, // Hide navbar on this page
+      layout: 'full',
+    }
   },
   "area-do-aluno": {
     title: "Área do Aluno ↗",
