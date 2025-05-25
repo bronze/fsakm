@@ -116,3 +116,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* hack da poha */
+
+body.page-,
+body.page-grao-mestre-kobi {
+  .x\:mx-auto.x\:flex.x\:max-w-\(--nextra-content-width\) > div.x\:w-64 {
+    /* your styles here */
+    display: none;
+  }
+}

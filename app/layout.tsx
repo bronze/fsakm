@@ -2,6 +2,7 @@ import {Footer, Layout, Navbar} from "nextra-theme-docs";
 import {Banner, Head, Search} from "nextra/components";
 import {getPageMap} from "nextra/page-map";
 import {Instagram, Facebook, Youtube} from "lucide-react"; // Import icons from Lucide
+import BodyWithPageClass from "@/components/bodypageclass";
 import "../styles/global.css";
 import "nextra-theme-docs/style.css";
 import Link from "next/link";
@@ -80,7 +81,7 @@ export default async function RootLayout({children}) {
         <link rel="shortcut icon" href="/images/general/icon.svg" />
         {/* Your additional tags should be passed as `children` of `<Head>` element */}
       </Head>
-      <body>
+      <BodyWithPageClass>
         <Layout
           // banner={banner}
           navbar={navbar}
@@ -104,7 +105,7 @@ export default async function RootLayout({children}) {
         >
           {children}
         </Layout>
-      </body>
+      </BodyWithPageClass>
     </html>
   );
 }
