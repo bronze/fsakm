@@ -29,4 +29,8 @@ https://bratislava.github.io/
 
 https://github.com/bratislava/bratislava.github.io/
 
+https://www.reddit.com/r/nextjs/comments/1i21p8o/comment/mgp831b/
+
+https://github.com/phucbm/nextra-docs-starter
+
 https://aicybr.com/blog/nextra-docs-setup

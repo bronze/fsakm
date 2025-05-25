@@ -14,7 +14,7 @@ export const metadata = {
 
 const banner = (
   <Banner storageKey="some-key">
-    This template was created with 🩸 and 💦 by <Link href="https://github.com/phucbm">PHUCBM</Link> 🐧
+    <Link href="https://github.com/"></Link>
   </Banner>
 );
 //<img src="/images/general/logo.svg" alt="Logo" width={100} height={20} />
