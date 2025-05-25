@@ -1,37 +1,37 @@
-import React from 'react'
-import { DocsThemeConfig, ThemeSwitch, useConfig } from 'nextra-theme-docs'
-import { useRouter } from 'next/router'
-import { resolveUrl } from './lib/utils'
+import React from "react";
+import {DocsThemeConfig, ThemeSwitch, useConfig} from "nextra-theme-docs";
+import {useRouter} from "next/router";
+import {resolveUrl} from "./lib/utils";
 
 const config: DocsThemeConfig = {
   logo: <span>FSAKM NextJS</span>,
-  logoLink: '/',
+  logoLink: "/",
   chat: {},
   footer: {
-    text: 'FSAKM Test',
+    text: "FSAKM Test",
   },
   project: {
-    link: 'https://github.com/bronze/fsakm',
+    link: "https://github.com/bronze/fsakm",
   },
   search: {
-    placeholder: 'Busque no site...',
+    placeholder: "Busque no site...",
   },
   // banner: {
   //   text: "This is a template based on nextra + tailwind + shadcn-ui",
   // },
-  docsRepositoryBase: 'https://github.com/ObservedObserver/nextra-docs-tailwind-shadcn-template',
+  docsRepositoryBase: "https://github.com/ObservedObserver/nextra-docs-tailwind-shadcn-template",
   head: () => {
-    const { asPath, defaultLocale, locale, basePath } = useRouter()
-    const { frontMatter } = useConfig()
+    const {asPath, defaultLocale, locale, basePath} = useRouter();
+    const {frontMatter} = useConfig();
 
     // Replace with your website's base URL
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://example.com'
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://example.com";
 
-    const url = resolveUrl(baseUrl, basePath, defaultLocale === locale ? undefined : locale, asPath)
-    const ogImage = frontMatter.ogImage
+    const url = resolveUrl(baseUrl, basePath, defaultLocale === locale ? undefined : locale, asPath);
+    const ogImage = frontMatter.ogImage;
 
-    const title = frontMatter.title || 'Your Default Title'
-    const description = frontMatter.description || 'Your Default Description'
+    const title = frontMatter.title || "Your Default Title";
+    const description = frontMatter.description || "Your Default Description";
 
     return (
       <>
@@ -42,21 +42,21 @@ const config: DocsThemeConfig = {
         <link rel="icon" href="/favicon.ico" sizes="any" />
         {ogImage && <meta property="og:image" content={ogImage} />}
       </>
-    )
+    );
   },
   useNextSeoProps() {
-    const { asPath } = useRouter()
-    if (asPath !== '/') {
+    const {asPath} = useRouter();
+    if (asPath !== "/") {
       return {
-        titleTemplate: '%s – FSAKM',
-      }
+        titleTemplate: "%s – FSAKM",
+      };
     }
   },
   navbar: {
     extraContent: () => {
-      return <ThemeSwitch />
+      return <ThemeSwitch />;
     },
   },
-}
+};
 
-export default config
+export default config;

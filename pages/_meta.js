@@ -1,4 +1,4 @@
-module.exports={
+module.exports = {
   index: {
     type: "page",
     display: "hidden",
@@ -8,8 +8,8 @@ module.exports={
     type: "page",
     theme: {
       sidebar: false, // Hide navbar on this page
-      layout: 'full',
-    }
+      layout: "full",
+    },
   },
   "krav-maga": {
     title: "Krav Maga",
@@ -32,8 +32,8 @@ module.exports={
     type: "page",
     theme: {
       sidebar: false, // Hide navbar on this page
-      layout: 'full',
-    }
+      layout: "full",
+    },
   },
   "area-do-aluno": {
     title: "Área do Aluno ↗",
