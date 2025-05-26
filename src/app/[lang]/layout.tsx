@@ -9,6 +9,7 @@ import Link from "next/link";
 import {ThemeToggle} from "@/src/components/ThemeToggle";
 import {LanguageToggle} from "@/src/components/LanguageToggle";
 import {getDictionary, getDirection} from "../_dictionaries/get-dictionary";
+import {Toaster} from "@/src/components/ui/sonner";
 
 export const metadata = {
   // Define your metadata here
@@ -133,6 +134,7 @@ export default async function RootLayout({children, params}) {
             <div>{children}</div>
           </main>
         </Layout>
+        <Toaster />
       </BodyWithPageClass>
     </html>
   );
