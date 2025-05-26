@@ -25,7 +25,7 @@ const navbar = (
   <Navbar
     logo={
       <div>
-        <b>FSAKM</b> <span style={{opacity: "60%"}}>Federação Sul Americana de Krav-Maga</span>
+        <b>FSAKM</b>
       </div>
     }
     children={

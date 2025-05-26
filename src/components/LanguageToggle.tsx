@@ -5,13 +5,13 @@ import {Sun, Moon} from "lucide-react";
 import {usePathname, useRouter} from "next/navigation";
 import Image from "next/image";
 
-import USFlag from "@/src/components/flags/USFlag";
-import BRFlag from "@/src/components/flags/BRFlag";
-import ESFlag from "@/src/components/flags/ESFlag";
+import USFlag from "./flags/USFlag";
+import BRFlag from "./flags/BRFlag";
+import ESFlag from "./flags/ESFlag";
 
 const languages = [
-  {code: "en", label: "English", Flag: USFlag},
   {code: "pt", label: "Português", Flag: BRFlag},
+  {code: "en", label: "English", Flag: USFlag},
   {code: "es", label: "Español", Flag: ESFlag},
 ];
 
@@ -53,7 +53,7 @@ export function LanguageToggle() {
           aria-label={`Mudar para ${lang.label}`}
           onClick={() => handleLanguageChange(lang.code)}
           className="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-          <Image src={lang.flag} alt={lang.label} width={24} height={24} />
+          <lang.Flag width={24} height={24} />
         </button>
       ))}
     </div>
