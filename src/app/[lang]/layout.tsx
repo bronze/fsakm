@@ -113,8 +113,8 @@ export default async function RootLayout({children, params}) {
           // ... Your additional layout options
         >
           <main className="w-full h-full flex flex-col">
-            <header className="w-full space-x-8  ">
-              <div className="mx-auto flex container x:max-w-(--nextra-content-width) place-content-end p-4 nextra-border border-b">
+            <header className="w-full  ">
+              <div className="mx-auto gap-8 flex items-center container x:max-w-(--nextra-content-width) place-content-end p-4 nextra-border border-b">
                 <div className="group transition-all duration-300 ease-in-out w-64 focus-within:w-96">
                   <Search
                     emptyResult={dictionary.searchEmptyResult}
