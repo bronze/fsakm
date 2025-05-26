@@ -4,8 +4,11 @@ title: Contato
 
 import {Button} from "@/src/components/ui/button";
 import {GitHubLogoIcon, VercelLogoIcon} from "@radix-ui/react-icons";
+import {Mail, Phone, Home} from "lucide-react";
+
 import Link from "next/link";
 import {GoogleMapsEmbed} from "@next/third-parties/google";
+import ContactForm from "@/src/components/contact-form";
 
 # Contato
 
@@ -19,27 +22,29 @@ import {GoogleMapsEmbed} from "@next/third-parties/google";
 
 <div className="p-12"></div>
 
-<Button variant="outline" asChild>
-  <Link href="https://github.com/ObservedObserver/nextra-docs-tailwind-shadcn-template" className="gap-2">
-    <GitHubLogoIcon />
-    <span>View on Github</span>
-  </Link>
-</Button>
-<Button asChild>
-  <Link
-    href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FObservedObserver%2Fnextra-docs-tailwind-shadcn-template"
-    className="gap-2">
-    <VercelLogoIcon />
-    <span>Deploy on Vercel</span>
-  </Link>
-</Button>
+<div className="grid lg:grid-cols-3 md:gap-16">
+  <div className="space-y-4">
+    <div>
+      <div className="text-xl font-bold">KRAV MAGA</div>
+      <div className="text-xl font-semibold text-orange-500">GRÃO MESTRE KOBI</div>
+    </div>
 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+    <div className="grid grid-cols-[24px_1fr] gap-6 items-start text-sm">
+      <Mail size={20} className="mt-0.5" />
+      <span>kravmaga@kravmaga.com.br</span>
 
-## What is Nextra?
+      <Phone size={20} className="mt-0.5" />
+      <span>+55 21 2226-3807</span>
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+      <Home size={20} className="mt-0.5" />
+      <span>
+        Rua Sorocaba, 258, Botafogo – Rio de Janeiro, RJ, Brasil, 22271-110
+      </span>
+    </div>
 
-## Documentation
+  </div>
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+  <div className="md:col-span-2 flex place-items-center">
+    <ContactForm />
+  </div>
+</div>

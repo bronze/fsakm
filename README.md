@@ -44,3 +44,15 @@ https://www.reddit.com/r/nextjs/comments/15ug0df/how_to_implement_a_language_swi
 https://github.com/shuding/nextra/blob/main/packages/nextra-theme-docs/src/components/footer/index.tsx#L14
 
 https://nextjs.org/docs/app/guides/third-party-libraries
+
+https://resend.com/ email forms
+
+https://vercel.com/guides/deploying-react-forms-using-formspree-with-vercel
+
+https://formspree.io/
+
+https://web3forms.com/
+
+https://engineering.udacity.com/mastering-forms-in-next-js-15-and-react-19-e3d2d783946b
+
+https://www.youtube.com/watch?v=OFBVmAVqr5I https://github.com/TheOrcDev/orcish-contact-form/tree/main
