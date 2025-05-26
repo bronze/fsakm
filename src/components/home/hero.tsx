@@ -22,10 +22,10 @@ export default function KravMagaHero() {
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
                 <span className="">KRAV</span> <span className="text-blue-600">MAGA</span>
                 <br />
-                <span className="text-3xl lg:text-4xl font-normal text-gray-300">Mestre Kobi</span>
+                <span className="text-3xl lg:text-4xl font-norma">Mestre Kobi</span>
               </h1>
 
-              <p className="text-xl lg:text-2xl text-gray-300 max-w-2xl leading-relaxed">
+              <p className="text-xl lg:text-2xl max-w-2xl leading-relaxed">
                 Aprenda o sistema de defesa pessoal mais eficaz do mundo. Desenvolva confiança, força e habilidades que
                 podem salvar sua vida.
               </p>
