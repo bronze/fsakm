@@ -1,10 +1,12 @@
 // https://www.shadcn-form.com/templates/contact/contact
 "use client";
 
+import {useState} from "react";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {useForm} from "react-hook-form";
 import {toast} from "sonner";
+import {Loader2} from "lucide-react";
 
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/src/components/ui/form";
 import {Button} from "@/src/components/ui/button";
@@ -20,6 +22,7 @@ const formSchema = z.object({
 });
 
 export default function ContactFormPreview() {
+  const [loading, setLoading] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -30,13 +33,17 @@ export default function ContactFormPreview() {
   });
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+    setLoading(true);
     try {
       // Simulate a successful contact form submission
+      await new Promise(resolve => setTimeout(resolve, 1200)); // simulate network delay
       console.log(values);
       toast.success("Your message has been sent successfully!");
     } catch (error) {
       console.error("Error submitting contact form", error);
       toast.error("Failed to send your message. Please try again.");
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -96,8 +103,15 @@ export default function ContactFormPreview() {
                   )}
                 />
 
-                <Button type="submit" className="w-full">
-                  Send Message
+                <Button type="submit" className="w-full" disabled={loading}>
+                  {loading ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Please wait
+                    </>
+                  ) : (
+                    "Send Message"
+                  )}
                 </Button>
               </div>
             </form>
