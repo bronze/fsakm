@@ -10,10 +10,8 @@ const dictionaries: Dictionaries = {
 };
 
 export async function getDictionary(locale: string): Promise<Dictionary> {
-  const {default: dictionary} = await // @ts-expect-error -- fixme
-  (dictionaries[locale] || dictionaries.en)();
-
-  return dictionary;
+  const mod = await (dictionaries[locale] || dictionaries.en)();
+  return mod.default;
 }
 
 export function getDirection(locale: string): "ltr" | "rtl" {
