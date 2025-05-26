@@ -94,14 +94,7 @@ export default async function RootLayout({children, params}) {
           // banner={banner}
           navbar={navbar}
           // Example: To customize the search input placeholder
-          search={
-            <Search
-              emptyResult={dictionary.searchEmptyResult}
-              errorText={dictionary.searchError}
-              loading={dictionary.searchLoading}
-              placeholder={dictionary.searchPlaceholder}
-            />
-          }
+          search={null}
           editLink={null}
           feedback={{
             content: null,
@@ -119,7 +112,21 @@ export default async function RootLayout({children, params}) {
           footer={footer}
           // ... Your additional layout options
         >
-          {children}
+          <div className="w-full h-full">
+            <div className="flex flex-col">
+              <div>
+                <div className="w-full mx-auto flex container place-content-end p-4">
+                  <Search
+                    emptyResult={dictionary.searchEmptyResult}
+                    errorText={dictionary.searchError}
+                    loading={dictionary.searchLoading}
+                    placeholder={dictionary.searchPlaceholder}
+                  />
+                </div>
+              </div>
+              <div>{children}</div>
+            </div>
+          </div>
         </Layout>
       </BodyWithPageClass>
     </html>
