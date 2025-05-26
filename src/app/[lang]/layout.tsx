@@ -7,6 +7,7 @@ import "../../styles/global.css";
 import "nextra-theme-docs/style.css";
 import Link from "next/link";
 import {ThemeToggle} from "@/src/components/ThemeToggle";
+import {LanguageToggle} from "@/src/components/LanguageToggle";
 import {getDictionary, getDirection} from "../_dictionaries/get-dictionary";
 
 export const metadata = {
@@ -29,6 +30,7 @@ const navbar = (
     }
     children={
       <>
+        <LanguageToggle />
         <ThemeToggle />
         {/* <ThemeSwitch /> */}
         {/* Add your second component here */}
