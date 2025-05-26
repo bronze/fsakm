@@ -15,21 +15,6 @@ const languages = [
   {code: "es", label: "Español", Flag: ESFlag},
 ];
 
-export function ThemeToggle() {
-  const {resolvedTheme, setTheme} = useTheme();
-
-  const isDark = resolvedTheme === "dark";
-
-  return (
-    <button
-      aria-label="Toggle dark mode"
-      onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-      {isDark ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}
-    </button>
-  );
-}
-
 export function LanguageToggle() {
   const router = useRouter();
   const pathname = usePathname();
@@ -53,8 +38,8 @@ export function LanguageToggle() {
           title={lang.label}
           aria-label={`Mudar para ${lang.label}`}
           onClick={() => handleLanguageChange(lang.code)}
-          className="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition cursor-pointer">
-          <lang.Flag width={24} height={24} />
+          className="cursor-pointer rounded p-1 transition hover:bg-gray-200 dark:hover:bg-gray-700">
+          <lang.Flag height={24} width={24} />
         </button>
       ))}
     </div>
