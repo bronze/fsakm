@@ -4,22 +4,28 @@
 
 import {NextRequest, NextResponse} from "next/server";
 
-export function middleware(req: NextRequest) {
-  // Always use the defaultLocale from next.config.mjs
-  const url = req.nextUrl;
-  const {pathname, locale} = req.nextUrl;
+const SUPPORTED_LOCALES = ["pt", "en", "es"];
+const DEFAULT_LOCALE = "pt";
 
-  // If the pathname already includes a locale, do nothingca
-  if (["/pt", "/en", "/es"].some(lng => pathname.startsWith(lng))) {
+export function middleware(req: NextRequest) {
+  const url = req.nextUrl;
+  const {pathname} = url;
+
+  // If the pathname already includes a locale, do nothing
+  if (SUPPORTED_LOCALES.some(lng => pathname.startsWith(`/${lng}`))) {
     return NextResponse.next();
   }
 
-  // Redirect to defaultLocale ('pt') if no locale in path
-  url.pathname = `/pt${pathname}`;
+  // Try to get the locale from the cookie
+  const cookieLocale = req.cookies.get("NEXT_LOCALE")?.value;
+
+  // Use cookie locale if valid, otherwise default
+  const locale = SUPPORTED_LOCALES.includes(cookieLocale ?? "") ? cookieLocale : DEFAULT_LOCALE;
+
+  url.pathname = `/${locale}${pathname}`;
   return NextResponse.redirect(url);
 }
 
 export const config = {
-  // Matcher ignoring `/_next/` and `/api/`
   matcher: ["/((?!api|_next/static|_next/image|favicon.ico|icon.svg|apple-icon.png|manifest|_pagefind).*)"],
 };
