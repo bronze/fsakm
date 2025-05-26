@@ -112,9 +112,9 @@ export default async function RootLayout({children, params}) {
           footer={footer}
           // ... Your additional layout options
         >
-          <div className="w-full h-full">
-            <div className="flex flex-col">
-              <div className="w-full mx-auto flex container place-content-end p-4 space-x-8">
+          <main className="w-full h-full flex flex-col">
+            <header className="w-full space-x-8  ">
+              <div className="mx-auto flex container x:max-w-(--nextra-content-width) place-content-end p-4 nextra-border border-b">
                 <div>
                   <Search
                     emptyResult={dictionary.searchEmptyResult}
@@ -149,9 +149,9 @@ export default async function RootLayout({children, params}) {
                   </div>
                 </div>
               </div>
-              <div>{children}</div>
-            </div>
-          </div>
+            </header>
+            <div>{children}</div>
+          </main>
         </Layout>
       </BodyWithPageClass>
     </html>
