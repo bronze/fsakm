@@ -50,9 +50,10 @@ export function LanguageToggle() {
       {languages.map(lang => (
         <button
           key={lang.code}
+          title={lang.label}
           aria-label={`Mudar para ${lang.label}`}
           onClick={() => handleLanguageChange(lang.code)}
-          className="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+          className="p-1 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition cursor-pointer">
           <lang.Flag width={24} height={24} />
         </button>
       ))}
