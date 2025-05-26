@@ -114,14 +114,39 @@ export default async function RootLayout({children, params}) {
         >
           <div className="w-full h-full">
             <div className="flex flex-col">
-              <div>
-                <div className="w-full mx-auto flex container place-content-end p-4">
+              <div className="w-full mx-auto flex container place-content-end p-4 space-x-8">
+                <div>
                   <Search
                     emptyResult={dictionary.searchEmptyResult}
                     errorText={dictionary.searchError}
                     loading={dictionary.searchLoading}
                     placeholder={dictionary.searchPlaceholder}
                   />
+                </div>
+                <div>
+                  <div className="grid grid-cols-3 gap-1">
+                    <a
+                      href="https://www.instagram.com/kravmaga_mestrekobi/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded group">
+                      <Instagram className="w-6 h-6 group-hover:text-fuchsia-500" />
+                    </a>
+                    <a
+                      href="https://www.facebook.com/kravmagamestrekobi/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded group">
+                      <Facebook className="w-6 h-6 group-hover:text-blue-500" />
+                    </a>
+                    <a
+                      href="https://www.youtube.com/@kravmagamestrekobi/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded group ">
+                      <Youtube className="w-6 h-6 group-hover:text-red-500" />
+                    </a>
+                  </div>
                 </div>
               </div>
               <div>{children}</div>
