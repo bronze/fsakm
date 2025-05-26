@@ -120,7 +120,13 @@
 /* hack da poha */
 
 body.page-home,
-body.page-grao-mestre-kobi {
+body.page-pt-home,
+body.page-en-home,
+body.page-es-home,
+body.page-grao-mestre-kobi,
+body.page-pt-grao-mestre-kobi,
+body.page-en-grao-mestre-kobi,
+body.page-es-grao-mestre-kobi {
   .x\:mx-auto.x\:flex.x\:max-w-\(--nextra-content-width\) > div.x\:w-64 {
     /* your styles here */
     display: none;
