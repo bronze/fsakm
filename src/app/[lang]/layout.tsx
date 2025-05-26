@@ -111,7 +111,8 @@ export default async function RootLayout({children, params}) {
           pageMap={await getPageMap(`/${lang}`)}
           // docsRepositoryBase="https://github.com/phucbm/nextra-docs-starter/tree/main"
           toc={{
-            backToTop: "Rolagem para cima...",
+            backToTop: dictionary.backToTop,
+            title: dictionary.tocTitle,
           }}
           footer={footer}
           // ... Your additional layout options

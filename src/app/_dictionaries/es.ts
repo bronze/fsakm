@@ -5,6 +5,7 @@ export default {
   light: "Luz",
   system: "Sistema",
   backToTop: "Desplazarse hacia arriba",
+  tocTitle: "On This Page",
   lastUpdated: "Última actualización el",
   logo: {
     title: "Biblioteca React Hooks para la obtención de datos",

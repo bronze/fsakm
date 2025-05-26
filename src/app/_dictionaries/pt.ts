@@ -2,7 +2,8 @@ export default {
   dark: "Dark",
   light: "Light",
   system: "System",
-  backToTop: "Scroll to top",
+  backToTop: "Rolagem para cima...",
+  tocTitle: "On This Page",
   lastUpdated: "Last updated on",
   logo: {
     title: "React Hooks for Data Fetching",

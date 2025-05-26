@@ -3,6 +3,7 @@ export default {
   light: "Light",
   system: "System",
   backToTop: "Scroll to top",
+  tocTitle: "On This Page",
   lastUpdated: "Last updated on",
   logo: {
     title: "React Hooks for Data Fetching",
