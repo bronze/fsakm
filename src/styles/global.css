@@ -132,3 +132,8 @@ body.page-es-grao-mestre-kobi {
     display: none;
   }
 }
+.searchinput {
+  input {
+    @apply w-full;
+  }
+}

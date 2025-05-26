@@ -115,14 +115,16 @@ export default async function RootLayout({children, params}) {
           <main className="w-full h-full flex flex-col">
             <header className="w-full space-x-8  ">
               <div className="mx-auto flex container x:max-w-(--nextra-content-width) place-content-end p-4 nextra-border border-b">
-                <div>
+                <div className="group transition-all duration-300 ease-in-out w-64 focus-within:w-96">
                   <Search
                     emptyResult={dictionary.searchEmptyResult}
                     errorText={dictionary.searchError}
                     loading={dictionary.searchLoading}
                     placeholder={dictionary.searchPlaceholder}
+                    className="searchinput" // Garante que o Search preencha o container
                   />
                 </div>
+
                 <div>
                   <div className="grid grid-cols-3 gap-1">
                     <a
