@@ -28,13 +28,14 @@ export function LanguageToggle() {
       segments.splice(1, 0, lang);
     }
     const newPath = segments.join("/");
-    router.push(newPath, newPath, {locale: lang});
+    router.push(newPath);
   };
 
   return (
     <div className="grid grid-cols-3 gap-2">
       {languages.map(lang => (
         <button
+          key={lang.code}
           title={lang.label}
           aria-label={`Mudar para ${lang.label}`}
           onClick={() => handleLanguageChange(lang.code)}
