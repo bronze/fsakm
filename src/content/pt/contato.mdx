@@ -2,25 +2,22 @@
 title: Contato
 ---
 
-## Contato
-
 import {Button} from "@/src/components/ui/button";
 import {GitHubLogoIcon, VercelLogoIcon} from "@radix-ui/react-icons";
 import Link from "next/link";
-
 import {GoogleMapsEmbed} from "@next/third-parties/google";
 
-export default function Page() {
-  return (
-    <GoogleMapsEmbed
-      apiKey={process.env.GOOGLEMAPS_API_KEY}
-      height={200}
-      width="100%"
-      mode="place"
-      q="Brooklyn+Bridge,New+York,NY"
-    />
-  );
-}
+# Contato
+
+<GoogleMapsEmbed
+  apiKey={process.env.GOOGLEMAPS_API_KEY}
+  height={400}
+  width="100%"
+  mode="place"
+  q="R. Sorocaba, 258 - Botafogo, Rio de Janeiro - RJ, 22271-110"
+/>
+
+<div className="p-12"></div>
 
 <Button variant="outline" asChild>
   <Link href="https://github.com/ObservedObserver/nextra-docs-tailwind-shadcn-template" className="gap-2">
