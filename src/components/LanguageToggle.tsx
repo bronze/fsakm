@@ -4,6 +4,7 @@ import {useTheme} from "next-themes";
 import {Sun, Moon} from "lucide-react";
 import {usePathname, useRouter} from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 import USFlag from "./flags/USFlag";
 import BRFlag from "./flags/BRFlag";
@@ -20,21 +21,20 @@ export function LanguageToggle() {
   const pathname = usePathname();
 
   const handleLanguageChange = (lang: string) => {
-    // Troca o prefixo do idioma na URL
     const segments = pathname.split("/");
     if (languages.some(l => l.code === segments[1])) {
       segments[1] = lang;
     } else {
       segments.splice(1, 0, lang);
     }
-    router.push(segments.join("/"));
+    const newPath = segments.join("/");
+    router.push(newPath, newPath, {locale: lang});
   };
 
   return (
     <div className="grid grid-cols-3 gap-2">
       {languages.map(lang => (
         <button
-          key={lang.code}
           title={lang.label}
           aria-label={`Mudar para ${lang.label}`}
           onClick={() => handleLanguageChange(lang.code)}
