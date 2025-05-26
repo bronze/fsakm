@@ -1,7 +1,12 @@
-module.exports = {
+module.exports={
   index: {
     type: "page",
     display: "hidden",
+    theme: {
+      sidebar: false, // Hide navbar on this page
+      layout: "full",
+      toc: false, // Hide table of contents on this page
+    },
   },
   "grao-mestre-kobi": {
     title: "Grão Mestre Kobi",

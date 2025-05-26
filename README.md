@@ -56,3 +56,9 @@ https://web3forms.com/
 https://engineering.udacity.com/mastering-forms-in-next-js-15-and-react-19-e3d2d783946b
 
 https://www.youtube.com/watch?v=OFBVmAVqr5I https://github.com/TheOrcDev/orcish-contact-form/tree/main
+
+https://www.shadcnblocks.com/group/hero
+
+https://www.shadcn-ui-blocks.com/blocks/hero-sections
+Product Carousel Hero
+Split Image Hero
