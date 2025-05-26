@@ -37,8 +37,6 @@ const navbar = (
   />
 );
 
-const searchConfig = <Search placeholder="Busque no site..." />;
-
 const footer = (
   <Footer>
     <div className="w-full grid sm:grid-cols-2 gap-4 ">
@@ -94,7 +92,14 @@ export default async function RootLayout({children, params}) {
           // banner={banner}
           navbar={navbar}
           // Example: To customize the search input placeholder
-          search={searchConfig}
+          search={
+            <Search
+              emptyResult={dictionary.searchEmptyResult}
+              errorText={dictionary.searchError}
+              loading={dictionary.searchLoading}
+              placeholder={dictionary.searchPlaceholder}
+            />
+          }
           editLink={null}
           feedback={{
             content: null,

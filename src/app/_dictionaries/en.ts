@@ -12,6 +12,10 @@ export default {
   link: {
     vercel: "https://vercel.com/?utm_source=swr",
   },
+  searchEmptyResult: "No results found",
+  searchError: "An error occurred while searching",
+  searchLoading: "Searching...",
+  searchPlaceholder: "Search...",
   lightweight: "Lightweight",
   realtime: "Realtime",
   suspense: "Suspense",
