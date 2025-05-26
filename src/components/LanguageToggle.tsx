@@ -28,7 +28,11 @@ export function LanguageToggle() {
       segments.splice(1, 0, lang);
     }
     const newPath = segments.join("/");
-    router.push(newPath);
+    // Set NEXT_LOCALE cookie for 1 year
+    const date = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000);
+    document.cookie = `NEXT_LOCALE=${lang}; expires=${date.toUTCString()}; path=/`;
+    // Reload page with new locale
+    location.href = newPath;
   };
 
   return (

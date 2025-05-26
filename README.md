@@ -38,3 +38,7 @@ https://aicybr.com/blog/nextra-docs-setup
 https://github.com/the-guild-org
 
 https://the-guild.dev/ - simple dark mode toggle
+
+https://www.reddit.com/r/nextjs/comments/15ug0df/how_to_implement_a_language_switcher_in_nextjs/
+
+https://github.com/shuding/nextra/blob/main/packages/nextra-theme-docs/src/components/footer/index.tsx#L14
