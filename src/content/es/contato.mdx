@@ -1,0 +1,34 @@
+---
+title: Contato
+---
+
+## Contato
+
+import {Button} from "@/src/components/ui/button";
+import {GitHubLogoIcon, VercelLogoIcon} from "@radix-ui/react-icons";
+import Link from "next/link";
+
+<Button variant="outline" asChild>
+  <Link href="https://github.com/ObservedObserver/nextra-docs-tailwind-shadcn-template" className="gap-2">
+    <GitHubLogoIcon />
+    <span>View on Github</span>
+  </Link>
+</Button>
+<Button asChild>
+  <Link
+    href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FObservedObserver%2Fnextra-docs-tailwind-shadcn-template"
+    className="gap-2">
+    <VercelLogoIcon />
+    <span>Deploy on Vercel</span>
+  </Link>
+</Button>
+
+Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+
+## What is Nextra?
+
+A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+
+## Documentation
+
+The documentation is available at [https://nextra.site](https://nextra.site).

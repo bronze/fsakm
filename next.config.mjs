@@ -8,7 +8,8 @@ const withNextra=nextra({
 export default withNextra({
   // ... Other Next.js config options
   // output: 'export'
-  // i18n: {
-  //   locales: ['pt', 'en'],
-  // },
+  i18n: {
+    locales: ['pt', 'en', 'es'],
+    defaultLocale: 'pt'
+  },
 });
