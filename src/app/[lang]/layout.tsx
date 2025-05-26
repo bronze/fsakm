@@ -39,35 +39,37 @@ const navbar = (
   />
 );
 
+const SocialLinks = (
+  <div className="grid grid-cols-3 gap-4">
+    <a
+      href="https://www.instagram.com/kravmaga_mestrekobi/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded group transition">
+      <Instagram className="w-6 h-6 group-hover:text-fuchsia-500" />
+    </a>
+    <a
+      href="https://www.facebook.com/kravmagamestrekobi/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded group transition">
+      <Facebook className="w-6 h-6 group-hover:text-blue-500" />
+    </a>
+    <a
+      href="https://www.youtube.com/@kravmagamestrekobi/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded group transition ">
+      <Youtube className="w-6 h-6 group-hover:text-red-500" />
+    </a>
+  </div>
+);
+
 const footer = (
   <Footer>
     <div className="w-full grid sm:grid-cols-2 gap-4 ">
       <div className="flex place-content-center lg:place-content-start">MIT {new Date().getFullYear()} © Nextra.</div>
-      <div className="flex place-content-center lg:place-content-end">
-        <div className="grid grid-cols-3 gap-4">
-          <a
-            href="https://www.instagram.com/kravmaga_mestrekobi/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded group">
-            <Instagram className="w-6 h-6 group-hover:text-fuchsia-500" />
-          </a>
-          <a
-            href="https://www.facebook.com/kravmagamestrekobi/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded group">
-            <Facebook className="w-6 h-6 group-hover:text-blue-500" />
-          </a>
-          <a
-            href="https://www.youtube.com/@kravmagamestrekobi/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded group ">
-            <Youtube className="w-6 h-6 group-hover:text-red-500" />
-          </a>
-        </div>
-      </div>
+      <div className="flex place-content-center lg:place-content-end">{SocialLinks}</div>
     </div>
   </Footer>
 );
@@ -125,31 +127,7 @@ export default async function RootLayout({children, params}) {
                   />
                 </div>
 
-                <div>
-                  <div className="grid grid-cols-3 gap-1">
-                    <a
-                      href="https://www.instagram.com/kravmaga_mestrekobi/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded group">
-                      <Instagram className="w-6 h-6 group-hover:text-fuchsia-500" />
-                    </a>
-                    <a
-                      href="https://www.facebook.com/kravmagamestrekobi/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded group">
-                      <Facebook className="w-6 h-6 group-hover:text-blue-500" />
-                    </a>
-                    <a
-                      href="https://www.youtube.com/@kravmagamestrekobi/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 rounded group ">
-                      <Youtube className="w-6 h-6 group-hover:text-red-500" />
-                    </a>
-                  </div>
-                </div>
+                <div>{SocialLinks}</div>
               </div>
             </header>
             <div>{children}</div>
