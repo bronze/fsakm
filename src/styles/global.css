@@ -128,7 +128,7 @@ body.page-pt-grao-mestre-kobi,
 body.page-en-grao-mestre-kobi,
 body.page-es-grao-mestre-kobi {
   .x\:mx-auto.x\:flex.x\:max-w-\(--nextra-content-width\) > div.x\:w-64 {
-    /* your styles here */
+  /* your styles here */
     display: none;
   }
 }
@@ -136,4 +136,9 @@ body.page-es-grao-mestre-kobi {
   input {
     @apply w-full;
   }
+}
+
+/*  lite-youtube hack */
+lite-youtube {
+  @apply mx-auto;
 }

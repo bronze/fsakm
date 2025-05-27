@@ -1,7 +1,7 @@
 import Image from "next/image";
 import {Button} from "@/src/components/ui/button";
 import {Badge} from "@/src/components/ui/badge";
-import {Shield, Users, Award, MapPin} from "lucide-react";
+import {Shield, Award, MapPin} from "lucide-react";
 
 export default function KravMagaHero() {
   return (
@@ -34,7 +34,7 @@ export default function KravMagaHero() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 py-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">25+</div>
+                <div className="text-3xl font-bold text-blue-600">35+</div>
                 <div className="text-sm">Anos de Experiência</div>
               </div>
               <div className="text-center">
@@ -61,10 +61,6 @@ export default function KravMagaHero() {
             <div className="flex flex-wrap items-center gap-6 pt-8 border-t border-gray-800">
               <div className="flex items-center gap-2 ">
                 <Award className="w-5 h-5 text-blue-600" />
-                <span>Certificação Internacional</span>
-              </div>
-              <div className="flex items-center gap-2 ">
-                <Users className="w-5 h-5 text-blue-600" />
                 <span>Instrutores Qualificados</span>
               </div>
               <div className="flex items-center gap-2 ">

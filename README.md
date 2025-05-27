@@ -60,5 +60,5 @@ https://www.youtube.com/watch?v=OFBVmAVqr5I https://github.com/TheOrcDev/orcish-
 https://www.shadcnblocks.com/group/hero
 
 https://www.shadcn-ui-blocks.com/blocks/hero-sections
-Product Carousel Hero
-Split Image Hero
+Product Carousel Hero https://www.shadcn-ui-blocks.com/examples/hero-sections/paid/product-carousel-hero
+Split Image Hero https://www.shadcn-ui-blocks.com/examples/hero-sections/paid/split-image-hero
