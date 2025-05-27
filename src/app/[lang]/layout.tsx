@@ -85,7 +85,9 @@ export default async function RootLayout({children, params}) {
   return (
     <html lang={lang} dir={getDirection(lang)} suppressHydrationWarning>
       <Head>
-        <link rel="shortcut icon" href="/images/general/icon.svg" />
+        <link rel="shortcut icon" href="/pt/cropped-favicon-mestre-kobi-32x32.png" sizes="32x32" />
+        <link rel="icon" href="/pt/cropped-favicon-mestre-kobi-192x192.png" sizes="192x192" />
+        <link rel="apple-touch-icon" href="/pt/cropped-favicon-mestre-kobi-180x180.png" />
       </Head>
       <BodyWithPageClass>
         <Layout
