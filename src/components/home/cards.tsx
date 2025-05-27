@@ -2,6 +2,7 @@ import {Card, CardContent} from "@/src/components/ui/card";
 import {Button} from "@/src/components/ui/button";
 import {ArrowRight} from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function KravMagaCards() {
   const cards = [
@@ -35,14 +36,19 @@ export default function KravMagaCards() {
         {cards.map((card, index) => (
           <Link key={index} href={card.href} className="block">
             <Card className="relative overflow-hidden h-80 group hover:scale-105 transition-transform duration-300">
-              <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                style={{
-                  backgroundImage: `url(${card.image})`,
-                }}
-              />
-              <div className="absolute inset-0 bg-black/40" />
-              <CardContent className="relative z-10 h-full flex flex-col justify-between p-6 text-white">
+              {/* Use Next.js Image as background */}
+              <div className="absolute inset-0 w-full h-full">
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  fill
+                  style={{objectFit: "cover"}}
+                  className="z-0"
+                  priority={index === 0}
+                />
+              </div>
+              <div className="absolute inset-0 bg-black/40 z-10" />
+              <CardContent className="relative z-20 h-full flex flex-col justify-between p-6 text-white">
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold mb-3 leading-tight">{card.title}</h2>
                   <p className="text-sm md:text-base text-white/90 leading-relaxed">{card.description}</p>
