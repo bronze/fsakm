@@ -5,53 +5,25 @@ layout: "full"
 
 import {Steps} from "nextra/components";
 import Hero from "@/src/components/home/hero";
+import Cards from "@/src/components/home/cards";
+import {YouTubeEmbed} from "@next/third-parties/google";
 
 <Hero />
 
-## Introdução PORTUGUES
+## Quem disse que você não pode se defender?
 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+<div className='grid lg:grid-cols-2 gap-6 mt-4'>
+  <div>
+    ### Krav Maga
 
-## What is Nextra?
+    É a defesa pessoal criada em Israel por Imi Lichtenfeld, já adotada por forças de segurança e civis no
+    mundo inteiro. Tem o objetivo de dar a qualquer pessoa, independente de sexo, idade ou porte físico, a capacidade de
+    se defender contra qualquer tipo de agressão: armada ou desarmada, contra um ou vários agressores, em pé ou no chão.
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+  </div>
+  <div>
+    <YouTubeEmbed videoid="NNb7iYmZfR4"  />
+  </div>
+</div>
 
-## Documentation
-
-The documentation is available at [https://nextra.site](https://nextra.site).
-
-## Nextra Docs Starter
-
-This starter template includes the following features:
-
-[**Live Demo →**](https://nextra-docs-starter.vercel.app)
-
-[**Check this on GitHub →**](https://github.com/phucbm/nextra-docs-starter)
-
-## Quick Start
-
-You can deploy this template on Vercel by clicking the button below
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fphucbm%2Fnextra-docs-starter)
-
-Or you can follow the steps below to clone the repository and run it locally.
-
-<Steps>
-    ### Clone this repository
-
-    Using the GitHub CLI:
-    ```bash
-    gh repo clone phucbm/nextra-docs-starter
-    ```
-
-    ### Install
-    ```bash
-    pnpm i
-    ```
-
-    ### Run the development server
-    ```bash
-    pnpm dev
-    ```
-
-</Steps>
+<Cards />
