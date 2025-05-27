@@ -86,7 +86,7 @@ export default function KravMagaHero() {
             </div>
 
             {/* Floating Card */}
-            <div className="absolute -bottom-6 -right-6 bg-white text-black p-6 rounded-xl shadow-2xl max-w-xs">
+            <div className="absolute -bottom-6 -right-2 bg-white text-black p-6 rounded-xl shadow-2xl max-w-xs">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
                   <Shield className="w-6 h-6 text-white" />
