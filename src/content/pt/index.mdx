@@ -7,6 +7,36 @@ import {Steps} from "nextra/components";
 import Hero from "@/src/components/home/hero";
 import Cards from "@/src/components/home/cards";
 import {YouTubeEmbed} from "@next/third-parties/google";
+import {Button} from "@/src/components/ui/button";
+import Image from "next/image";
+
+import {Testimonial} from "@/src/components/home/testimonial";
+
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+  <Testimonial
+    title="Evita-se o confronto quando é possível, mas dele não se foge quando é inevitável."
+    author="Kobi Lichtenstein"
+    bio="Grão Mestre de Krav Maga"
+  />
+
+<Testimonial
+  title="É o caminho mais eficaz para imobilizar o agressor sem uso de armas letais."
+  author="Capitão do BOPE"
+  bio="Batalhão de Operações Especiais"
+/>
+
+<Testimonial
+  title="Você entende que não é porque é menor ou não tem tanta força que alguém pode fazer o que quiser com você."
+  author="Fabiana Soares Vieira"
+  bio="Aluna, Krav Maga"
+/>
+
+  <Testimonial
+    title="Hoje ando tranquilo na rua, porque sei o que se passa ao meu redor e estou preparado para me defender."
+    author="Leandro Leibel"
+    bio="Aluno, Krav Maga"
+  />
+</div>
 
 <Hero />
 
@@ -27,3 +57,73 @@ import {YouTubeEmbed} from "@next/third-parties/google";
 </div>
 
 <Cards />
+
+<h2 className="text-3xl text-center uppercase my-24">
+  {`Saber se defender desenvolve autoconfiança.`}
+  <br />
+  <span className="text-blue-500">{`Autoconfiança desenvolve coragem.`}</span>
+</h2>
+
+<div className='grid md:grid-cols-2 gap-6 mt-8'>
+  <div>
+    <Image
+    src="/pt/images/home/mestre-kobi_banner.png"
+    alt="Academias ao redor do mundo."
+    width={800}
+    height={400}
+    className="w-full h-auto"/>
+  </div>
+  <div>
+    <p className='text-center font-semibold text-3xl uppercase'>Grão Mestre Kobi, um dos primeiros alunos de Imi, <span className='text-red-500'>o criador do Krav Maga.</span></p>
+
+    Kobi Lichtenstein foi um dos primeiros alunos de Imi, o criador do Krav Maga, com que aprendeu as técnicas, a filosofia e o caminho de vida desta arte. Israelense, ex-combatente do IDF, saiu de sua terra natal e introduziu o Krav Maga na América Latina. Atualmente, com a graduação de 8º dan, supervisiona a prática e a divulgação do Krav Maga em todo o continente.
+
+  </div>
+</div>
+
+## Onde treinar
+
+<div className="grid md:grid-cols-2 gap-6 mt-8">
+  <div className="grid place-items-center">
+    <div className="text-center">
+      <p className="text-left text-3xl text-balance my-8">Busque a academia de Krav Maga mais perto de você.</p>
+      <a href="/academias">
+        <Button className="bg-red-500 hover:cursor-pointer text-center text-xl p-6">Conheça nossas academias</Button>
+      </a>
+    </div>
+
+  </div>
+  <div>
+<Image
+  src="/pt/images/home/mapa-home.png"
+  alt="Academias ao redor do mundo."
+  width={800}
+  height={400}
+  className="w-full h-auto"
+        />
+</div>
+</div>
+
+<h2 className="text-3xl text-center uppercase my-24">
+  {`Não é só defesa.`}
+  <br />
+  <span className="text-red-500">{`É sobre saber se defender.`}</span>
+</h2>
+
+<p className="text-center w-full">
+  <h2 className="text-3xl font-semibold text-center uppercase my-8">{`Pronto para começar?`}</h2>
+  <a href="/academias" className="text-center">
+    <Button className="bg-red-500 hover:cursor-pointer text-center text-xl p-6">
+      Busque um de nossos professores licenciados.
+    </Button>
+  </a>
+</p>
+
+<h2 className=" text-center my-24">
+  <span className="text-3xl uppercase ">{`Newsletter.`}</span>
+  <br />
+  <span className="text-2xl">Inscreva-se para receber informações</span>
+</h2>
+
+{/* prettier-ignore */}
+{/* https://jasongerbes.com/blog/mdx-remove-unwanted-paragraph-tags */}
