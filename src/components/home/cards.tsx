@@ -8,14 +8,14 @@ export default function KravMagaCards() {
     {
       title: "KRAV MAGA",
       description: "Conheça mais sobre a defesa pessoal do exército israelense.",
-      image: "/placeholder.svg?height=300&width=400&query=krav maga training class with people on mats",
+      image: "/pt/images/home/kra-maga-1b-2-1.jpg",
       buttonText: "SAIBA MAIS",
       href: "/krav-maga",
     },
     {
       title: "NOSSAS ACADEMIAS",
       description: "Encontre a academia mais próxima de você e comece a treinar em qualquer uma de nossas academias.",
-      image: "/placeholder.svg?height=300&width=400&query=martial arts academy gym with training equipment",
+      image: "/pt/images/home/foto-2-academia-1-2-1.jpg",
       buttonText: "SAIBA MAIS",
       href: "/academias",
     },
@@ -23,14 +23,14 @@ export default function KravMagaCards() {
       title: "TREINAMENTO MILITAR",
       description:
         "Conheça as técnicas utilizadas pelas forças militares e policiais para proteção em situações de risco.",
-      image: "/placeholder.svg?height=300&width=400&query=military tactical training with two people in gear",
+      image: "/pt/images/home/krav-maga-mestre-kobi-seguranca-militar-1-1.jpg",
       buttonText: "SAIBA MAIS",
       href: "/krav-maga/militar",
     },
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto py-8 mt-24">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {cards.map((card, index) => (
           <Link key={index} href={card.href} className="block">
