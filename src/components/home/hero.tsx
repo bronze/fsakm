@@ -35,15 +35,15 @@ export default function KravMagaHero() {
             <div className="grid grid-cols-3 gap-6 py-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-600">25+</div>
-                <div className="text-sm text-gray-400">Anos de Experiência</div>
+                <div className="text-sm">Anos de Experiência</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-600">50+</div>
-                <div className="text-sm text-gray-400">Academias Afiliadas</div>
+                <div className="text-sm">Academias Afiliadas</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-600">10k+</div>
-                <div className="text-sm text-gray-400">Alunos Formados</div>
+                <div className="text-sm">Alunos Formados</div>
               </div>
             </div>
 
@@ -59,15 +59,15 @@ export default function KravMagaHero() {
 
             {/* Trust Indicators */}
             <div className="flex flex-wrap items-center gap-6 pt-8 border-t border-gray-800">
-              <div className="flex items-center gap-2 text-gray-400">
+              <div className="flex items-center gap-2 ">
                 <Award className="w-5 h-5 text-blue-600" />
                 <span>Certificação Internacional</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-400">
+              <div className="flex items-center gap-2 ">
                 <Users className="w-5 h-5 text-blue-600" />
                 <span>Instrutores Qualificados</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-400">
+              <div className="flex items-center gap-2 ">
                 <MapPin className="w-5 h-5 text-blue-600" />
                 <span>Presente em Todo Brasil</span>
               </div>
