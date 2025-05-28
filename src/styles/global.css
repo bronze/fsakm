@@ -155,3 +155,8 @@ body.page-es-grao-mestre-kobi {
 lite-youtube {
   @apply mx-auto;
 }
+
+/* search hack */
+.nextra-search-results {
+  background-color: color-mix(in oklab, var(--x-color-nextra-bg) 100%, transparent);
+}
