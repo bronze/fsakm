@@ -5,7 +5,11 @@ TO DO:
 - Carousel
 
   - Formacao de Instrutores https://kravmaga.com.br/formacao-de-instrutores/
-  
+
+- Card de Perfil
+
+  - Página de Instrutores
+  - Página de academia
 
 # Nextra Docs Template
 
