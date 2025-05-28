@@ -2,6 +2,43 @@
 title: Botafogo
 ---
 
+import {YouTubeEmbed} from "@next/third-parties/google";
+import {Button} from "@/src/components/ui/button";
+import Link from "next/link";
+
+import {GoogleMapsEmbed} from "@next/third-parties/google";
+
 # Botafogo
 
+<div className='grid lg:grid-cols-2 gap-6 mt-4'>
+  <div>
+      <YouTubeEmbed videoid="-4yX8WRkiOA" />
+  </div>
+  <div>
+    ## Agende uma aula experimental gratuita
+
+    É a defesa pessoal criada em Israel por Imi Lichtenfeld, já adotada por forças de segurança e civis no
+    mundo inteiro. Tem o objetivo de dar a qualquer pessoa, independente de sexo, idade ou porte físico, a capacidade de
+    se defender contra qualquer tipo de agressão: armada ou desarmada, contra um ou vários agressores, em pé ou no chão.
+
+  </div>
+
+</div>
+
+<Button asChild size="lg" className="bg-red-500 hover:cursor-pointer text-center text-xl">
+  <Link href="https://wa.me/5521975978455">Entre em contato</Link>
+</Button>
+
 ## Sede da FSAKM
+
+Lorem Ipsum
+
+## Localização
+
+<GoogleMapsEmbed
+  apiKey={process.env.GOOGLEMAPS_API_KEY}
+  height={400}
+  width="100%"
+  mode="place"
+  q="R. Sorocaba, 258 - Botafogo, Rio de Janeiro - RJ, 22271-110"
+/>
