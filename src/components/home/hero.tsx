@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {Button} from "@/src/components/ui/button";
 import {Badge} from "@/src/components/ui/badge";
 import {Shield, Award, MapPin} from "lucide-react";
@@ -50,10 +51,10 @@ export default function KravMagaHero() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg font-semibold">
-                Aula Experimental Grátis
+                <Link href="/federacao/instrutores-licenciados">Aula Experimental Grátis</Link>
               </Button>
               <Button size="lg" variant="outline" className=" px-8 py-4 text-lg">
-                Encontrar Academia
+                <Link href="/academias">Encontrar Academia</Link>
               </Button>
             </div>
 
