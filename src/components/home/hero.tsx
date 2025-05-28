@@ -43,8 +43,8 @@ export default function KravMagaHero() {
                 <div className="text-sm">Academias Afiliadas</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">10k+</div>
-                <div className="text-sm">Alunos Formados</div>
+                <div className="text-3xl font-bold text-blue-600">1 Milhão+</div>
+                <div className="text-sm">Alunos</div>
               </div>
             </div>
 
