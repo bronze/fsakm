@@ -27,7 +27,25 @@ const navbar = (
   <Navbar
     logo={
       <div>
-        <b>FSAKM</b>
+        <div>
+          {/* Logo para modo claro */}
+          <Image
+            src="/pt/images/logo-km-preto.png"
+            alt="Logo Krav Maga"
+            width={100}
+            height={30}
+            className="block dark:hidden"
+          />
+
+          {/* Logo para modo escuro */}
+          <Image
+            src="/pt/images/logo-km.png"
+            alt="Logo Krav Maga"
+            width={100}
+            height={30}
+            className="hidden dark:block"
+          />
+        </div>
       </div>
     }
     children={
