@@ -13,7 +13,7 @@ export function Testimonial({title, author, bio, highlight = false, className}: 
   return (
     <div className={cn("flex flex-col", className)}>
       {/* Quote Icon */}
-      <Quote className="w-12 h-12 text-blue-600 p-2 rounded [path]:fill-current" />
+      <Quote fill="var(--color-blue-600)" className="w-12 h-12 text-blue-600 p-2 rounded [path]:fill-current" />
 
       {/* Quote Text */}
       <blockquote className="flex-1 mb-6">
