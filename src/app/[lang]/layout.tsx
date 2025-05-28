@@ -89,7 +89,27 @@ const footer = (
   <Footer>
     <div className="w-full grid md:grid-cols-2 gap-4 ">
       <div className="flex flex-col items-center md:items-start gap-4">
-        <Image src="/pt/images/logo-km.png" alt="Logo Krav Maga" className="" width={160} height={20} />
+        <div>
+          <div>
+            {/* Logo para modo claro */}
+            <Image
+              src="/pt/images/logo-km-preto.png"
+              alt="Logo Krav Maga"
+              width={160}
+              height={30}
+              className="block dark:hidden"
+            />
+
+            {/* Logo para modo escuro */}
+            <Image
+              src="/pt/images/logo-km.png"
+              alt="Logo Krav Maga"
+              width={160}
+              height={30}
+              className="hidden dark:block"
+            />
+          </div>
+        </div>
         {new Date().getFullYear()} © Federação Sul Americana de Krav Maga.
       </div>
 
