@@ -10,31 +10,32 @@ export const OverviewPage: FC<{
   icons?: Record<string, FC>;
   pageMap?: PageMapItem[];
 }> = async ({filePath, lang, icons, pageMap: $pageMap}) => {
-  const {h2: H2} = getMDXComponents();
   const currentRoute = `/${lang}${filePath.replace("src", "").replace("/index.mdx", "")}`; // Include lang in the route
-  const rawMap = $pageMap ?? (await getPageMap(currentRoute));
-  const pageMap = ($pageMap ?? (await getPageMap(currentRoute))).filter(item => {
-    // Ignora index.mdx direto na pasta "academias"
-    return !(item.kind === "MdxPage" && item.name === "index");
-  });
+  const pageMap = $pageMap ?? (await getPageMap(currentRoute));
 
   return getIndexPageMap(pageMap).map((pageItem, index) => {
-    if (!Array.isArray(pageItem)) {
-      return <H2 key={index}>{pageItem.title}</H2>;
+    if (Array.isArray(pageItem)) {
+      return (
+        <Cards key={index}>
+          {pageItem.map(item => {
+            const icon = item.frontMatter?.icon;
+            const Icon = icons?.[icon];
+            if (icon && !Icon) {
+              throw new Error(`Icon "${icon}" is defined in front matter but isn't provided`);
+            }
+            return (
+              <Cards.Card key={item.name} title={item.frontMatter?.title} href={item.route} icon={Icon && <Icon />} />
+            );
+          })}
+        </Cards>
+      );
+    } else if (pageItem.type === "separator") {
+      return (
+        <div key={index} style={{margin: "1em 0", fontWeight: "bold"}}>
+          {pageItem.title}
+        </div>
+      );
     }
-    return (
-      <Cards key={index}>
-        {pageItem.map(item => {
-          const icon = item.frontMatter?.icon;
-          const Icon = icons?.[icon];
-          if (icon && !Icon) {
-            throw new Error(`Icon "${icon}" is defined in front matter but isn't provided`);
-          }
-          return (
-            <Cards.Card key={item.name} title={item.title} href={item.route || item.href} icon={Icon && <Icon />} />
-          );
-        })}
-      </Cards>
-    );
+    return null;
   });
 };
