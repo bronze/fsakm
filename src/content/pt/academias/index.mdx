@@ -2,17 +2,27 @@
 title: Academias
 ---
 
-## Academias INDEX
+import {OverviewPage} from "@/src/components/academias/overview-page";
 
-This is the about page! This page is shown on the navbar.
+import {Cards, Image} from "nextra/components";
 
-Nextra's File Conventions guide details the structure and organization of
-files and directories within a Nextra project, including the use of
-`page.mdx`, `_meta.js`, and `mdx-components.js` files, as well as the
-`content` and `src` directories.
+# Academias INDEX
 
-## H2
+<OverviewPage filePath="/academias/index.mdx" lang="pt" />
 
-### H3
+## Conheça nossa SEDE
 
-#### H4
+<Cards num={1}>
+  <Cards.Card arrow title="Documentation theme" href="/docs/docs-theme/start">
+    <>![Documentation theme screenshot](/pt/images/academias/botafogo.jpg)</>
+  </Cards.Card>
+</Cards>
+
+<Cards num={2}>
+  <Cards.Card arrow title="Documentation theme" href="/docs/docs-theme/start">
+    <>![Documentation theme screenshot](/pt/assets/docs-theme.png)</>
+  </Cards.Card>
+  <Cards.Card arrow title="Blog theme" href="/docs/blog-theme/start">
+    <>![Blog theme screenshot](/pt/assets/blog-theme.png)</>
+  </Cards.Card>
+</Cards>
