@@ -12,7 +12,11 @@ export const OverviewPage: FC<{
 }> = async ({filePath, lang, icons, pageMap: $pageMap}) => {
   const {h2: H2} = getMDXComponents();
   const currentRoute = `/${lang}${filePath.replace("src", "").replace("/index.mdx", "")}`; // Include lang in the route
-  const pageMap = $pageMap ?? (await getPageMap(currentRoute));
+  const rawMap = $pageMap ?? (await getPageMap(currentRoute));
+  const pageMap = ($pageMap ?? (await getPageMap(currentRoute))).filter(item => {
+    // Ignora index.mdx direto na pasta "academias"
+    return !(item.kind === "MdxPage" && item.name === "index");
+  });
 
   return getIndexPageMap(pageMap).map((pageItem, index) => {
     if (!Array.isArray(pageItem)) {

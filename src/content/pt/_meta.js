@@ -26,7 +26,9 @@ module.exports={
   academias: {
     title: "Academias",
     type: "page",
-    theme: {},
+    theme: {
+      sidebar: true
+    },
   },
   blog: {
     title: "Blog",
