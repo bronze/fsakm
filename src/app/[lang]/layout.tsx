@@ -5,6 +5,7 @@ import {Instagram, Facebook, Youtube} from "lucide-react"; // Import icons from 
 import BodyWithPageClass from "@/src/components/bodypageclass";
 import "../../styles/global.css";
 import "nextra-theme-docs/style.css";
+import Image from "next/image";
 import Link from "next/link";
 import {ThemeToggle} from "@/src/components/ThemeToggle";
 import {LanguageToggle} from "@/src/components/LanguageToggle";
@@ -68,8 +69,12 @@ const SocialLinks = (
 
 const footer = (
   <Footer>
-    <div className="w-full grid sm:grid-cols-2 gap-4 ">
-      <div className="flex place-content-center lg:place-content-start">MIT {new Date().getFullYear()} © Nextra.</div>
+    <div className="w-full grid md:grid-cols-2 gap-4 ">
+      <div className="flex flex-col items-center md:items-start gap-4">
+        <Image src="/pt/images/logo-km.png" alt="Logo Krav Maga" className="" width={160} height={20} />
+        {new Date().getFullYear()} © Federação Sul Americana de Krav Maga.
+      </div>
+
       <div className="flex place-content-center lg:place-content-end">{SocialLinks}</div>
     </div>
   </Footer>
