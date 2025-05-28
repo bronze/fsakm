@@ -6,3 +6,4 @@ _pagefind/
 package-lock.json
 pnpm-lock.yaml
 .env.local
+*:Zone.Identifier
