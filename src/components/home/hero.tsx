@@ -50,10 +50,10 @@ export default function KravMagaHero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg font-semibold">
+              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg font-semibold">
                 <Link href="/federacao/instrutores-licenciados">Aula Experimental Grátis</Link>
               </Button>
-              <Button size="lg" variant="outline" className=" px-8 py-4 text-lg">
+              <Button asChild size="lg" variant="outline" className=" px-8 py-4 text-lg">
                 <Link href="/academias">Encontrar Academia</Link>
               </Button>
             </div>
