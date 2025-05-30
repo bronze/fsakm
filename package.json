@@ -7,7 +7,8 @@
     "build": "next build --turbopack",
     "postbuild": "pagefind --site .next/server/app --output-path public/_pagefind",
     "start": "next start",
-    "prettier": "pnpm lint:prettier --write"
+    "eslint": "eslint .",
+    "prettier": "prettier '**/*.{js,jsx,ts,tsx}' --check --write"
   },
   "repository": {
     "type": "git",
@@ -49,6 +50,7 @@
     "tailwind-merge": "^3.3.0",
     "tailwindcss": "^4.1.7",
     "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-hocus": "^1.0.0",
     "zod": "^3.25.28"
   },
   "devDependencies": {
@@ -56,8 +58,14 @@
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "22.13.10",
     "@types/react": "19.0.10",
+    "eslint": "^8.41.0",
+    "eslint-config-next": "13.3.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-config-turbo": "^1.9.9",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-tailwindcss": "3.13.1",
     "pagefind": "^1.3.0",
-    "tailwindcss-hocus": "^1.0.0",
+
     "tw-animate-css": "^1.3.0",
     "typescript": "^5.7.3"
   }
