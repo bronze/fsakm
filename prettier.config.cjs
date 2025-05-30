@@ -1,0 +1,40 @@
+/** @type {import('prettier').Config} */
+module.exports={
+  bracketSpacing: false,
+  bracketSameLine: true, // evita quebra antes do > em JSX
+  arrowParens: "avoid",
+  // printWidth: 120, // aumente conforme seu gosto
+  endOfLine: "lf",
+  semi: false, // <- ponto e vírgula no final
+  singleQuote: false,
+  tabWidth: 2,
+  trailingComma: "es5",
+  importOrder: [
+    "^(react/(.*)$)|^(react$)",
+    "^(next/(.*)$)|^(next$)",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^@workspace/(.*)$",
+    "",
+    "^types$",
+    "^@/types/(.*)$",
+    "^@/config/(.*)$",
+    "^@/lib/(.*)$",
+    "^@/hooks/(.*)$",
+    "^@/components/ui/(.*)$",
+    "^@/components/(.*)$",
+    "^@/registry/(.*)$",
+    "^@/styles/(.*)$",
+    "^@/app/(.*)$",
+    "^@/www/(.*)$",
+    "",
+    "^[./]",
+  ],
+  importOrderSeparation: false,
+  importOrderSortSpecifiers: true,
+  importOrderBuiltinModulesToTop: true,
+  importOrderParserPlugins: ["typescript", "jsx", "decorators-legacy"],
+  importOrderMergeDuplicateImports: true,
+  importOrderCombineTypeAndValueImports: true,
+  plugins: ["@ianvs/prettier-plugin-sort-imports"],
+}
