@@ -13,6 +13,10 @@
 }
 
 @theme inline {
+  /* --default-font-family: "Inter", system-ui, sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-homemade: "Homemade Apple", cursive;
+  --font-cursive: "Homemade Apple", cursive; */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -158,5 +162,9 @@ lite-youtube {
 
 /* search hack */
 .nextra-search-results {
-  background-color: color-mix(in oklab, var(--x-color-nextra-bg) 100%, transparent);
+  background-color: color-mix(
+    in oklab,
+    var(--x-color-nextra-bg) 100%,
+    transparent
+  );
 }

@@ -3,15 +3,15 @@ title: FSAKM
 layout: "full"
 ---
 
-import {Steps} from "nextra/components";
-import Hero from "@/src/components/home/hero";
-import Cards from "@/src/components/home/cards";
-import {YouTubeEmbed} from "@next/third-parties/google";
-import {Button} from "@/src/components/ui/button";
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/image"
+import Link from "next/link"
+import Cards from "@/src/components/home/cards"
+import Hero from "@/src/components/home/hero"
+import {Button} from "@/src/components/ui/button"
+import {YouTubeEmbed} from "@next/third-parties/google"
+import {Steps} from "nextra/components"
 
-import {Testimonial} from "@/src/components/home/testimonial";
+import {Testimonial} from "@/src/components/home/testimonial"
 
 {/* em componente pra sair das limitações de layout do mdx */}
 
@@ -110,11 +110,11 @@ import {Testimonial} from "@/src/components/home/testimonial";
   />
 </div>
 
-<p className="text-center w-full mt-24">
+<div className="text-center w-full mt-24">
   <h2 className="text-3xl font-semibold text-center uppercase my-8">{`Pronto para começar?`}</h2>
   {/* prettier-ignore */}
   <Button asChild size="free" className="bg-red-500 hover:cursor-pointer text-center text-xl lg:py-4"><Link href="/academias">Busque um de nossos professores licenciados.</Link></Button>
-</p>
+</div>
 
 <h2 className=" text-center my-24">
   <span className="text-3xl uppercase ">{`Newsletter.`}</span>
