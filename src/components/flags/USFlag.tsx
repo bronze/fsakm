@@ -1,7 +1,11 @@
 export default function USFlag(props: React.SVGProps<SVGSVGElement>) {
   return (
     // Paste your US SVG code here, replacing <svg ...>...</svg>
-    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 32 32">
       <rect x="1" y="4" width="30" height="24" rx="4" ry="4" fill="#fff"></rect>
       <path
         d="M1.638,5.846H30.362c-.711-1.108-1.947-1.846-3.362-1.846H5c-1.414,0-2.65,.738-3.362,1.846Z"
@@ -81,5 +85,5 @@ export default function USFlag(props: React.SVGProps<SVGSVGElement>) {
         fill="#fff"
         d="M13.539 14.744L14.13 14.315 13.399 14.315 13.173 13.619 12.947 14.315 12.216 14.315 12.808 14.744 12.582 15.44 13.173 15.01 13.765 15.44 13.539 14.744z"></path>
     </svg>
-  );
+  )
 }

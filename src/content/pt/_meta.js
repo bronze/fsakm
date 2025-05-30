@@ -1,4 +1,4 @@
-module.exports={
+module.exports = {
   index: {
     type: "page",
     display: "hidden",
@@ -27,7 +27,7 @@ module.exports={
     title: "Academias",
     type: "page",
     theme: {
-      sidebar: true
+      sidebar: true,
     },
   },
   blog: {
@@ -47,4 +47,4 @@ module.exports={
     type: "page",
     href: "https://intranetfsakm.com.br/",
   },
-};
+}

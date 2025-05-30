@@ -40,4 +40,4 @@ module.exports = {
     type: "page",
     href: "https://intranetfsakm.com.br/",
   },
-};
+}

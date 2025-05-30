@@ -1,39 +1,40 @@
 // Example: src/components/ThemeToggle.tsx
-"use client";
-import {useTheme} from "next-themes";
-import {Sun, Moon} from "lucide-react";
-import {usePathname, useRouter} from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
+"use client"
 
-import USFlag from "./flags/USFlag";
-import BRFlag from "./flags/BRFlag";
-import ESFlag from "./flags/ESFlag";
+import Image from "next/image"
+import Link from "next/link"
+import {usePathname, useRouter} from "next/navigation"
+import {Moon, Sun} from "lucide-react"
+import {useTheme} from "next-themes"
+
+import BRFlag from "./flags/BRFlag"
+import ESFlag from "./flags/ESFlag"
+import USFlag from "./flags/USFlag"
 
 const languages = [
   {code: "pt", label: "Português", Flag: BRFlag},
   {code: "en", label: "English", Flag: USFlag},
   {code: "es", label: "Español", Flag: ESFlag},
-];
+]
 
 export function LanguageToggle() {
-  const router = useRouter();
-  const pathname = usePathname();
+  const router = useRouter()
+  const pathname = usePathname()
 
   const handleLanguageChange = (lang: string) => {
-    const segments = pathname.split("/");
+    const segments = pathname.split("/")
     if (languages.some(l => l.code === segments[1])) {
-      segments[1] = lang;
+      segments[1] = lang
     } else {
-      segments.splice(1, 0, lang);
+      segments.splice(1, 0, lang)
     }
-    const newPath = segments.join("/");
+    const newPath = segments.join("/")
     // Set NEXT_LOCALE cookie for 1 year
-    const date = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000);
-    document.cookie = `NEXT_LOCALE=${lang}; expires=${date.toUTCString()}; path=/`;
+    const date = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
+    document.cookie = `NEXT_LOCALE=${lang}; expires=${date.toUTCString()}; path=/`
     // Reload page with new locale
-    location.href = newPath;
-  };
+    location.href = newPath
+  }
 
   return (
     <div className="grid grid-cols-3 gap-2">
@@ -48,5 +49,5 @@ export function LanguageToggle() {
         </button>
       ))}
     </div>
-  );
+  )
 }

@@ -1,23 +1,38 @@
-import {Quote} from "lucide-react";
-import {cn} from "@/src/lib/utils";
+import {cn} from "@/src/lib/utils"
+import {Quote} from "lucide-react"
 
 interface TestimonialProps {
-  title: string;
-  author: string;
-  bio: string;
-  highlight?: boolean;
-  className?: string;
+  title: string
+  author: string
+  bio: string
+  highlight?: boolean
+  className?: string
 }
 
-export function Testimonial({title, author, bio, highlight = false, className}: TestimonialProps) {
+export function Testimonial({
+  title,
+  author,
+  bio,
+  highlight = false,
+  className,
+}: TestimonialProps) {
   return (
     <div className={cn("flex flex-col", className)}>
       {/* Quote Icon */}
-      <Quote fill="var(--color-blue-600)" className="w-12 h-12 text-blue-600 p-2 rounded [path]:fill-current" />
+      <Quote
+        fill="var(--color-blue-600)"
+        className="w-12 h-12 text-blue-600 p-2 rounded [path]:fill-current"
+      />
 
       {/* Quote Text */}
       <blockquote className="flex-1 mb-6">
-        <p className={cn(" leading-relaxed", highlight && "bg-blue-600 text-white p-3 rounded")}>{title}</p>
+        <p
+          className={cn(
+            " leading-relaxed",
+            highlight && "bg-blue-600 text-white p-3 rounded"
+          )}>
+          {title}
+        </p>
       </blockquote>
 
       {/* Author Info */}
@@ -28,5 +43,5 @@ export function Testimonial({title, author, bio, highlight = false, className}: 
         </cite>
       </div>
     </div>
-  );
+  )
 }

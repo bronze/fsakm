@@ -8,4 +8,4 @@ module.exports = {
     title: "Blog ↗",
     href: "/blog",
   },
-};
+}

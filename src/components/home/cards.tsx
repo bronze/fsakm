@@ -1,17 +1,19 @@
-import {CardLink} from "@/src/components/cardlink";
+import {CardLink} from "@/src/components/cardlink"
 
 export default function KravMagaCards() {
   const cards = [
     {
       title: "KRAV MAGA",
-      description: "Conheça mais sobre a defesa pessoal do exército israelense.",
+      description:
+        "Conheça mais sobre a defesa pessoal do exército israelense.",
       image: "/pt/images/home/kra-maga-1b-2-1.jpg",
       buttonText: "SAIBA MAIS",
       href: "/krav-maga",
     },
     {
       title: "NOSSAS ACADEMIAS",
-      description: "Encontre a academia mais próxima de você e comece a treinar em qualquer uma de nossas academias.",
+      description:
+        "Encontre a academia mais próxima de você e comece a treinar em qualquer uma de nossas academias.",
       image: "/pt/images/home/foto-2-academia-1-2-1.jpg",
       buttonText: "SAIBA MAIS",
       href: "/academias",
@@ -24,7 +26,7 @@ export default function KravMagaCards() {
       buttonText: "SAIBA MAIS",
       href: "/krav-maga/militar",
     },
-  ];
+  ]
 
   return (
     <div className="container mx-auto py-8 mt-24">
@@ -34,5 +36,5 @@ export default function KravMagaCards() {
         ))}
       </div>
     </div>
-  );
+  )
 }

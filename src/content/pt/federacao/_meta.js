@@ -1,4 +1,4 @@
-module.exports={
+module.exports = {
   index: {
     theme: {
       toc: false, // Hide table of contents on this page
@@ -13,4 +13,4 @@ module.exports={
     title: "Blog ↗",
     href: "/blog",
   },
-};
+}

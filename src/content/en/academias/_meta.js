@@ -37,4 +37,4 @@ module.exports = {
       collapsed: true,
     },
   },
-};
+}

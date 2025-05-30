@@ -1,25 +1,25 @@
-import {useEffect, useState} from "react";
+import {useEffect, useState} from "react"
 
 function getHash() {
-  return decodeURIComponent(window.location.hash.replace("#", ""));
+  return decodeURIComponent(window.location.hash.replace("#", ""))
 }
 
 export default function useLocationHash() {
-  const [hash, setHash] = useState<string>();
+  const [hash, setHash] = useState<string>()
 
   useEffect(() => {
     function updateHash() {
-      setHash(getHash());
+      setHash(getHash())
     }
 
-    window.addEventListener("hashchange", updateHash);
+    window.addEventListener("hashchange", updateHash)
 
-    updateHash();
+    updateHash()
 
     return () => {
-      window.removeEventListener("hashchange", updateHash);
-    };
-  }, []);
+      window.removeEventListener("hashchange", updateHash)
+    }
+  }, [])
 
-  return hash;
+  return hash
 }

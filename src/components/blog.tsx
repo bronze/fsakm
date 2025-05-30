@@ -1,13 +1,13 @@
-import type {MdxFile} from "nextra";
-import {Link} from "nextra-theme-docs";
-import {getPageMap} from "nextra/page-map";
-import type {FC} from "react";
+import type {FC} from "react"
+import type {MdxFile} from "nextra"
+import {Link} from "nextra-theme-docs"
+import {getPageMap} from "nextra/page-map"
 
 export const Blog: FC<{lang: string}> = async ({lang}) => {
-  const pageMap = (await getPageMap(`/${lang}/blog`)) as unknown as MdxFile[];
+  const pageMap = (await getPageMap(`/${lang}/blog`)) as unknown as MdxFile[]
   return pageMap.map(page => {
-    if (page.name === "index") return;
-    const {title, description, date} = page.frontMatter!;
+    if (page.name === "index") return
+    const {title, description, date} = page.frontMatter!
 
     return (
       <div key={page.route} className="mt-12">
@@ -18,7 +18,9 @@ export const Blog: FC<{lang: string}> = async ({lang}) => {
             Read more
           </Link>
         </p>
-        <time dateTime={new Date(date).toISOString()} className="text-sm opacity-50">
+        <time
+          dateTime={new Date(date).toISOString()}
+          className="text-sm opacity-50">
           {new Date(date).toLocaleDateString(lang, {
             month: "long",
             day: "numeric",
@@ -26,6 +28,6 @@ export const Blog: FC<{lang: string}> = async ({lang}) => {
           })}
         </time>
       </div>
-    );
-  });
-};
+    )
+  })
+}

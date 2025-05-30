@@ -1,4 +1,4 @@
-module.exports={
+module.exports = {
   brasil: {
     title: "Brasil",
     theme: {},
@@ -37,4 +37,4 @@ module.exports={
       collapsed: true,
     },
   },
-};
+}

@@ -1,8 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
-import {Button} from "@/src/components/ui/button";
-import {Badge} from "@/src/components/ui/badge";
-import {Shield, Award, MapPin} from "lucide-react";
+import Image from "next/image"
+import Link from "next/link"
+import {Badge} from "@/src/components/ui/badge"
+import {Button} from "@/src/components/ui/button"
+import {Award, MapPin, Shield} from "lucide-react"
 
 export default function KravMagaHero() {
   return (
@@ -15,20 +15,26 @@ export default function KravMagaHero() {
           {/* Left Column - Main Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <Badge variant="outline" className="border-blue-600 text-blue-500 bg-blue-600/10">
+              <Badge
+                variant="outline"
+                className="border-blue-600 text-blue-500 bg-blue-600/10">
                 <Shield className="w-4 h-4 mr-2" />
                 Federação Sul Americana
               </Badge>
 
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                <span className="">KRAV</span> <span className="text-blue-600">MAGA</span>
+                <span className="">KRAV</span>{" "}
+                <span className="text-blue-600">MAGA</span>
                 <br />
-                <span className="text-3xl lg:text-4xl font-norma">Mestre Kobi</span>
+                <span className="text-3xl lg:text-4xl font-norma">
+                  Mestre Kobi
+                </span>
               </h1>
 
               <p className="text-xl lg:text-2xl max-w-2xl leading-relaxed">
-                Aprenda o sistema de defesa pessoal mais eficaz do mundo. Desenvolva confiança, força e habilidades que
-                podem salvar sua vida.
+                Aprenda o sistema de defesa pessoal mais eficaz do mundo.
+                Desenvolva confiança, força e habilidades que podem salvar sua
+                vida.
               </p>
             </div>
 
@@ -43,17 +49,28 @@ export default function KravMagaHero() {
                 <div className="text-sm">Academias Afiliadas</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">1 Milhão+</div>
+                <div className="text-3xl font-bold text-blue-600">
+                  1 Milhão+
+                </div>
                 <div className="text-sm">Alunos</div>
               </div>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg font-semibold">
-                <Link href="/federacao/instrutores-licenciados">Aula Experimental Grátis</Link>
+              <Button
+                asChild
+                size="lg"
+                className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg font-semibold">
+                <Link href="/federacao/instrutores-licenciados">
+                  Aula Experimental Grátis
+                </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className=" px-8 py-4 text-lg">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className=" px-8 py-4 text-lg">
                 <Link href="/academias">Encontrar Academia</Link>
               </Button>
             </div>
@@ -90,7 +107,9 @@ export default function KravMagaHero() {
                 </div>
                 <div>
                   <div className="font-bold text-lg">Defesa Real</div>
-                  <div className="text-gray-600 text-sm">Técnicas testadas em combate</div>
+                  <div className="text-gray-600 text-sm">
+                    Técnicas testadas em combate
+                  </div>
                 </div>
               </div>
             </div>
@@ -101,11 +120,20 @@ export default function KravMagaHero() {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
         <div className="animate-bounce">
-          <svg className="w-6 h-6 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          <svg
+            className="w-6 h-6 "
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
           </svg>
         </div>
       </div>
     </section>
-  );
+  )
 }

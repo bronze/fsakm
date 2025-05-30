@@ -1,27 +1,30 @@
-import {Footer, Layout, Navbar, ThemeSwitch} from "nextra-theme-docs";
-import {Banner, Head, Search} from "nextra/components";
-import {getPageMap} from "nextra/page-map";
-import {Instagram, Facebook, Youtube} from "lucide-react"; // Import icons from Lucide
-import BodyWithPageClass from "@/src/components/bodypageclass";
-import "../../styles/global.css";
-import "nextra-theme-docs/style.css";
-import Image from "next/image";
-import Link from "next/link";
-import {ThemeToggle} from "@/src/components/ThemeToggle";
-import {LanguageToggle} from "@/src/components/LanguageToggle";
-import {getDictionary, getDirection} from "../_dictionaries/get-dictionary";
-import {Toaster} from "@/src/components/ui/sonner";
+import BodyWithPageClass from "@/src/components/bodypageclass"
+import {Facebook, Instagram, Youtube} from "lucide-react" // Import icons from Lucide
+import {Footer, Layout, Navbar, ThemeSwitch} from "nextra-theme-docs"
+import {Banner, Head, Search} from "nextra/components"
+import {getPageMap} from "nextra/page-map"
+
+import "../../styles/global.css"
+import "nextra-theme-docs/style.css"
+
+import Image from "next/image"
+import Link from "next/link"
+import {LanguageToggle} from "@/src/components/LanguageToggle"
+import {ThemeToggle} from "@/src/components/ThemeToggle"
+import {Toaster} from "@/src/components/ui/sonner"
+
+import {getDictionary, getDirection} from "../_dictionaries/get-dictionary"
 
 export const metadata = {
   // Define your metadata here
   // For more information on metadata API, see: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
-};
+}
 
 const banner = (
   <Banner storageKey="some-key">
     <Link href="https://github.com/"></Link>
   </Banner>
-);
+)
 //<img src="/images/general/logo.svg" alt="Logo" width={100} height={20} />
 const navbar = (
   <Navbar
@@ -47,8 +50,7 @@ const navbar = (
           />
         </div>
       </div>
-    }
-  >
+    }>
     <>
       <LanguageToggle />
       <ThemeToggle />
@@ -56,7 +58,7 @@ const navbar = (
       {/* Add your second component here */}
     </>
   </Navbar>
-);
+)
 
 const SocialLinks = (
   <div className="grid grid-cols-3 gap-4">
@@ -82,7 +84,7 @@ const SocialLinks = (
       <Youtube className="w-6 h-6 group-hover:text-red-500" />
     </a>
   </div>
-);
+)
 
 const footer = (
   <Footer>
@@ -112,24 +114,37 @@ const footer = (
         {new Date().getFullYear()} © Federação Sul Americana de Krav Maga.
       </div>
 
-      <div className="flex place-content-center lg:place-content-end">{SocialLinks}</div>
+      <div className="flex place-content-center lg:place-content-end">
+        {SocialLinks}
+      </div>
     </div>
   </Footer>
-);
+)
 
 // Removed searchProps because the search prop expects a ReactNode, not an object
 
 export default async function RootLayout({children, params}) {
-  const {lang} = await params;
-  const dictionary = await getDictionary(lang);
-  let pageMap = await getPageMap(`/${lang}`);
+  const {lang} = await params
+  const dictionary = await getDictionary(lang)
+  let pageMap = await getPageMap(`/${lang}`)
 
   return (
     <html lang={lang} dir={getDirection(lang)} suppressHydrationWarning>
       <Head>
-        <link rel="shortcut icon" href="/pt/cropped-favicon-mestre-kobi-32x32.png" sizes="32x32" />
-        <link rel="icon" href="/pt/cropped-favicon-mestre-kobi-192x192.png" sizes="192x192" />
-        <link rel="apple-touch-icon" href="/pt/cropped-favicon-mestre-kobi-180x180.png" />
+        <link
+          rel="shortcut icon"
+          href="/pt/cropped-favicon-mestre-kobi-32x32.png"
+          sizes="32x32"
+        />
+        <link
+          rel="icon"
+          href="/pt/cropped-favicon-mestre-kobi-192x192.png"
+          sizes="192x192"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/pt/cropped-favicon-mestre-kobi-180x180.png"
+        />
       </Head>
       <BodyWithPageClass>
         <Layout
@@ -181,5 +196,5 @@ export default async function RootLayout({children, params}) {
         <Toaster />
       </BodyWithPageClass>
     </html>
-  );
+  )
 }

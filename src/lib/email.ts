@@ -1,11 +1,12 @@
-"use server";
+"use server"
 
-import {EmailTemplate} from "@/src/components/ui/email-template";
-import {Resend} from "resend";
-import {z} from "zod";
-import {formSchema} from "./schemas";
+import {EmailTemplate} from "@/src/components/ui/email-template"
+import {Resend} from "resend"
+import {z} from "zod"
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+import {formSchema} from "./schemas"
+
+const resend = new Resend(process.env.RESEND_API_KEY)
 
 export const send = async (emailFormData: z.infer<typeof formSchema>) => {
   try {
@@ -21,12 +22,12 @@ export const send = async (emailFormData: z.infer<typeof formSchema>) => {
         message: emailFormData.message,
         email: emailFormData.email,
       }),
-    });
+    })
 
     if (error) {
-      throw error;
+      throw error
     }
   } catch (e) {
-    throw e;
+    throw e
   }
-};
+}

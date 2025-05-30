@@ -1,4 +1,4 @@
-module.exports={
+module.exports = {
   "linha-do-tempo": "",
   criador: "",
   historia: "",
@@ -8,4 +8,4 @@ module.exports={
   "tecnicas-especiais": "",
   galeria: "",
   midia: "",
-};
+}

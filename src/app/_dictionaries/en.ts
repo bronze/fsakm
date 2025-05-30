@@ -1,6 +1,4 @@
-import type {Dictionary} from "./i18n-config"
-
-export default {
+const en = {
   dark: "Dark",
   light: "Light",
   system: "System",
@@ -29,4 +27,6 @@ export default {
   remoteLocal: "Remote + Local",
   editPage: "Edit this page on GitHub",
   by: "by",
-} satisfies Dictionary
+}
+
+export default en
