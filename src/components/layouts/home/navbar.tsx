@@ -34,7 +34,7 @@ export function Navbar(props: ComponentProps<'div'>) {
         id="nd-nav"
         {...props}
         className={cn(
-          'fixed top-(--fd-banner-height) z-40 box-content backdrop-blur-lg max-w-fd-container -translate-x-1/2 border-b transition-colors lg:mt-2 lg:[--fd-padding:1rem] lg:rounded-2xl lg:border',
+          'fixed top-(--fd-banner-height) z-40 box-content backdrop-blur-md max-w-fd-container -translate-x-1/2 transition-colors lg:mt-2 lg:[--fd-padding:1rem]',
           value.length > 0 ? 'shadow-lg' : 'shadow-sm',
           (!isTransparent || value.length > 0) && 'bg-fd-background/80',
           props.className,
