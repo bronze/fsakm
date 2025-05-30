@@ -1,3 +1,5 @@
+import type {Dictionary} from "./i18n-config"
+
 export default {
   dark: "Dark",
   light: "Light",
@@ -27,4 +29,4 @@ export default {
   remoteLocal: "Remote + Local",
   editPage: "Edit this page on GitHub",
   by: "by",
-};
+} satisfies Dictionary

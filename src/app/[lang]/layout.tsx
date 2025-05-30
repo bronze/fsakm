@@ -48,15 +48,14 @@ const navbar = (
         </div>
       </div>
     }
-    children={
-      <>
-        <LanguageToggle />
-        <ThemeToggle />
-        {/* <ThemeSwitch /> */}
-        {/* Add your second component here */}
-      </>
-    }
-  />
+  >
+    <>
+      <LanguageToggle />
+      <ThemeToggle />
+      {/* <ThemeSwitch /> */}
+      {/* Add your second component here */}
+    </>
+  </Navbar>
 );
 
 const SocialLinks = (

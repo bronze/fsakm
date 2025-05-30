@@ -1,4 +1,3 @@
-/** @type {import('prettier').Config} */
 module.exports={
   bracketSpacing: false,
   bracketSameLine: true, // evita quebra antes do > em JSX

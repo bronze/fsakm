@@ -1,17 +1,28 @@
-"use client";
+"use client"
 
-import {formSchema} from "@/src/lib/schemas";
-
-import {Card, CardHeader, CardTitle, CardDescription, CardContent} from "@/src/components/ui/card";
-import {Input} from "@/src/components/ui/input";
-import {Textarea} from "@/src/components/ui/textarea";
-import {Button} from "@/src/components/ui/button";
-import {zodResolver} from "@hookform/resolvers/zod";
-import {useForm} from "react-hook-form";
-import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/src/components/ui/form";
-
-import {z} from "zod";
-import {send} from "@/src/lib/email";
+import {Button} from "@/src/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/src/components/ui/card"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/src/components/ui/form"
+import {Input} from "@/src/components/ui/input"
+import {Textarea} from "@/src/components/ui/textarea"
+import {send} from "@/src/lib/email"
+import {formSchema} from "@/src/lib/schemas"
+import {zodResolver} from "@hookform/resolvers/zod"
+import {useForm} from "react-hook-form"
+import {z} from "zod"
 
 export default function ContactForm() {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -22,20 +33,23 @@ export default function ContactForm() {
       email: "",
       message: "",
     },
-  });
+  })
 
   // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    send(values);
+    send(values)
   }
 
   return (
     <Card className="mx-auto max-w-md">
       <CardHeader>
         <CardTitle>Contact Us</CardTitle>
-        <CardDescription>Fill out the form below and we'll get back to you as soon as possible.</CardDescription>
+        <CardDescription>
+          Fill out the form below and we&#39;ll get back to you as soon as
+          possible.
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -114,5 +128,5 @@ export default function ContactForm() {
         </Form>
       </CardContent>
     </Card>
-  );
+  )
 }
