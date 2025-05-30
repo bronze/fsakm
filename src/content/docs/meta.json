@@ -1,8 +1,0 @@
-{
-  "title": "Display Name",
-  "description": "The description of root folder (optional)",
-  "root": true,
-  "icon": "MyIcon",
-  "pages": ["index", "test", "---My Separator---", "./nested/page"],
-  "defaultOpen": true
-}

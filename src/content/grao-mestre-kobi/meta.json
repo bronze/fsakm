@@ -1,8 +1,0 @@
-{
-  "title": "Grão Mestre Kobi",
-  "description": "The description of root folder (optional)",
-  "root": true,
-  "icon": "MyIcon",
-  "pages": ["index"],
-  "defaultOpen": true
-}
