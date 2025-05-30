@@ -1,8 +1,8 @@
 {
-  "title": "Display Name",
+  "title": "Grão Mestre Kobi",
   "description": "The description of root folder (optional)",
   "root": true,
   "icon": "MyIcon",
-  "pages": ["index", "test", "---My Separator---", "./nested/page"],
+  "pages": ["index"],
   "defaultOpen": true
 }
