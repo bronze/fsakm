@@ -1,20 +1,10 @@
-import nextra from "nextra";
+import { createMDX } from 'fumadocs-mdx/next';
 
-const withNextra = nextra({
-  search: true,
-  defaultShowCopyCode: true,
-});
+const withMDX = createMDX();
 
-export default withNextra({
-  // ... Other Next.js config options
-  // output: 'export'
-  i18n: {
-    locales: ["pt", "en", "es"],
-    defaultLocale: "pt",
-    localeDetection: false, // <- disables auto-detection based on browser
-    debug: process.env.NODE_ENV === "development",
-    nonExplicitSupportedLngs: true,
-    reloadOnPrerender: process.env.NODE_ENV === "development",
-    trailingSlash: true,
-  },
-});
+/** @type {import('next').NextConfig} */
+const config = {
+  reactStrictMode: true,
+};
+
+export default withMDX(config);
