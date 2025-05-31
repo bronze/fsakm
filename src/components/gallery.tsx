@@ -126,12 +126,15 @@ export function Gallery({children}: GalleryProps) {
   React.useEffect(() => {
     if (!lightboxApi) return
 
+    const api = lightboxApi
     const onSelect = () => {
-      setCurrentImageIndex(lightboxApi.selectedScrollSnap())
+      setCurrentImageIndex(api.selectedScrollSnap())
     }
 
-    lightboxApi.on("select", onSelect)
-    return () => lightboxApi.off("select", onSelect)
+    api.on("select", onSelect)
+    return () => {
+      api.off("select", onSelect)
+    }
   }, [lightboxApi])
 
   const contextValue = React.useMemo(
