@@ -174,7 +174,7 @@ export function Gallery({children}: GalleryProps) {
                           alt={image.title}
                           width={1200}
                           height={800}
-                          className="max-w-full max-h-[70vh] object-contain"
+                          className="w-full max-h-[70vh] object-contain max-w-[80%]"
                           priority={index === currentImageIndex}
                         />
                         <h2 className="text-white text-xl font-semibold mt-4 text-center">
