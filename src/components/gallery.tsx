@@ -7,11 +7,10 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
   type CarouselApi,
 } from "@/src/components/ui/carousel"
 import {Dialog, DialogContent} from "@/src/components/ui/dialog"
+import {cn} from "@/src/lib/utils"
 import {ChevronLeft, ChevronRight, X} from "lucide-react"
 
 interface GalleryItemProps {
