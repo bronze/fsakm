@@ -168,3 +168,6 @@ lite-youtube {
     transparent
   );
 }
+.nextra-breadcrumb {
+  @apply mb-6;
+}

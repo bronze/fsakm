@@ -32,7 +32,7 @@ export function CardLink({
   const showButton = buttonText && buttonText.trim() !== ""
 
   return (
-    <Link href={href} className="block group">
+    <Link href={href} className="block group min-w-64">
       <Card
         className={cn(
           hover && "group-hover:scale-105 transition-transform duration-300",
