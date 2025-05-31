@@ -11,6 +11,7 @@ import {
 } from "@/src/components/ui/carousel"
 import {Dialog, DialogContent} from "@/src/components/ui/dialog"
 import {cn} from "@/src/lib/utils"
+import ClassNames from "embla-carousel-class-names"
 import {ChevronLeft, ChevronRight, X} from "lucide-react"
 
 interface GalleryItemProps {
@@ -150,7 +151,8 @@ export function Gallery({children}: GalleryProps) {
           opts={{
             align: "start",
             loop: true,
-          }}>
+          }}
+          plugins={[ClassNames()]}>
           <CarouselContent className="-ml-2 md:-ml-4">
             {React.Children.map(children, (child, index) => (
               <CarouselItem
@@ -203,7 +205,7 @@ export function Gallery({children}: GalleryProps) {
 
         {/* Lightbox Dialog */}
         <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
-          <DialogContent className="max-w-7xl w-full h-full max-h-[90vh] p-0 bg-black/95 border-none">
+          <DialogContent className="max-w-7xl w-full h-full p-0 bg-black/95 border-none">
             <div className="relative w-full h-full flex items-center justify-center">
               {/* Close Button */}
               <Button
@@ -217,12 +219,12 @@ export function Gallery({children}: GalleryProps) {
               {/* Lightbox Carousel */}
               <Carousel
                 setApi={setLightboxApi}
-                className="w-full h-full"
+                className="w-full h-full max-w-[90vw]"
                 opts={{
                   startIndex: currentImageIndex,
                   loop: true,
                 }}>
-                <CarouselContent className="h-full">
+                <CarouselContent className="">
                   {images?.map((image, index) => (
                     <CarouselItem
                       key={index}
