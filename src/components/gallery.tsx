@@ -110,7 +110,9 @@ export function Gallery({children}: GalleryProps) {
     }
 
     api.on("select", onSelect)
-    return () => api.off("select", onSelect)
+    return () => {
+      api.off("select", onSelect)
+    }
   }, [lightboxApi])
 
   const contextValue = React.useMemo(
@@ -133,7 +135,7 @@ export function Gallery({children}: GalleryProps) {
             {React.Children.map(children, (child, index) => (
               <CarouselItem
                 key={index}
-                className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                className="slide pl-2 md:pl-24 md:basis-1/2 lg:basis-1/3">
                 {React.cloneElement(child, {
                   index,
                   galleryId,
