@@ -92,7 +92,7 @@ export default function KravMagaHero() {
           <div className="relative">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
               <Image
-                src="/pt/images/krav-maga-mestre-kobi-61-768x1098.png"
+                src="/pt/images/home/mestre_kobi-hero.png"
                 alt="Mestre Kobi demonstrando técnica de Krav Maga"
                 fill
                 className="object-contain"
