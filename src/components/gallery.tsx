@@ -139,6 +139,7 @@ export function Gallery({children}: GalleryProps) {
                 key={index}
                 className="slide pl-2 md:pl-4 basis-[60%] @lg:basis-[50%]  @2xl:basis-[40%] @4xl:basis-[25%]">
                 {/* @lg:bg-green-200 @2xl:bg-yellow-200 @4xl:bg-red-200 */}
+                {/* https://tailwindcss.com/docs/responsive-design#container-size-reference */}
                 {/* slide pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 */}
                 {React.cloneElement(child, {
                   index,
