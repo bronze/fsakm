@@ -41,7 +41,7 @@ export function CardLink({
         <div className="absolute inset-0 w-full h-full">
           <Image
             src={image}
-            alt={title}
+            alt={description}
             fill
             style={{objectFit: "cover"}}
             className="z-0"
