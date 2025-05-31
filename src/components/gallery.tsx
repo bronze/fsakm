@@ -80,6 +80,9 @@ export function Gallery({children}: GalleryProps) {
   const [lightboxOpen, setLightboxOpen] = React.useState(false)
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0)
   const [lightboxApi, setLightboxApi] = React.useState<CarouselApi>()
+  const [mainApi, setMainApi] = React.useState<CarouselApi>()
+  const [current, setCurrent] = React.useState(0)
+  const [count, setCount] = React.useState(0)
 
   // Extract image data from children
   const images = React.useMemo(() => {
@@ -97,6 +100,20 @@ export function Gallery({children}: GalleryProps) {
   const closeLightbox = () => {
     setLightboxOpen(false)
   }
+
+  // Main carousel API effects
+  React.useEffect(() => {
+    if (!mainApi) {
+      return
+    }
+
+    setCount(mainApi.scrollSnapList().length)
+    setCurrent(mainApi.selectedScrollSnap() + 1)
+
+    mainApi.on("select", () => {
+      setCurrent(mainApi.selectedScrollSnap() + 1)
+    })
+  }, [mainApi])
 
   // Update lightbox carousel when currentImageIndex changes
   React.useEffect(() => {
@@ -126,9 +143,15 @@ export function Gallery({children}: GalleryProps) {
 
   return (
     <GalleryContext.Provider value={contextValue}>
-      <div data-gallery>
+      <div data-gallery className="w-full max-w-4xl mx-auto">
         {/* Main Gallery Carousel */}
-        <Carousel className="w-full">
+        <Carousel
+          setApi={setMainApi}
+          className="w-full"
+          opts={{
+            align: "start",
+            loop: true,
+          }}>
           <CarouselContent className="-ml-2 md:-ml-4">
             {React.Children.map(children, (child, index) => (
               <CarouselItem
@@ -138,13 +161,50 @@ export function Gallery({children}: GalleryProps) {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
         </Carousel>
+
+        {/* Custom Navigation Controls */}
+        <div className="flex items-center justify-between mt-4">
+          {/* Arrow Controls - Left Side */}
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="icon"
+              className="h-10 w-10 rounded-full"
+              onClick={() => mainApi?.scrollPrev()}
+              disabled={!mainApi}>
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="h-10 w-10 rounded-full"
+              onClick={() => mainApi?.scrollNext()}
+              disabled={!mainApi}>
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          </div>
+
+          {/* Dot Indicators - Right Side */}
+          <div className="flex gap-2">
+            {Array.from({length: count}, (_, index) => (
+              <button
+                key={index}
+                className={cn(
+                  "h-2 w-2 rounded-full transition-colors",
+                  index + 1 === current
+                    ? "bg-primary"
+                    : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                )}
+                onClick={() => mainApi?.scrollTo(index)}
+              />
+            ))}
+          </div>
+        </div>
 
         {/* Lightbox Dialog */}
         <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
-          <DialogContent className="w-full h-full p-0 bg-black/95 border-none">
+          <DialogContent className="max-w-7xl w-full h-full max-h-[90vh] p-0 bg-black/95 border-none">
             <div className="relative w-full h-full flex items-center justify-center">
               {/* Close Button */}
               <Button
@@ -174,7 +234,7 @@ export function Gallery({children}: GalleryProps) {
                           alt={image.title}
                           width={1200}
                           height={800}
-                          className="w-full max-h-[70vh] object-contain max-w-[80%]"
+                          className="max-w-full max-h-[70vh] object-contain"
                           priority={index === currentImageIndex}
                         />
                         <h2 className="text-white text-xl font-semibold mt-4 text-center">
