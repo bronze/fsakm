@@ -62,7 +62,7 @@ export default function KravMagaHero() {
                 asChild
                 size="lg"
                 className="bg-blue-600 hover:bg-blue-700 px-8 py-4 text-lg font-semibold">
-                <Link href="/federacao/instrutores-licenciados">
+                <Link href="/federacao/instrutores">
                   Aula Experimental Grátis
                 </Link>
               </Button>

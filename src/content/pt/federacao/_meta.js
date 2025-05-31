@@ -5,7 +5,7 @@ module.exports={
     },
   },
   "formacao-de-instrutores": "",
-  "instrutores-licenciados": {
+  "instrutores": {
     theme: {}
   },
   "centro-de-treinamento": "",

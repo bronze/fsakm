@@ -1,6 +1,6 @@
-module.exports = {
+module.exports={
   "formacao-de-instrutores": "",
-  "instrutores-licenciados": "",
+  "instrutores": "",
   "centro-de-treinamento": "",
   "seminarios-e-treinos-especiais": "",
   palestras: "",

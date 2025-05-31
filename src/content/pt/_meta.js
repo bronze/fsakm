@@ -11,7 +11,7 @@ module.exports={
   mestre_kobi: {
     type: "page",
     title: 'Grão Mestre Kobi',
-    href: '/federacao/instrutores-licenciados/grao-mestre-kobi'
+    href: '/federacao/instrutores/grao-mestre-kobi'
   },
   // "grao-mestre-kobi": {
   //   title: "Grão Mestre Kobi",
