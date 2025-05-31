@@ -3,13 +3,14 @@ title: Grão Mestre Kobi
 layout: "default"
 sidebar: false
 display: "hidden"
+type: "page"
 ---
 
 import Image from "next/image"
+import Link from "next/link"
+import {Button} from "@/src/components/ui/button"
 import {YouTubeEmbed} from "@next/third-parties/google"
 import {Bleed} from "nextra/components"
-
-# Grão Mestre Kobi
 
 <div className="mt-12 flex flex-col items-start gap-8 md:flex-row">
   <div className="w-full md:w-1/2">
@@ -54,8 +55,7 @@ import {Bleed} from "nextra/components"
 
 <div className="mt-24 flex flex-col items-start gap-8 md:flex-row">
   <div className="w-full space-y-6 md:w-1/2">
-    <div>
-      {/* prettier-ignore */}
+    <div>{/* prettier-ignore */}
       <div className="">
         ## Aluno direto do criador de <span className="font-semibold text-yellow-500">Krav Maga</span>
       </div>
@@ -84,6 +84,7 @@ import {Bleed} from "nextra/components"
         ensinadas em aula.
       </div>
     </div>
+
   </div>
   <div className="w-full md:w-1/2">
     ![Grão Mestre Kobi Lichtenstein](./kobi-e-imi.jpg)
@@ -148,7 +149,7 @@ import {Bleed} from "nextra/components"
   <div className="flex place-content-center">
     <YouTubeEmbed videoid="NNb7iYmZfR4" height={400} width={720} />
   </div>
-  <div className="mt-12 columns-auto lg:columns-2">
+  <div className="mt-12 columns-auto">
     Em março de 2009, Mestre Kobi foi condecorado com a maior honraria do Estado do Rio de Janeiro, a Medalha Tiradentes. Em maio do mesmo ano, foi condecorado com a maior honraria da cidade do Rio de Janeiro, o conjunto de medalhas Pedro Ernesto. Em dezembro de 2010, recebeu a Medalha Mérito Legislativo no Palácio do Congresso Nacional.
 
     Em maio de 2010, organizou o maior evento internacional de Krav Maga, trazendo ao Rio de Janeiro os principais mestres de Krav Maga no mundo e reunindo delegações de 28 países durante programação intensa de 5 dias, incluindo seminários, palestras, workshops, evento cultural e noite de homenagens, e ainda obtendo o recorde mundial da “Maior aula de defesa pessoal do mundo”, conferido por auditor oficial do Guinness Records, com 2212 pessoas presentes na aula.
@@ -163,15 +164,4 @@ import {Bleed} from "nextra/components"
 
   </div>
 
-</div>
-
-<div className="relative mt-24 min-h-[200px] py-12">
-  <div className="absolute inset-0 h-full">
-    <div>![banner](./banner-4.png)</div>
-    <div className="absolute inset-0 flex h-full place-content-center items-center justify-center">
-      <div className="text-center text-2xl text-white uppercase">
-        O melhor seguro de vida é saber defender a vida.
-      </div>
-    </div>
-  </div>
 </div>

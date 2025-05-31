@@ -3,7 +3,7 @@ const pt = {
   light: "Light",
   system: "System",
   backToTop: "Rolagem para cima...",
-  tocTitle: "On This Page",
+  tocTitle: "Acesso rápido:",
   lastUpdated: "Last updated on",
   logo: {
     title: "React Hooks for Data Fetching",

@@ -1,11 +1,13 @@
-module.exports = {
+module.exports={
   index: {
     theme: {
       toc: false, // Hide table of contents on this page
     },
   },
   "formacao-de-instrutores": "",
-  "instrutores-licenciados": "",
+  "instrutores-licenciados": {
+    theme: {}
+  },
   "centro-de-treinamento": "",
   "seminarios-e-treinos-especiais": "",
   palestras: "",
