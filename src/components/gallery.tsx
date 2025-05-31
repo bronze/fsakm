@@ -106,14 +106,16 @@ export function Gallery({children}: GalleryProps) {
 
     const api = lightboxApi
     const onSelect = () => {
-      setCurrentImageIndex(api.selectedScrollSnap())
+      const selected = api.selectedScrollSnap()
+      setCurrentImageIndex(selected)
+      mainApi?.scrollTo(selected) // sincroniza carousel principal
     }
 
     api.on("select", onSelect)
     return () => {
       api.off("select", onSelect)
     }
-  }, [lightboxApi])
+  }, [lightboxApi, mainApi])
 
   const contextValue = React.useMemo(
     () => ({
@@ -129,13 +131,14 @@ export function Gallery({children}: GalleryProps) {
         <Carousel
           setApi={setMainApi}
           className="w-full"
-          opts={{align: "start", loop: true}}
+          opts={{align: "center", loop: true}}
           plugins={[ClassNames()]}>
-          <CarouselContent className="-ml-2 md:-ml-4">
+          <CarouselContent className="-ml-2 md:-ml-4 max-h-[250px]">
             {React.Children.map(children, (child, index) => (
               <CarouselItem
                 key={index}
-                className="slide pl-2 md:pl-24 md:basis-1/2 lg:basis-1/3">
+                className="slide pl-2 md:pl-4 basis-[60%] lg:basis-[40%]">
+                {/* slide pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 */}
                 {React.cloneElement(child, {
                   index,
                   galleryId,

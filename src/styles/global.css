@@ -183,4 +183,8 @@ lite-youtube {
   .slide:not(.is-snapped) {
     opacity: 0.4;
   }
+  .is-snapped {
+    transform: scale(1.05);
+    z-index: 10;
+  }
 }
