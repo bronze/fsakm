@@ -2,24 +2,28 @@
 title: Botafogo
 ---
 
-import {YouTubeEmbed} from "@next/third-parties/google";
-import {Button} from "@/src/components/ui/button";
-import Link from "next/link";
-
-import {GoogleMapsEmbed} from "@next/third-parties/google";
+import Image from "next/image"
+import Link from "next/link"
+import {CardLink} from "@/src/components/cardlink"
+import {Button} from "@/src/components/ui/button"
+import {GoogleMapsEmbed, YouTubeEmbed} from "@next/third-parties/google"
 
 # Botafogo
 
-<div className="grid lg:grid-cols-3 gap-6 mt-18 items-center">
+<div className="mt-18 grid items-center gap-6 lg:grid-cols-3">
   <div className="lg:col-span-2">
     <YouTubeEmbed videoid="-4yX8WRkiOA" />
   </div>
   <div>
-    <h2 className="text-3xl text-center uppercase">
-      Agende uma aula <span className="text-yellow-500">experimental gratuita</span>
+    <h2 className="text-center text-3xl uppercase">
+      Agende uma aula{" "}
+      <span className="text-yellow-500">experimental gratuita</span>
     </h2>
     <div className="mt-6 w-full text-center">
-      <Button asChild size="lg" className="bg-[#25d366] hover:bg-[#128c7e] hover:cursor-pointer text-center text-xl">
+      <Button
+        asChild
+        size="lg"
+        className="bg-[#25d366] text-center text-xl hover:cursor-pointer hover:bg-[#128c7e]">
         <Link href="https://wa.me/5521975978455">Entre em contato</Link>
       </Button>
     </div>
@@ -40,11 +44,42 @@ import {GoogleMapsEmbed} from "@next/third-parties/google";
 
 ## Grão Mestre
 
-> perfil
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+
+<CardLink
+  description="Grão Mestre Kobi"
+  image="/pt/images/federacao/instrutores-licenciados/kobi-lichtenstein.png"
+  href="/federacao/instrutores-licenciados/grao-mestre-kobi/"
+  layout="bottom"
+/>
+
+</div>
 
 ## Instrutores
 
-> perfil
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+  <CardLink
+    description="Mestre Cláudio Oliveira"
+    image="/pt/images/federacao/instrutores-licenciados/claudio-oliveira.jpg"
+    href="/federacao/instrutores-licenciados/claudio-oliveira/"
+    layout="bottom"
+  />
+
+<CardLink
+  description="Mestre Marcio Hirszberg"
+  image="/pt/images/federacao/instrutores-licenciados/marcio-hirszberg.jpg"
+  href="/federacao/instrutores-licenciados/marcio-hirszberg/"
+  layout="bottom"
+/>
+
+<CardLink
+  description="Mestre Léo Miller"
+  image="/pt/images/federacao/instrutores-licenciados/leo-miller.png"
+  href="/federacao/instrutores-licenciados/leo-miller/"
+  layout="bottom"
+/>
+
+</div>
 
 ## Localização
 

@@ -2,6 +2,8 @@
 title: Palestras
 ---
 
+import {Button} from "@/src/components/ui/button"
+
 # Palestras
 
 Frequentemente, realizamos palestras e workshops em empresas, escolas, faculdades e corporações militares/policiais. Falamos, mostramos um vídeo e fazemos demonstrações, direcionando o conteúdo para o público que assiste, de modo que as palestras dadas para civis diferem das dadas para militares e policiais.
@@ -13,3 +15,11 @@ Já no mundo militar e policial, a palestra e as demonstrações são direcionad
 Além de palestras, realizamos cursos de Krav Maga para unidades de segurança.
 
 Para mais informações sobre estes cursos, ou para solicitar uma palestra em sua empresa ou corporação, fale conosco!
+
+<div className="mt-12 grid grid-cols-2 gap-8">
+  <div>
+    {/* prettier-ignore */}
+    <Button asChild size="free" className="bg-red-500 hover:cursor-pointer text-center text-xl lg:py-4"><Link href="/academias">Busque um de nossos professores licenciados.</Link></Button>
+  </div>
+  <div></div>
+</div>
