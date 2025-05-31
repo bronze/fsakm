@@ -17,6 +17,7 @@ interface CardLinkProps {
   priority?: boolean
   layout?: "overlay" | "bottom"
   hover?: boolean
+  overlay?: boolean
 }
 
 export function CardLink({
@@ -28,6 +29,7 @@ export function CardLink({
   priority = false,
   layout = "overlay",
   hover = false,
+  overlay = false,
 }: CardLinkProps) {
   const showButton = buttonText && buttonText.trim() !== ""
 
@@ -48,7 +50,9 @@ export function CardLink({
             priority={priority}
           />
         </div>
-        <div className="absolute inset-0 bg-black/40 z-10" />
+        {(layout === "overlay" || overlay === true) && (
+          <div className="absolute inset-0 bg-black/40 z-10" />
+        )}
         <CardContent className="relative z-20 h-full flex flex-col justify-between p-6 text-white {``cardstyles``}">
           <div>
             <h2 className="text-2xl z-20 md:text-3xl  font-bold mb-3 leading-tight">

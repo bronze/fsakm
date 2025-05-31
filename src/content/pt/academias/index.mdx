@@ -2,8 +2,8 @@
 title: Academias
 ---
 
-import {Cards, Image} from "nextra/components";
-import {CardLink} from "@/src/components/cardlink";
+import {CardLink} from "@/src/components/cardlink"
+import {Cards, Image} from "nextra/components"
 
 # Academias
 
@@ -15,6 +15,7 @@ import {CardLink} from "@/src/components/cardlink";
       image="/pt/images/academias/botafogo.jpg"
       href="/academias/brasil/rio-de-janeiro/botafogo/"
       layout="bottom"
+      overlay={true}
     />
 
   </div>
@@ -22,11 +23,13 @@ import {CardLink} from "@/src/components/cardlink";
   <div>
     <CardLink
       title="Brasil"
+      layout="overlay"
       description="Pesquise outras academias pelo país."
       image="/pt/images/academias/brasil.jpg"
       buttonText="Academias no Brasil"
       href="/academias/brasil/"
     />
+
   </div>
 
   </div>
