@@ -26,7 +26,9 @@ const Page: FC<PageProps> = async props => {
   const {default: MDXContent, toc, metadata} = result
   return (
     <Wrapper toc={toc} metadata={metadata}>
-      <MDXContent {...props} params={params} />
+      <div className="@container">
+        <MDXContent {...props} params={params} />
+      </div>
     </Wrapper>
   )
 }

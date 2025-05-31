@@ -5,6 +5,7 @@ layout: "full"
 
 import Image from "next/image"
 import Link from "next/link"
+import {Gallery, GalleryItem} from "@/src/components/gallery"
 import Cards from "@/src/components/home/cards"
 import Hero from "@/src/components/home/hero"
 import {Button} from "@/src/components/ui/button"
@@ -35,11 +36,36 @@ import {Testimonial} from "@/src/components/home/testimonial"
 
 <Cards />
 
-<h2 className="text-3xl text-center uppercase my-24">
+<h2 className="my-24 text-center text-3xl uppercase">
   {`Saber se defender desenvolve autoconfiança.`}
   <br />
   <span className="text-blue-500">{`Autoconfiança desenvolve coragem.`}</span>
 </h2>
+
+<div className="carousel mx-auto py-8">
+  <Gallery>
+    <GalleryItem
+      src="/pt/images/federacao/palestras/palestra-educacao-1.jpg"
+      title=""
+    />
+    <GalleryItem
+      src="/pt/images/federacao/palestras/palestra-educacao-2.jpg"
+      title=""
+    />
+    <GalleryItem
+      src="/pt/images/federacao/palestras/palestra-educacao-3.jpg"
+      title=""
+    />
+    <GalleryItem
+      src="/pt/images/federacao/palestras/palestra-educacao-4.jpg"
+      title=""
+    />
+    <GalleryItem
+      src="/pt/images/federacao/palestras/palestra-educacao-5.jpg"
+      title=""
+    />
+  </Gallery>
+</div>
 
 <div className='grid md:grid-cols-2 gap-6 mt-8'>
   <div>
@@ -81,13 +107,13 @@ import {Testimonial} from "@/src/components/home/testimonial"
 </div>
 </div>
 
-<h2 className="text-3xl text-center uppercase my-24">
+<h2 className="my-24 text-center text-3xl uppercase">
   {`Não é só defesa.`}
   <br />
   <span className="text-red-500">{`É sobre saber se defender.`}</span>
 </h2>
 
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
   <Testimonial
     title="Evita-se o confronto quando é possível, mas dele não se foge quando é inevitável."
     author="Kobi Lichtenstein"
@@ -110,14 +136,14 @@ import {Testimonial} from "@/src/components/home/testimonial"
   />
 </div>
 
-<div className="text-center w-full mt-24">
-  <h2 className="text-3xl font-semibold text-center uppercase my-8">{`Pronto para começar?`}</h2>
+<div className="mt-24 w-full text-center">
+  <h2 className="my-8 text-center text-3xl font-semibold uppercase">{`Pronto para começar?`}</h2>
   {/* prettier-ignore */}
   <Button asChild size="free" className="bg-red-500 hover:cursor-pointer text-center text-xl lg:py-4"><Link href="/academias">Busque um de nossos professores licenciados.</Link></Button>
 </div>
 
-<h2 className=" text-center my-24">
-  <span className="text-3xl uppercase ">{`Newsletter.`}</span>
+<h2 className="my-24 text-center">
+  <span className="text-3xl uppercase">{`Newsletter.`}</span>
   <br />
   <span className="text-2xl">Inscreva-se para receber informações</span>
 </h2>

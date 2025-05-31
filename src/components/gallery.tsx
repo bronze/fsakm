@@ -127,7 +127,7 @@ export function Gallery({children}: GalleryProps) {
 
   return (
     <GalleryContext.Provider value={contextValue}>
-      <div data-gallery={galleryId} className="w-full max-w-4xl mx-auto">
+      <div data-gallery={galleryId} className="w-full x-auto">
         <Carousel
           setApi={setMainApi}
           className="w-full"
@@ -137,7 +137,8 @@ export function Gallery({children}: GalleryProps) {
             {React.Children.map(children, (child, index) => (
               <CarouselItem
                 key={index}
-                className="slide pl-2 md:pl-4 basis-[60%] lg:basis-[40%]">
+                className="slide pl-2 md:pl-4 basis-[60%] @lg:basis-[50%]  @2xl:basis-[40%] @4xl:basis-[25%]">
+                {/* @lg:bg-green-200 @2xl:bg-yellow-200 @4xl:bg-red-200 */}
                 {/* slide pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 */}
                 {React.cloneElement(child, {
                   index,

@@ -10,7 +10,7 @@ export default function KravMagaHero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0"></div>
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 pb-20">
+      <div className="relative z-10 mx-auto px-4 pb-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Left Column - Main Content */}
           <div className="space-y-8">
