@@ -3,6 +3,11 @@
 /* Optional: import Nextra theme styles */
 @import "nextra-theme-docs/style.css";
 
+.carousel.container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
 @custom-variant dark (&:is(.dark *)); /* or nextra-theme-blog/style.css */
 
 @theme {
