@@ -17,41 +17,27 @@ import {ChevronLeft, ChevronRight, X} from "lucide-react"
 interface GalleryItemProps {
   src: string
   title: string
+  index: number
+  galleryId: string
 }
 
 interface GalleryProps {
-  children: React.ReactElement<GalleryItemProps>[]
+  children: React.ReactElement<Partial<GalleryItemProps>>[]
 }
 
 interface GalleryContextType {
   openLightbox: (index: number) => void
+  galleryId: string
 }
 
 const GalleryContext = React.createContext<GalleryContextType | null>(null)
 
-export function GalleryItem({src, title}: GalleryItemProps) {
+export function GalleryItem({src, title, index, galleryId}: GalleryItemProps) {
   const context = React.useContext(GalleryContext)
-  const [imageIndex, setImageIndex] = React.useState<number | null>(null)
-
-  React.useEffect(() => {
-    // Get the index from the parent Gallery component
-    const galleryElement = document.querySelector("[data-gallery]")
-    if (galleryElement) {
-      const items = Array.from(
-        galleryElement.querySelectorAll("[data-gallery-item]")
-      )
-      const currentElement = document.querySelector(
-        `[data-gallery-item][data-src="${src}"]`
-      )
-      if (currentElement) {
-        setImageIndex(items.indexOf(currentElement))
-      }
-    }
-  }, [src])
 
   const handleClick = () => {
-    if (context && imageIndex !== null) {
-      context.openLightbox(imageIndex)
+    if (context && context.galleryId === galleryId) {
+      context.openLightbox(index)
     }
   }
 
@@ -77,6 +63,7 @@ export function GalleryItem({src, title}: GalleryItemProps) {
 }
 
 export function Gallery({children}: GalleryProps) {
+  const galleryId = React.useId()
   const [lightboxOpen, setLightboxOpen] = React.useState(false)
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0)
   const [lightboxApi, setLightboxApi] = React.useState<CarouselApi>()
@@ -84,7 +71,6 @@ export function Gallery({children}: GalleryProps) {
   const [current, setCurrent] = React.useState(0)
   const [count, setCount] = React.useState(0)
 
-  // Extract image data from children
   const images = React.useMemo(() => {
     return React.Children.map(children, child => ({
       src: child.props.src,
@@ -97,16 +83,10 @@ export function Gallery({children}: GalleryProps) {
     setLightboxOpen(true)
   }, [])
 
-  const closeLightbox = () => {
-    setLightboxOpen(false)
-  }
+  const closeLightbox = () => setLightboxOpen(false)
 
-  // Main carousel API effects
   React.useEffect(() => {
-    if (!mainApi) {
-      return
-    }
-
+    if (!mainApi) return
     setCount(mainApi.scrollSnapList().length)
     setCurrent(mainApi.selectedScrollSnap() + 1)
 
@@ -115,14 +95,12 @@ export function Gallery({children}: GalleryProps) {
     })
   }, [mainApi])
 
-  // Update lightbox carousel when currentImageIndex changes
   React.useEffect(() => {
     if (lightboxApi && lightboxOpen) {
       lightboxApi.scrollTo(currentImageIndex)
     }
   }, [lightboxApi, currentImageIndex, lightboxOpen])
 
-  // Update currentImageIndex when lightbox carousel changes
   React.useEffect(() => {
     if (!lightboxApi) return
 
@@ -132,44 +110,40 @@ export function Gallery({children}: GalleryProps) {
     }
 
     api.on("select", onSelect)
-    return () => {
-      api.off("select", onSelect)
-    }
+    return () => api.off("select", onSelect)
   }, [lightboxApi])
 
   const contextValue = React.useMemo(
     () => ({
       openLightbox,
+      galleryId,
     }),
-    [openLightbox]
+    [openLightbox, galleryId]
   )
 
   return (
     <GalleryContext.Provider value={contextValue}>
-      <div data-gallery className="w-full max-w-4xl mx-auto">
-        {/* Main Gallery Carousel */}
+      <div data-gallery={galleryId} className="w-full max-w-4xl mx-auto">
         <Carousel
           setApi={setMainApi}
           className="w-full"
-          opts={{
-            align: "start",
-            loop: true,
-          }}
+          opts={{align: "start", loop: true}}
           plugins={[ClassNames()]}>
           <CarouselContent className="-ml-2 md:-ml-4">
             {React.Children.map(children, (child, index) => (
               <CarouselItem
                 key={index}
                 className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                {child}
+                {React.cloneElement(child, {
+                  index,
+                  galleryId,
+                })}
               </CarouselItem>
             ))}
           </CarouselContent>
         </Carousel>
 
-        {/* Custom Navigation Controls */}
         <div className="flex items-center justify-between mt-4">
-          {/* Arrow Controls - Left Side */}
           <div className="flex items-center gap-2">
             <Button
               variant="outline"
@@ -189,7 +163,6 @@ export function Gallery({children}: GalleryProps) {
             </Button>
           </div>
 
-          {/* Dot Indicators - Right Side */}
           <div className="flex gap-2">
             {Array.from({length: count}, (_, index) => (
               <button
@@ -206,11 +179,9 @@ export function Gallery({children}: GalleryProps) {
           </div>
         </div>
 
-        {/* Lightbox Dialog */}
         <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
           <DialogContent className="max-w-7xl w-full h-full p-0 bg-black/95 border-none">
             <div className="relative w-full h-full flex items-center justify-center">
-              {/* Close Button */}
               <Button
                 variant="ghost"
                 size="icon"
@@ -219,16 +190,12 @@ export function Gallery({children}: GalleryProps) {
                 <X className="h-6 w-6" />
               </Button>
 
-              {/* Lightbox Carousel */}
               <Carousel
                 setApi={setLightboxApi}
                 className="w-full h-full max-w-[90vw]"
-                opts={{
-                  startIndex: currentImageIndex,
-                  loop: true,
-                }}>
-                <CarouselContent className="">
-                  {images?.map((image, index) => (
+                opts={{startIndex: currentImageIndex, loop: true}}>
+                <CarouselContent>
+                  {images.map((image, index) => (
                     <CarouselItem
                       key={index}
                       className="h-full flex items-center justify-center">
@@ -252,7 +219,6 @@ export function Gallery({children}: GalleryProps) {
                   ))}
                 </CarouselContent>
 
-                {/* Lightbox Navigation */}
                 <Button
                   variant="ghost"
                   size="icon"

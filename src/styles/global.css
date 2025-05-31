@@ -3,11 +3,6 @@
 /* Optional: import Nextra theme styles */
 @import "nextra-theme-docs/style.css";
 
-.carousel.container {
-  margin-inline: auto;
-  padding-inline: 2rem;
-}
-
 @custom-variant dark (&:is(.dark *)); /* or nextra-theme-blog/style.css */
 
 @theme {
@@ -175,4 +170,17 @@ lite-youtube {
 }
 .nextra-breadcrumb {
   @apply mb-6;
+}
+
+.carousel {
+  &.container {
+    margin-inline: auto;
+    /* padding-inline: 2rem; */
+  }
+  .slide {
+    transition: opacity 0.2s ease-in-out;
+  }
+  .slide:not(.is-snapped) {
+    opacity: 0.4;
+  }
 }
