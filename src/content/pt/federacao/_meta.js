@@ -4,10 +4,10 @@ module.exports={
       toc: false, // Hide table of contents on this page
     },
   },
-  "formacao-de-instrutores": "",
   "instrutores": {
     theme: {}
   },
+  "formacao-de-instrutores": "",
   "centro-de-treinamento": "",
   "seminarios-e-treinos-especiais": "",
   palestras: "",
