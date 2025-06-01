@@ -53,17 +53,26 @@ export function LightboxGallery({certificates}: LightboxGalleryProps) {
       </ul>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-full w-[90vw] max-h-[90vh] overflow-auto text-center">
+        <DialogContent
+          // className="max-w-7xl w-full h-full p-0 bg-black/95 border-none"
+          className="p-4 max-w-7xl  bg-background border w-full h-full  shadow-xl rounded-md"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}>
           {current?.imageUrl && (
-            <div>
+            <div className="inline-block text-center">
               <Image
                 src={current.imageUrl}
                 alt={current.label}
                 width={800}
                 height={600}
-                className="mx-auto h-auto w-full max-w-4xl"
+                className="h-auto w-auto max-w-[calc(min(90vmin,_80lvw))] mx-auto"
               />
-              <p className="mt-4 font-semibold">{current.label}</p>
+              <p className="mt-4 font-semibold text-sm text-muted-foreground">
+                {current.label}
+              </p>
             </div>
           )}
         </DialogContent>

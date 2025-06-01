@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import {Button} from "@/src/components/ui/button"
 import {cn} from "@/src/lib/utils"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import {XIcon} from "lucide-react"
@@ -57,7 +58,8 @@ function DialogContent({
       <DialogPrimitive.Content
         data-slot="dialog-content"
         className={cn(
-          "bg-background max-sm:max-w-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border p-6 shadow-lg duration-200 h-full max-h-[90vh] w-full max-w-[calc(100%-2rem)]",
+          "bg-background data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed top-[50%] left-[50%] z-50 translate-x-[-50%] translate-y-[-50%] rounded-lg border p-4 shadow-lg duration-200",
+          "max-w-fit max-h-fit w-auto h-auto",
           className
         )}
         {...props}>
@@ -66,8 +68,15 @@ function DialogContent({
           <DialogPrimitive.Close
             data-slot="dialog-close"
             className="ring-offset-background focus:ring-ring data-[state=open]:bg-accent data-[state=open]:text-muted-foreground absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100 focus:ring-2 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4">
-            <XIcon />
-            <span className="sr-only">Close</span>
+            <div className="relative flex items-center justify-center z-50">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute top-4 right-4 z-50 mix-blend-difference bg-blue-800 hover:bg-red-800 transition duration-300">
+                <XIcon className="h-6 w-6" />
+              </Button>
+              <span className="sr-only">Close</span>
+            </div>
           </DialogPrimitive.Close>
         )}
       </DialogPrimitive.Content>
