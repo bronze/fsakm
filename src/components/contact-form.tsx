@@ -57,9 +57,9 @@ export default function ContactFormMerged() {
     <div className="flex min-h-[60vh] h-full w-full items-center justify-center px-4">
       <Card className="mx-auto max-w-md w-full">
         <CardHeader>
-          <CardTitle className="text-2xl">Contact Us</CardTitle>
+          <CardTitle className="text-2xl">Envie sua Mensagem</CardTitle>
           <CardDescription>
-            Fill out the form below and we&#39;ll get back to you shortly.
+            Preencha o formulário abaixo para falar diretamente com a Federação.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -130,10 +130,10 @@ export default function ContactFormMerged() {
                 {loading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Sending...
+                    Enviando...
                   </>
                 ) : (
-                  "Send Message"
+                  "Enviar Mensagem"
                 )}
               </Button>
             </form>
