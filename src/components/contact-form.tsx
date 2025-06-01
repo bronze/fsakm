@@ -1,5 +1,6 @@
 "use client"
 
+import {useState} from "react"
 import {Button} from "@/src/components/ui/button"
 import {
   Card,
@@ -21,10 +22,14 @@ import {Textarea} from "@/src/components/ui/textarea"
 import {send} from "@/src/lib/email"
 import {formSchema} from "@/src/lib/schemas"
 import {zodResolver} from "@hookform/resolvers/zod"
+import {Loader2} from "lucide-react"
 import {useForm} from "react-hook-form"
+import {toast} from "sonner"
 import {z} from "zod"
 
-export default function ContactForm() {
+export default function ContactFormMerged() {
+  const [loading, setLoading] = useState(false)
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -35,58 +40,60 @@ export default function ContactForm() {
     },
   })
 
-  // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    send(values)
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setLoading(true)
+    try {
+      await send(values)
+      toast.success("Your message has been sent successfully!")
+    } catch (error) {
+      console.error("Error submitting contact form", error)
+      toast.error("Failed to send your message. Please try again.")
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
-    <Card className="mx-auto max-w-md">
-      <CardHeader>
-        <CardTitle>Contact Us</CardTitle>
-        <CardDescription>
-          Fill out the form below and we&#39;ll get back to you as soon as
-          possible.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
+    <div className="flex min-h-[60vh] h-full w-full items-center justify-center px-4">
+      <Card className="mx-auto max-w-md w-full">
+        <CardHeader>
+          <CardTitle className="text-2xl">Contact Us</CardTitle>
+          <CardDescription>
+            Fill out the form below and we&#39;ll get back to you shortly.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <div className="grid grid-cols-2 gap-4">
                 <FormField
                   control={form.control}
                   name="firstName"
                   render={({field}) => (
                     <FormItem>
-                      <FormLabel>First Name</FormLabel>
+                      <FormLabel>Nome</FormLabel>
                       <FormControl>
-                        <Input placeholder="Your first name" {...field} />
+                        <Input placeholder="Kobi" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-              </div>
-              <div className="space-y-2">
                 <FormField
                   control={form.control}
                   name="lastName"
                   render={({field}) => (
                     <FormItem>
-                      <FormLabel>Last Name</FormLabel>
+                      <FormLabel>Sobrenome</FormLabel>
                       <FormControl>
-                        <Input placeholder="Your last name" {...field} />
+                        <Input placeholder="Lichtenstein" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
               </div>
-            </div>
-            <div className="space-y-2">
+
               <FormField
                 control={form.control}
                 name="email"
@@ -94,14 +101,13 @@ export default function ContactForm() {
                   <FormItem>
                     <FormLabel>Email</FormLabel>
                     <FormControl>
-                      <Input placeholder="Your Email" {...field} />
+                      <Input placeholder="kobi@kravmaga.com.br" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-            </div>
-            <div className="space-y-2">
+
               <FormField
                 control={form.control}
                 name="message"
@@ -110,8 +116,7 @@ export default function ContactForm() {
                     <FormLabel>Message</FormLabel>
                     <FormControl>
                       <Textarea
-                        id="message"
-                        placeholder="Type in your message here"
+                        placeholder="Digite sua mensagem..."
                         className="min-h-[120px]"
                         {...field}
                       />
@@ -120,13 +125,21 @@ export default function ContactForm() {
                   </FormItem>
                 )}
               />
-            </div>
-            <Button type="submit" className="ml-auto">
-              Submit
-            </Button>
-          </form>
-        </Form>
-      </CardContent>
-    </Card>
+
+              <Button type="submit" className="w-full" disabled={loading}>
+                {loading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  "Send Message"
+                )}
+              </Button>
+            </form>
+          </Form>
+        </CardContent>
+      </Card>
+    </div>
   )
 }
