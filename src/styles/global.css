@@ -184,3 +184,17 @@ lite-youtube {
     z-index: 10;
   }
 }
+.page-pt-krav-maga-midia {
+  h2::before {
+    content: attr(data-year);
+    
+    /* width: 10ch; */
+    /* color: aliceblue; */
+    /* z-index: 99;  */
+    /* estilos da bolinha */
+  }
+  h3 {
+    @apply my-8;
+  }
+}
+/* tailwind.config.ts: safelist essas classes ou coloque direto num CSS global */
