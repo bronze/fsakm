@@ -9,7 +9,16 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/src/components/ui/carousel"
-import {Dialog, DialogContent} from "@/src/components/ui/dialog"
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/src/components/ui/dialog"
 import {cn} from "@/src/lib/utils"
 import ClassNames from "embla-carousel-class-names"
 import {ChevronLeft, ChevronRight, X} from "lucide-react"
@@ -188,6 +197,12 @@ export function Gallery({children}: GalleryProps) {
 
         <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
           <DialogContent className="max-w-7xl w-full p-0 bg-black/95 border-none">
+            {/* <DialogHeader>
+              <DialogTitle>Share link</DialogTitle>
+              <DialogDescription>
+                Anyone who has this link will be able to view this.
+              </DialogDescription>
+            </DialogHeader> */}
             <div className="relative w-full h-full flex items-center justify-center">
               {/* <Button
                 variant="ghost"
