@@ -207,3 +207,11 @@ lite-youtube {
     }
   }
 }
+
+/* hack pra evitar margem antes de lista no markdown */
+p:has(+ ul) {
+  margin-bottom: 0;
+}
+p + ul {
+  margin-top: 0;
+}
