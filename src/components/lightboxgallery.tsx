@@ -57,7 +57,7 @@ export function LightboxGallery({certificates}: LightboxGalleryProps) {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent
           // className="max-w-7xl w-full h-full p-0 bg-black/95 border-none"
-          className="p-4 max-w-7xl  bg-background border w-full h-full  shadow-xl rounded-md"
+          className="p-4 max-w-[calc(min(90vmin,_80lvw))] bg-background border w-full h-full  shadow-xl rounded-md"
           style={{
             display: "flex",
             justifyContent: "center",
@@ -70,7 +70,7 @@ export function LightboxGallery({certificates}: LightboxGalleryProps) {
                 alt={current.label}
                 width={800}
                 height={600}
-                className="h-auto w-auto max-h-[80vh] max-w-[calc(min(90vmin,_80lvw))] mx-auto"
+                className="h-auto w-auto max-h-[85vh] max-w-[calc(min(90vmin,_80lvw))] mx-auto"
               />
               <p className="mt-4 font-semibold text-sm text-muted-foreground">
                 {current.label}
