@@ -200,9 +200,10 @@ lite-youtube {
 /* tailwind.config.ts: safelist essas classes ou coloque direto num CSS global */
 .page-pt-krav-maga-faixas {
   h2 {
-    @apply inline-flex;
+    @apply clear-both;
+    /* @apply inline-flex; */
     span {
-      @apply ml-4;
+      /* @apply ml-4; */
     }
   }
 }
