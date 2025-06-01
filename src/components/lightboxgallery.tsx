@@ -3,6 +3,7 @@
 import {useState} from "react"
 import Image from "next/image"
 import {Dialog, DialogContent} from "@/src/components/ui/dialog"
+import {FileImage} from "lucide-react"
 
 interface Certificate {
   label: string
@@ -32,7 +33,8 @@ export function LightboxGallery({certificates}: LightboxGalleryProps) {
                 onClick={() => handleOpen(item)}
                 className="text-blue-600 hover:underline cursor-pointer flex items-center gap-1 font-semibold">
                 {item.label}
-                <svg
+                <FileImage className="h-4" />
+                {/* <svg
                   fill="none"
                   stroke="currentColor"
                   strokeLinecap="round"
@@ -43,7 +45,7 @@ export function LightboxGallery({certificates}: LightboxGalleryProps) {
                   className="inline align-baseline shrink-0">
                   <path d="M7 17L17 7" />
                   <path d="M7 7h10v10" />
-                </svg>
+                </svg> */}
               </button>
             ) : (
               <span>{item.label}</span>
