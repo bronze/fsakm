@@ -187,7 +187,7 @@ export function Gallery({children}: GalleryProps) {
         </div>
 
         <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
-          <DialogContent className="max-w-7xl w-full h-full p-0 bg-black/95 border-none">
+          <DialogContent className="max-w-7xl w-full p-0 bg-black/95 border-none">
             <div className="relative w-full h-full flex items-center justify-center">
               {/* <Button
                 variant="ghost"
