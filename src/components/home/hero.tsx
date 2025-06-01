@@ -106,7 +106,7 @@ export default function KravMagaHero() {
                 <div>
                   <div className="font-bold text-lg">Defesa Real</div>
                   <div className="text-gray-600 text-sm">
-                    Técnicas testadas em combate
+                    Técnica do Exército Israelense
                   </div>
                 </div>
               </div>
