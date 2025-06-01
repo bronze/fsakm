@@ -2,11 +2,15 @@
 Title: História
 sidebarTitle: História
 asIndexPage: true
-description: The `page.mdx` file in Nextra is a special Next.js App Router convention file
+description:
+  The `page.mdx` file in Nextra is a special Next.js App Router convention file
   that allows you to define UI unique to a route. By default, `.js`, `.jsx`, or
   `.tsx` file extensions can be used for `page`, and Nextra enhances them with
   `.md` and `.mdx` extensions.
 ---
+
+import Image from "next/image"
+import Link from "next/link"
 
 # História
 
@@ -26,16 +30,15 @@ Foi nesse momento que seu criador abriu 2 academias, uma em Netanya e outra em T
 
 Contudo, a turma não era infantil e a pequena criança ficaria apenas para algumas aulas de experiência, a fim de entender que aquilo ainda não era para ele. Entretanto, esse período de experiência se estendeu, e se estendeu, e se estendeu mais ainda. Hoje, Mestre Kobi já tem mais de 50 anos de Krav Maga.
 
-<div className="grid lg:grid-cols-2 gap-6 mt-8">
-  <div>![historia-mestrekobi.jpg](./historia-mestrekobi.jpg)</div>
-  <div>
-    Em 1971, Imi entrega a primeira faixa preta a Eli Avigzar e realiza o primeiro curso de instrutores. Em 1978, funda
-    a Associação de Krav Maga Israelense. Então, chega a década de 80 e Imi, com a preocupação de dar continuidade à sua
-    obra, transmitindo-a para o resto do mundo e para as próximas gerações, decide selecionar um pequeno grupo que seria
-    treinado e preparado para este fim, do qual o Mestre Kobi é parte integrante. Em 1987, foi liberado o ensino do Krav
-    Maga fora de Israel.
-  </div>
-</div>
+<Image
+  src="/pt/images/krav-maga/historia/historia-mestrekobi.jpg"
+  alt="Grão Mestre Kobi Lichtenstein"
+  width={400}
+  height={400}
+  className="mx-auto mt-6 mb-4 h-auto w-sm @lg:float-left @lg:mr-6 @lg:max-w-1/2"
+/>
+
+Em 1971, Imi entrega a primeira faixa preta a Eli Avigzar e realiza o primeiro curso de instrutores. Em 1978, funda a Associação de Krav Maga Israelense. Então, chega a década de 80 e Imi, com a preocupação de dar continuidade à sua obra, transmitindo-a para o resto do mundo e para as próximas gerações, decide selecionar um pequeno grupo que seria treinado e preparado para este fim, do qual o Mestre Kobi é parte integrante. Em 1987, foi liberado o ensino do Krav Maga fora de Israel.
 
 Assim sendo, em 1990, o primeiro faixa preta sai de Israel para difundir o Krav Maga: Mestre Kobi chega ao Brasil, como o único representante da arte na América Latina.
 
