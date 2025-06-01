@@ -111,7 +111,14 @@ const footer = (
             />
           </div>
         </div>
-        {new Date().getFullYear()} © Federação Sul Americana de Krav Maga.
+        <div>
+          <p>
+            {new Date().getFullYear()} © Federação Sul Americana de Krav Maga.
+          </p>
+          <p>
+            Rua Sorocaba, 258, Botafogo – Rio de Janeiro, RJ, Brasil, 22271-110
+          </p>
+        </div>
       </div>
 
       <div className="flex place-content-center lg:place-content-end">

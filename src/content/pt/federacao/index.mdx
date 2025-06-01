@@ -4,7 +4,7 @@ toc: false
 ---
 
 import Image from "next/image"
-import {YouTubeEmbed} from "@next/third-parties/google"
+import {GoogleMapsEmbed, YouTubeEmbed} from "@next/third-parties/google"
 
 # Federação Sul Americana de Krav Maga
 
@@ -54,3 +54,24 @@ Somos grandes: hoje, somos considerados a maior organização de Krav Maga do mu
 - **Estrutura**: nos bastidores, organizamos, divulgamos, fiscalizamos e trabalhamos para que tudo saia do jeito mais perfeito. A maior parte do trabalho é transparente aos alunos, e até mesmo aos instrutores, mas é isso que faz a diferença no final.
 
 Ou seja, esta é a forma de garantir que nossos alunos recebam um serviço de alta qualidade, incluindo instrutores bem treinados, material de treinamento e técnica e método de ensino corretos, em todos os nossos centros de treinamento.
+
+<div className="mt-12 grid gap-6 lg:grid-cols-2">
+  <div>
+    <Image
+      src="/pt/images/slide-federacao-1.jpg"
+      alt="Sede da Federação"
+      width={832}
+      height={300}
+      className="mx-auto h-auto w-full text-center"
+    />
+  </div>
+  <div>
+    <GoogleMapsEmbed
+      apiKey={process.env.GOOGLEMAPS_API_KEY}
+      height={300}
+      width="100%"
+      mode="place"
+      q="R. Sorocaba, 258 - Botafogo, Rio de Janeiro - RJ, 22271-110"
+    />
+  </div>
+</div>
