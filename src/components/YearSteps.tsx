@@ -25,18 +25,19 @@ export const YearSteps: FC<HTMLAttributes<HTMLDivElement>> = ({
       const childElement = child as React.ReactElement<{
         children?: ReactNode
         id?: string
-       }>
+        className?: string
+      }>
       const text =
         typeof childElement.props.children === "string"
           ? childElement.props.children
           : Array.isArray(childElement.props.children)
             ? childElement.props.children.join(" ")
             : ""
+
       const year = extractYearFromText(text)
       if (year) {
         foundYear = year
         return cloneElement(childElement, {
-          "data-year": undefined, // placeholder to remove the error
           id: year,
           className: cn("relative pl-6 ml-4", childElement.props.className),
           ...(year ? {["data-year"]: year} : {}),
