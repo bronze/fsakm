@@ -149,6 +149,12 @@ body.page-es-grao-mestre-kobi {
     display: none;
   }
 }
+
+body.page-pt-contato {
+  .nextra-toc {
+    display: none;
+  }
+}
 .searchinput {
   input {
     @apply w-full;
