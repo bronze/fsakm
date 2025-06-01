@@ -187,7 +187,7 @@ lite-youtube {
 .page-pt-krav-maga-midia {
   h2::before {
     content: attr(data-year);
-    
+
     /* width: 10ch; */
     /* color: aliceblue; */
     /* z-index: 99;  */
@@ -198,3 +198,11 @@ lite-youtube {
   }
 }
 /* tailwind.config.ts: safelist essas classes ou coloque direto num CSS global */
+.page-pt-krav-maga-faixas {
+  h2 {
+    @apply inline-flex;
+    span {
+      @apply ml-4;
+    }
+  }
+}
