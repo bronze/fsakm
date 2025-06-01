@@ -206,7 +206,7 @@ export function Gallery({children}: GalleryProps) {
                     <CarouselItem
                       key={index}
                       className="h-full flex items-center justify-center">
-                      <div className="relative max-w-full max-h-full flex flex-col items-center justify-center p-8">
+                      <div className="relative max-w-full max-h-[90vh] flex flex-col items-center justify-center p-8">
                         <Image
                           src={image.src || "/placeholder.svg"}
                           alt={image.title}
