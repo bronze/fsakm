@@ -53,7 +53,7 @@ export function CardLink({
         {(layout === "overlay" || overlay === true) && (
           <div className="absolute inset-0 bg-black/40 z-10" />
         )}
-        <CardContent className="relative z-20 h-full flex flex-col justify-between p-1 py-4 @md:p-6 text-white {``cardstyles``}">
+        <CardContent className="relative z-20 h-full flex flex-col justify-between p-6 text-white {``cardstyles``}">
           <div>
             <h2 className="text-2xl z-20 md:text-3xl  font-bold mb-3 leading-tight">
               {title}
