@@ -34,11 +34,11 @@ export function CardLink({
   const showButton = buttonText && buttonText.trim() !== ""
 
   return (
-    <Link href={href} className="block group min-w-64">
+    <Link href={href} className="block group lg:min-w-64">
       <Card
         className={cn(
           hover && "group-hover:scale-105 transition-transform duration-300",
-          "relative overflow-hidden h-80 "
+          "relative overflow-hidden h-64 @lg:h-80 "
         )}>
         <div className="absolute inset-0 w-full h-full">
           <Image
@@ -53,7 +53,7 @@ export function CardLink({
         {(layout === "overlay" || overlay === true) && (
           <div className="absolute inset-0 bg-black/40 z-10" />
         )}
-        <CardContent className="relative z-20 h-full flex flex-col justify-between p-6 text-white {``cardstyles``}">
+        <CardContent className="relative z-20 h-full flex flex-col justify-between p-1 py-4 @md:p-6 text-white {``cardstyles``}">
           <div>
             <h2 className="text-2xl z-20 md:text-3xl  font-bold mb-3 leading-tight">
               {title}
@@ -70,9 +70,9 @@ export function CardLink({
             <Button
               variant="default"
               size="lg"
-              className="bg-blue-600 group-hover:bg-blue-700 text-white font-semibold py-3 px-6 w-fit transition-all duration-300  cursor-pointer">
+              className="bg-blue-600 group-hover:bg-blue-700 text-white font-semibold py-3 px-6 w-full @lg:w-fit transition-all duration-300  cursor-pointer">
               {buttonText}
-              <ArrowRight className="ml-2" />
+              <ArrowRight className="hidden @md:block ml-2" />
             </Button>
           )}
           {layout === "bottom" && (
