@@ -1,4 +1,5 @@
 import BodyWithPageClass from "@/src/components/bodypageclass"
+import {Analytics} from "@vercel/analytics/next"
 import {Facebook, Instagram, Youtube} from "lucide-react" // Import icons from Lucide
 import {Footer, Layout, Navbar, ThemeSwitch} from "nextra-theme-docs"
 import {Banner, Head, Search} from "nextra/components"
@@ -205,6 +206,7 @@ export default async function RootLayout({children, params}) {
             </main>
           </Layout>
           <Toaster />
+          <Analytics />
         </PostHogProvider>
       </BodyWithPageClass>
     </html>
