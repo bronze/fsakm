@@ -2,17 +2,89 @@
 title: Academias
 ---
 
-## Academias
+import {CardLink} from "@/src/components/cardlink"
+import {Cards, Image} from "nextra/components"
 
-This is the about page! This page is shown on the navbar.
+# Academias
 
-Nextra's File Conventions guide details the structure and organization of
-files and directories within a Nextra project, including the use of
-`page.mdx`, `_meta.js`, and `mdx-components.js` files, as well as the
-`content` and `src` directories.
+<div className="grid grid-cols-2 gap-8 mt-12">
+  <div>
+    <CardLink
+      title="Conheça nossa sede"
+      description="Botafogo - Rio de Janeiro"
+      image="/pt/images/academias/botafogo.jpg"
+      href="/academias/brasil/rio-de-janeiro/botafogo/"
+      layout="bottom"
+      overlay={true}
+    />
 
-## H2
+  </div>
+  <div>
+  <div>
+    <CardLink
+      title="Brasil"
+      layout="overlay"
+      description="Pesquise outras academias pelo país."
+      image="/pt/images/academias/brasil.jpg"
+      buttonText="Academias no Brasil"
+      href="/academias/brasil/"
+    />
 
-### H3
+  </div>
 
-#### H4
+  </div>
+</div>
+
+## Academias Internacionais
+
+<div className="grid grid-cols-2 gap-8 mt-12">
+  <div>
+   <CardLink
+      title="Argentina"
+      description=""
+      image="/pt/images/academias/argentina.jpg"
+      buttonText="Academias na Argentina"
+      href="/academias/argentina/"
+    />
+
+  </div>
+  <div>
+    <CardLink
+      title="Canadá"
+      description=""
+      image="/pt/images/academias/canada.jpg"
+      buttonText="Academias no Canadá"
+      href="/academias/canada/"
+    />
+  </div>
+   <div>
+   <CardLink
+      title="México"
+      description=""
+      image="/pt/images/academias/mexico.jpg"
+      buttonText="Academias no México"
+      href="/academias/mexico/"
+    />
+
+  </div>
+  <div>
+    <CardLink
+      title="Portugal"
+      description=""
+      image="/pt/images/academias/portugal.jpg"
+      buttonText="Academias em Portugal"
+      href="/academias/portugal/"
+    />
+  </div>
+   <div>
+   <CardLink
+      title="Estados Unidos"
+      description=""
+      image="/pt/images/academias/estados-unidos.jpg"
+      buttonText="Academias nos Estados Unidos"
+      href="/academias/estados-unidos/"
+    />
+
+  </div>
+
+</div>

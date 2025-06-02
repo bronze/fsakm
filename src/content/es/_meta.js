@@ -1,15 +1,25 @@
-module.exports = {
+module.exports={
   index: {
     type: "page",
     display: "hidden",
-  },
-  "grao-mestre-kobi": {
-    title: "Grão Mestre Kobi",
-    type: "page",
     theme: {
       sidebar: false, // Hide navbar on this page
+      layout: "full",
+      toc: false, // Hide table of contents on this page
     },
   },
+  mestre_kobi: {
+    type: "page",
+    title: 'Grão Mestre Kobi',
+    href: '/federacao/instrutores/grao-mestre-kobi'
+  },
+  // "grao-mestre-kobi": {
+  //   title: "Grão Mestre Kobi",
+  //   type: "page",
+  //   theme: {
+  //     sidebar: false, // Hide navbar on this page
+  //   },
+  // },
   "krav-maga": {
     title: "Krav Maga",
     type: "page",
@@ -21,11 +31,17 @@ module.exports = {
   academias: {
     title: "Academias",
     type: "page",
-    theme: {},
+    theme: {
+      sidebar: true,
+    },
   },
   blog: {
     title: "Blog",
     type: "page",
+    theme: {
+      sidebar: false,
+      typesetting: 'article'
+    }
   },
   contato: {
     title: "Contato",

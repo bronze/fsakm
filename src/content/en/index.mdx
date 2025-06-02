@@ -5,27 +5,25 @@ layout: "full"
 
 import Image from "next/image"
 import Link from "next/link"
+import {CardLink} from "@/src/components/cardlink"
 import {Gallery, GalleryItem} from "@/src/components/gallery"
-import Cards from "@/src/components/home/cards"
-import Hero from "@/src/components/home/hero"
+import Hero from "@/src/components/home/hero.en"
 import {Button} from "@/src/components/ui/button"
 import {YouTubeEmbed} from "@next/third-parties/google"
 
 import {Testimonial} from "@/src/components/home/testimonial"
 
-{/* em componente pra sair das limitações de layout do mdx */}
+{/* component used to bypass MDX layout limitations */}
 
 <Hero />
 
-## Quem disse que você não pode se defender?
+## Who said you can't defend yourself?
 
 <div className='grid lg:grid-cols-2 gap-6 mt-4'>
   <div>
     ### Krav Maga
 
-    É a defesa pessoal criada em Israel por Imi Lichtenfeld, já adotada por forças de segurança e civis no
-    mundo inteiro. Tem o objetivo de dar a qualquer pessoa, independente de sexo, idade ou porte físico, a capacidade de
-    se defender contra qualquer tipo de agressão: armada ou desarmada, contra um ou vários agressores, em pé ou no chão.
+    Krav Maga is a self-defense system created in Israel by Imi Lichtenfeld, already adopted by security forces and civilians around the world. Its goal is to give anyone — regardless of gender, age, or physical condition — the ability to defend themselves against any kind of aggression: armed or unarmed, against one or multiple attackers, standing or on the ground.
 
   </div>
   <div>
@@ -33,113 +31,149 @@ import {Testimonial} from "@/src/components/home/testimonial"
   </div>
 </div>
 
-<Cards />
+<div className="mx-auto mt-24 py-8">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <CardLink
+      title="KRAV MAGA"
+      description="Learn more about the self-defense system used by the Israeli army."
+      image="/pt/images/home/kra-maga-1b-2-1.jpg"
+      href="/krav-maga"
+      buttonText="LEARN MORE"
+      layout="button"
+      hover={true}
+      overlay={true}
+    />
+    <CardLink
+      title="OUR SCHOOLS"
+      description="Find the nearest school and start training at any of our locations."
+      image="/pt/images/home/foto-2-academia-1-2-1.jpg"
+      href="/academias"
+      buttonText="LEARN MORE"
+      layout="button"
+      hover={true}
+      overlay={true}
+    />
+    <CardLink
+      title="MILITARY TRAINING"
+      description="Explore the techniques used by military and police forces for protection in high-risk situations."
+      image="/pt/images/home/krav-maga-mestre-kobi-seguranca-militar-1-1.jpg"
+      href="/krav-maga/militar"
+      buttonText="LEARN MORE"
+      layout="button"
+      hover={true}
+      overlay={true}
+    />
+  </div>
+</div>
 
 <h2 className="mt-24 text-center text-3xl uppercase">
-  {`Saber se defender desenvolve autoconfiança.`}
+  {`Knowing how to defend yourself builds self-confidence.`}
   <br />
-  <span className="text-blue-500">{`Autoconfiança desenvolve coragem.`}</span>
+  <span className="text-blue-500">{`Self-confidence builds courage.`}</span>
 </h2>
 
 <div className="carousel mx-auto mb-24 py-8">
   <Gallery>
     <GalleryItem
       src="/pt/images/home/galeria_1.jpg"
-      title="Defesa em situação de rua"
+      title="Defense in a street situation"
     />
+    <GalleryItem src="/pt/images/home/galeria_2.jpg" title="Knife defense" />
+    <GalleryItem src="/pt/images/home/galeria_3.jpg" title="Car defense" />
     <GalleryItem
-      src="/pt/images/home/galeria_2.jpg"
-      title="Defesa de arma branca"
+      src="/pt/images/home/galeria_1.jpg"
+      title="Defense in a street situation"
     />
-    <GalleryItem
-      src="/pt/images/home/galeria_3.jpg"
-      title="Defesa dentro do carro"
-    />
-    <GalleryItem src="/pt/images/home/galeria_1.jpg" title="" />
-    <GalleryItem src="/pt/images/home/galeria_2.jpg" title="" />
-    <GalleryItem src="/pt/images/home/galeria_3.jpg" title="" />
+    <GalleryItem src="/pt/images/home/galeria_2.jpg" title="Knife defense" />
+    <GalleryItem src="/pt/images/home/galeria_3.jpg" title="Car defense" />
   </Gallery>
 </div>
 
 <div className='grid md:grid-cols-2 gap-6 mt-8'>
   <div>
     <Image
-    src="/pt/images/home/mestre-kobi_banner.png"
-    alt="Academias ao redor do mundo."
-    width={800}
-    height={400}
-    className="w-full h-auto"/>
+      src="/pt/images/home/mestre-kobi_banner.png"
+      alt="Schools around the world."
+      width={800}
+      height={400}
+      className="w-full h-auto"/>
   </div>
   <div>
-    <p className='text-center font-semibold text-3xl uppercase'>Grão Mestre Kobi, um dos primeiros alunos de Imi, <span className='text-red-500'>o criador do Krav Maga.</span></p>
+    <p className='text-center font-semibold text-3xl uppercase'>
+      Grandmaster Kobi, one of Imi's first students, <span className='text-red-500'>the creator of Krav Maga.</span>
+    </p>
 
-    Kobi Lichtenstein foi um dos primeiros alunos de Imi, o criador do Krav Maga, com que aprendeu as técnicas, a filosofia e o caminho de vida desta arte. Israelense, ex-combatente do IDF, saiu de sua terra natal e introduziu o Krav Maga na América Latina. Atualmente, com a graduação de 8º dan, supervisiona a prática e a divulgação do Krav Maga em todo o continente.
+    Kobi Lichtenstein was one of Imi’s first students — the creator of Krav Maga — from whom he learned the techniques, philosophy, and life path of this art. An Israeli and former IDF combatant, he left his homeland and introduced Krav Maga in Latin America. Today, holding the rank of 8th dan, he oversees the practice and dissemination of Krav Maga throughout the continent.
 
   </div>
 </div>
 
-## Onde treinar
+## Where to train
 
 <div className="grid md:grid-cols-2 gap-6 mt-8">
   <div className="grid place-items-center">
     <div className="text-center">
-      <p className="text-left text-3xl text-balance my-8">Busque a academia de Krav Maga mais perto de você.</p>
+      <p className="text-left text-3xl text-balance my-8">Find the Krav Maga school nearest to you.</p>
 
-        <Button asChild size="lg" className="bg-red-500 hover:cursor-pointer text-center text-xl"><Link href="/academias">Conheça nossas academias</Link></Button>
+      <Button asChild size="lg" className="bg-red-500 hover:cursor-pointer text-center text-xl">
+        <Link href="/academias">See our schools</Link>
+      </Button>
 
     </div>
 
   </div>
   <div>
-<Image
-  src="/pt/images/home/mapa-home.png"
-  alt="Academias ao redor do mundo."
-  width={800}
-  height={400}
-  className="w-full h-auto"
-        />
-</div>
+    <Image
+      src="/pt/images/home/mapa-home.png"
+      alt="Schools around the world."
+      width={800}
+      height={400}
+      className="w-full h-auto"
+    />
+  </div>
 </div>
 
 <h2 className="my-24 text-center text-3xl uppercase">
-  {`Não é só defesa.`}
+  {`It's not just about defense.`}
   <br />
-  <span className="text-red-500">{`É sobre saber se defender.`}</span>
+  <span className="text-red-500">{`It's about knowing how to defend yourself.`}</span>
 </h2>
 
 <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
   <Testimonial
-    title="Evita-se o confronto quando é possível, mas dele não se foge quando é inevitável."
+    title="Avoid confrontation when possible, but never flee from it when inevitable."
     author="Kobi Lichtenstein"
-    bio="Grão Mestre de Krav Maga"
+    bio="Krav Maga Grandmaster"
   />
   <Testimonial
-    title="É o caminho mais eficaz para imobilizar o agressor sem uso de armas letais."
-    author="Capitão do BOPE"
-    bio="Batalhão de Operações Especiais"
+    title="It’s the most effective way to immobilize an aggressor without using lethal weapons."
+    author="BOPE Captain"
+    bio="Special Operations Battalion"
   />
   <Testimonial
-    title="Você entende que não é porque é menor ou não tem tanta força que alguém pode fazer o que quiser com você."
+    title="You realize that just because you’re smaller or not as strong, it doesn’t mean someone can do whatever they want to you."
     author="Fabiana Soares Vieira"
-    bio="Aluna, Krav Maga"
+    bio="Krav Maga Student"
   />
   <Testimonial
-    title="Hoje ando tranquilo na rua, porque sei o que se passa ao meu redor e estou preparado para me defender."
+    title="Today I walk the streets confidently because I know what’s going on around me and I’m prepared to defend myself."
     author="Leandro Leibel"
-    bio="Aluno, Krav Maga"
+    bio="Krav Maga Student"
   />
 </div>
 
 <div className="mt-24 w-full text-center">
-  <h2 className="my-8 text-center text-3xl font-semibold uppercase">{`Pronto para começar?`}</h2>
+  <h2 className="my-8 text-center text-3xl font-semibold uppercase">{`Ready to get started?`}</h2>
   {/* prettier-ignore */}
-  <Button asChild size="free" className="bg-red-500 hover:cursor-pointer text-center text-xl lg:py-4"><Link href="/academias">Busque um de nossos professores licenciados.</Link></Button>
+  <Button asChild size="free" className="bg-red-500 hover:cursor-pointer text-center text-xl lg:py-4">
+    <Link href="/academias">Find one of our licensed instructors.</Link>
+  </Button>
 </div>
 
 <h2 className="my-24 text-center">
   <span className="text-3xl uppercase">{`Newsletter.`}</span>
   <br />
-  <span className="text-2xl">Inscreva-se para receber informações</span>
+  <span className="text-2xl">Sign up to receive updates</span>
 </h2>
 
 {/* prettier-ignore */}
