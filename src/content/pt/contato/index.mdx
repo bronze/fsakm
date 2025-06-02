@@ -1,0 +1,51 @@
+---
+title: Contato
+layout: full
+toc: false
+---
+
+import {Button} from "@/src/components/ui/button"
+import {GitHubLogoIcon, VercelLogoIcon} from "@radix-ui/react-icons"
+import {Home, Mail, Phone} from "lucide-react"
+
+import Link from "next/link"
+import ContactForm from "@/src/components/contact-form"
+import ContactTemplate from "@/src/components/contacttemplate"
+import {GoogleMapsEmbed} from "@next/third-parties/google"
+
+# Contato
+
+<div className="grid lg:grid-cols-2 gap-8">
+  <div className="space-y-4">
+    <div>
+      <div className="text-xl font-bold">KRAV MAGA</div>
+      <div className="text-xl font-semibold text-orange-500">GRÃO MESTRE KOBI</div>
+    </div>
+
+    <div className="grid grid-cols-[24px_1fr] gap-6 items-start text-sm">
+      <Mail size={20} className="mt-0.5" />
+      <span>kravmaga@kravmaga.com.br</span>
+
+      <Phone size={20} className="mt-0.5" />
+      <span>+55 21 2226-3807</span>
+
+      <Home size={20} className="mt-0.5" />
+      <span>
+        Rua Sorocaba, 258, Botafogo – Rio de Janeiro, RJ, Brasil, 22271-110
+      </span>
+    </div>
+
+    <GoogleMapsEmbed
+      apiKey={process.env.GOOGLEMAPS_API_KEY}
+      height={400}
+      width="100%"
+      mode="place"
+      q="R. Sorocaba, 258 - Botafogo, Rio de Janeiro - RJ, 22271-110"
+    />
+
+  </div>
+
+  <div className="flex place-items-center">
+    <ContactForm />
+  </div>
+</div>

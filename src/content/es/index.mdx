@@ -1,0 +1,188 @@
+---
+title: FSAKM
+layout: "full"
+---
+
+import Image from "next/image"
+import Link from "next/link"
+import {CardLink} from "@/src/components/cardlink"
+import {Gallery, GalleryItem} from "@/src/components/gallery"
+import Hero from "@/src/components/home/hero.es"
+import {Testimonial} from "@/src/components/home/testimonial"
+import {Button} from "@/src/components/ui/button"
+import {YouTubeEmbed} from "@next/third-parties/google"
+
+{/* en componente para salir de las limitaciones del layout de MDX */}
+
+<Hero />
+
+## ¿Quién dijo que no puedes defenderte?
+
+<div className='grid lg:grid-cols-2 gap-6 mt-4'>
+  <div>
+    ### Krav Maga
+
+    Es un sistema de defensa personal creado en Israel por Imi Lichtenfeld, adoptado por fuerzas de seguridad y civiles en todo el mundo. Su objetivo es dar a cualquier persona, sin importar su sexo, edad o condición física, la capacidad de defenderse ante cualquier tipo de agresión: armada o desarmada, contra uno o varios agresores, de pie o en el suelo.
+
+  </div>
+  <div>
+      <YouTubeEmbed videoid="NNb7iYmZfR4"  />
+  </div>
+</div>
+
+<div className="mx-auto mt-24 py-8">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <CardLink
+      title="KRAV MAGA"
+      description="Conozca más sobre la defensa personal del ejército israelí."
+      image="/pt/images/home/kra-maga-1b-2-1.jpg"
+      href="/krav-maga"
+      buttonText="MÁS INFORMACIÓN"
+      layout="button"
+      hover={true}
+      overlay={true}
+    />
+    <CardLink
+      title="NUESTRAS ACADEMIAS"
+      description="Encuentra la academia más cercana y empieza a entrenar en cualquiera de nuestras unidades."
+      image="/pt/images/home/foto-2-academia-1-2-1.jpg"
+      href="/academias"
+      buttonText="MÁS INFORMACIÓN"
+      layout="button"
+      hover={true}
+      overlay={true}
+    />
+    <CardLink
+      title="ENTRENAMIENTO MILITAR"
+      description="Conozca las técnicas utilizadas por fuerzas militares y policiales para protección en situaciones de riesgo."
+      image="/pt/images/home/krav-maga-mestre-kobi-seguranca-militar-1-1.jpg"
+      href="/krav-maga/militar"
+      buttonText="MÁS INFORMACIÓN"
+      layout="button"
+      hover={true}
+      overlay={true}
+    />
+  </div>
+</div>
+
+<h2 className="mt-24 text-center text-3xl uppercase">
+  {`Saber defenderse desarrolla autoconfianza.`}
+  <br />
+  <span className="text-blue-500">{`La autoconfianza desarrolla el coraje.`}</span>
+</h2>
+
+<div className="carousel mx-auto mb-24 py-8">
+  <Gallery>
+    <GalleryItem
+      src="/pt/images/home/galeria_1.jpg"
+      title="Defensa en situaciones urbanas"
+    />
+    <GalleryItem
+      src="/pt/images/home/galeria_2.jpg"
+      title="Defensa contra arma blanca"
+    />
+    <GalleryItem
+      src="/pt/images/home/galeria_3.jpg"
+      title="Defensa dentro del coche"
+    />
+    <GalleryItem
+      src="/pt/images/home/galeria_1.jpg"
+      title="Defensa en situaciones urbanas"
+    />
+    <GalleryItem
+      src="/pt/images/home/galeria_2.jpg"
+      title="Defensa contra arma blanca"
+    />
+    <GalleryItem
+      src="/pt/images/home/galeria_3.jpg"
+      title="Defensa dentro del coche"
+    />
+  </Gallery>
+</div>
+
+<div className='grid md:grid-cols-2 gap-6 mt-8'>
+  <div>
+    <Image
+    src="/pt/images/home/mestre-kobi_banner.png"
+    alt="Academias en todo el mundo."
+    width={800}
+    height={400}
+    className="w-full h-auto"/>
+  </div>
+  <div>
+    <p className='text-center font-semibold text-3xl uppercase'>Gran Maestro Kobi, uno de los primeros alumnos de Imi, <span className='text-red-500'>el creador del Krav Maga.</span></p>
+
+    Kobi Lichtenstein fue uno de los primeros alumnos de Imi, el creador del Krav Maga, con quien aprendió las técnicas, la filosofía y el camino de vida de este arte. Israelí, excombatiente del IDF, salió de su tierra natal e introdujo el Krav Maga en América Latina. Actualmente, con el grado de 8º dan, supervisa la práctica y la difusión del Krav Maga en todo el continente.
+
+  </div>
+</div>
+
+## Dónde entrenar
+
+<div className="grid md:grid-cols-2 gap-6 mt-8">
+  <div className="grid place-items-center">
+    <div className="text-center">
+      <p className="text-left text-3xl text-balance my-8">Busca la academia de Krav Maga más cercana a ti.</p>
+
+        <Button asChild size="lg" className="bg-red-500 hover:cursor-pointer text-center text-xl"><Link href="/academias">Conozca nuestras academias</Link></Button>
+
+    </div>
+
+  </div>
+  <div>
+<Image
+  src="/pt/images/home/mapa-home.png"
+  alt="Academias en todo el mundo."
+  width={800}
+  height={400}
+  className="w-full h-auto"
+/>
+</div>
+</div>
+
+<h2 className="my-24 text-center text-3xl uppercase">
+  {`No es solo defensa.`}
+  <br />
+  <span className="text-red-500">{`Es sobre saber defenderse.`}</span>
+</h2>
+
+<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+  <Testimonial
+    title="Se evita el enfrentamiento cuando es posible, pero no se huye de él cuando es inevitable."
+    author="Kobi Lichtenstein"
+    bio="Gran Maestro de Krav Maga"
+  />
+  <Testimonial
+    title="Es el camino más eficaz para inmovilizar al agresor sin el uso de armas letales."
+    author="Capitán del BOPE"
+    bio="Batallón de Operaciones Especiales"
+  />
+  <Testimonial
+    title="Entiendes que no es porque seas más pequeño o no tengas tanta fuerza que alguien puede hacer lo que quiera contigo."
+    author="Fabiana Soares Vieira"
+    bio="Alumna, Krav Maga"
+  />
+  <Testimonial
+    title="Hoy camino tranquilo por la calle, porque sé lo que pasa a mi alrededor y estoy preparado para defenderme."
+    author="Leandro Leibel"
+    bio="Alumno, Krav Maga"
+  />
+</div>
+
+<div className="mt-24 w-full text-center">
+  <h2 className="my-8 text-center text-3xl font-semibold uppercase">{`¿Listo para comenzar?`}</h2>
+  <Button
+    asChild
+    size="free"
+    className="bg-red-500 text-center text-xl hover:cursor-pointer lg:py-4">
+    <Link href="/academias">
+      Busca uno de nuestros instructores licenciados.
+    </Link>
+  </Button>
+</div>
+
+<h2 className="my-24 text-center">
+  <span className="text-3xl uppercase">{`Newsletter.`}</span>
+  <br />
+  <span className="text-2xl">Suscríbete para recibir información</span>
+</h2>

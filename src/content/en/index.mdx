@@ -1,0 +1,180 @@
+---
+title: FSAKM
+layout: "full"
+---
+
+import Image from "next/image"
+import Link from "next/link"
+import {CardLink} from "@/src/components/cardlink"
+import {Gallery, GalleryItem} from "@/src/components/gallery"
+import Hero from "@/src/components/home/hero.en"
+import {Button} from "@/src/components/ui/button"
+import {YouTubeEmbed} from "@next/third-parties/google"
+
+import {Testimonial} from "@/src/components/home/testimonial"
+
+{/* component used to bypass MDX layout limitations */}
+
+<Hero />
+
+## Who said you can't defend yourself?
+
+<div className='grid lg:grid-cols-2 gap-6 mt-4'>
+  <div>
+    ### Krav Maga
+
+    Krav Maga is a self-defense system created in Israel by Imi Lichtenfeld, already adopted by security forces and civilians around the world. Its goal is to give anyone — regardless of gender, age, or physical condition — the ability to defend themselves against any kind of aggression: armed or unarmed, against one or multiple attackers, standing or on the ground.
+
+  </div>
+  <div>
+      <YouTubeEmbed videoid="NNb7iYmZfR4"  />
+  </div>
+</div>
+
+<div className="mx-auto mt-24 py-8">
+  <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <CardLink
+      title="KRAV MAGA"
+      description="Learn more about the self-defense system used by the Israeli army."
+      image="/pt/images/home/kra-maga-1b-2-1.jpg"
+      href="/krav-maga"
+      buttonText="LEARN MORE"
+      layout="button"
+      hover={true}
+      overlay={true}
+    />
+    <CardLink
+      title="OUR SCHOOLS"
+      description="Find the nearest school and start training at any of our locations."
+      image="/pt/images/home/foto-2-academia-1-2-1.jpg"
+      href="/academias"
+      buttonText="LEARN MORE"
+      layout="button"
+      hover={true}
+      overlay={true}
+    />
+    <CardLink
+      title="MILITARY TRAINING"
+      description="Explore the techniques used by military and police forces for protection in high-risk situations."
+      image="/pt/images/home/krav-maga-mestre-kobi-seguranca-militar-1-1.jpg"
+      href="/krav-maga/militar"
+      buttonText="LEARN MORE"
+      layout="button"
+      hover={true}
+      overlay={true}
+    />
+  </div>
+</div>
+
+<h2 className="mt-24 text-center text-3xl uppercase">
+  {`Knowing how to defend yourself builds self-confidence.`}
+  <br />
+  <span className="text-blue-500">{`Self-confidence builds courage.`}</span>
+</h2>
+
+<div className="carousel mx-auto mb-24 py-8">
+  <Gallery>
+    <GalleryItem
+      src="/pt/images/home/galeria_1.jpg"
+      title="Defense in a street situation"
+    />
+    <GalleryItem src="/pt/images/home/galeria_2.jpg" title="Knife defense" />
+    <GalleryItem src="/pt/images/home/galeria_3.jpg" title="Car defense" />
+    <GalleryItem
+      src="/pt/images/home/galeria_1.jpg"
+      title="Defense in a street situation"
+    />
+    <GalleryItem src="/pt/images/home/galeria_2.jpg" title="Knife defense" />
+    <GalleryItem src="/pt/images/home/galeria_3.jpg" title="Car defense" />
+  </Gallery>
+</div>
+
+<div className='grid md:grid-cols-2 gap-6 mt-8'>
+  <div>
+    <Image
+      src="/pt/images/home/mestre-kobi_banner.png"
+      alt="Schools around the world."
+      width={800}
+      height={400}
+      className="w-full h-auto"/>
+  </div>
+  <div>
+    <p className='text-center font-semibold text-3xl uppercase'>
+      Grandmaster Kobi, one of Imi's first students, <span className='text-red-500'>the creator of Krav Maga.</span>
+    </p>
+
+    Kobi Lichtenstein was one of Imi’s first students — the creator of Krav Maga — from whom he learned the techniques, philosophy, and life path of this art. An Israeli and former IDF combatant, he left his homeland and introduced Krav Maga in Latin America. Today, holding the rank of 8th dan, he oversees the practice and dissemination of Krav Maga throughout the continent.
+
+  </div>
+</div>
+
+## Where to train
+
+<div className="grid md:grid-cols-2 gap-6 mt-8">
+  <div className="grid place-items-center">
+    <div className="text-center">
+      <p className="text-left text-3xl text-balance my-8">Find the Krav Maga school nearest to you.</p>
+
+      <Button asChild size="lg" className="bg-red-500 hover:cursor-pointer text-center text-xl">
+        <Link href="/academias">See our schools</Link>
+      </Button>
+
+    </div>
+
+  </div>
+  <div>
+    <Image
+      src="/pt/images/home/mapa-home.png"
+      alt="Schools around the world."
+      width={800}
+      height={400}
+      className="w-full h-auto"
+    />
+  </div>
+</div>
+
+<h2 className="my-24 text-center text-3xl uppercase">
+  {`It's not just about defense.`}
+  <br />
+  <span className="text-red-500">{`It's about knowing how to defend yourself.`}</span>
+</h2>
+
+<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+  <Testimonial
+    title="Avoid confrontation when possible, but never flee from it when inevitable."
+    author="Kobi Lichtenstein"
+    bio="Krav Maga Grandmaster"
+  />
+  <Testimonial
+    title="It’s the most effective way to immobilize an aggressor without using lethal weapons."
+    author="BOPE Captain"
+    bio="Special Operations Battalion"
+  />
+  <Testimonial
+    title="You realize that just because you’re smaller or not as strong, it doesn’t mean someone can do whatever they want to you."
+    author="Fabiana Soares Vieira"
+    bio="Krav Maga Student"
+  />
+  <Testimonial
+    title="Today I walk the streets confidently because I know what’s going on around me and I’m prepared to defend myself."
+    author="Leandro Leibel"
+    bio="Krav Maga Student"
+  />
+</div>
+
+<div className="mt-24 w-full text-center">
+  <h2 className="my-8 text-center text-3xl font-semibold uppercase">{`Ready to get started?`}</h2>
+  {/* prettier-ignore */}
+  <Button asChild size="free" className="bg-red-500 hover:cursor-pointer text-center text-xl lg:py-4">
+    <Link href="/academias">Find one of our licensed instructors.</Link>
+  </Button>
+</div>
+
+<h2 className="my-24 text-center">
+  <span className="text-3xl uppercase">{`Newsletter.`}</span>
+  <br />
+  <span className="text-2xl">Sign up to receive updates</span>
+</h2>
+
+{/* prettier-ignore */}
+{/* https://jasongerbes.com/blog/mdx-remove-unwanted-paragraph-tags */}

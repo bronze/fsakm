@@ -1,3 +1,10 @@
+dist
+node_modules
+.next
+build
+.contentlayer
+registry/__index__.tsx
+
 pnpm-lock.yaml
 .changeset/*.md
 CHANGELOG.md
@@ -13,3 +20,6 @@ docs/app/docs/guide/syntax-highlighting/page.mdx
 # contains mdx comments
 docs/app/docs/blog-theme/start/page.mdx
 types.generated.ts
+
+# Ignore all MDX files to prevent unwanted JSX line wrapping
+# *.mdx
