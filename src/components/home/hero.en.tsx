@@ -84,7 +84,7 @@ export default function KravMagaHero() {
           </div>
 
           {/* Right Column - Video/Image */}
-          <div className="relative">
+          <div className="relative hidden lg:block">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
               <Image
                 src="/pt/images/home/mestre_kobi-hero.png"
