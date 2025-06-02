@@ -4,6 +4,8 @@ import {Footer, Layout, Navbar, ThemeSwitch} from "nextra-theme-docs"
 import {Banner, Head, Search} from "nextra/components"
 import {getPageMap} from "nextra/page-map"
 
+import {PostHogProvider} from "./providers"
+
 import "../../styles/global.css"
 import "nextra-theme-docs/style.css"
 
@@ -155,53 +157,55 @@ export default async function RootLayout({children, params}) {
         />
       </Head>
       <BodyWithPageClass>
-        <Layout
-          i18n={[
-            {locale: "en", name: "English"},
-            {locale: "es", name: "Español"},
-            {locale: "pt", name: "Português"},
-          ]}
-          // banner={banner}
-          navbar={navbar}
-          // Example: To customize the search input placeholder
-          search={null}
-          editLink={null}
-          feedback={{
-            content: null,
-          }}
-          sidebar={{
-            defaultMenuCollapseLevel: 1,
-            autoCollapse: true,
-          }}
-          pageMap={await getPageMap(`/${lang}`)}
-          // docsRepositoryBase="https://github.com/phucbm/nextra-docs-starter/tree/main"
-          toc={{
-            backToTop: dictionary.backToTop,
-            title: dictionary.tocTitle,
-          }}
-          footer={footer}
-          // ... Your additional layout options
-        >
-          <main className="w-full h-full flex flex-col">
-            <header className="w-full  ">
-              <div className="mx-auto gap-8 flex items-center x:max-w-(--nextra-content-width) place-content-end p-4">
-                <div className="group transition-all duration-300 ease-in-out w-64 focus-within:w-96">
-                  <Search
-                    emptyResult={dictionary.searchEmptyResult}
-                    errorText={dictionary.searchError}
-                    loading={dictionary.searchLoading}
-                    placeholder={dictionary.searchPlaceholder}
-                    className="searchinput" // Garante que o Search preencha o container
-                  />
-                </div>
+        <PostHogProvider>
+          <Layout
+            i18n={[
+              {locale: "en", name: "English"},
+              {locale: "es", name: "Español"},
+              {locale: "pt", name: "Português"},
+            ]}
+            // banner={banner}
+            navbar={navbar}
+            // Example: To customize the search input placeholder
+            search={null}
+            editLink={null}
+            feedback={{
+              content: null,
+            }}
+            sidebar={{
+              defaultMenuCollapseLevel: 1,
+              autoCollapse: true,
+            }}
+            pageMap={await getPageMap(`/${lang}`)}
+            // docsRepositoryBase="https://github.com/phucbm/nextra-docs-starter/tree/main"
+            toc={{
+              backToTop: dictionary.backToTop,
+              title: dictionary.tocTitle,
+            }}
+            footer={footer}
+            // ... Your additional layout options
+          >
+            <main className="w-full h-full flex flex-col">
+              <header className="w-full  ">
+                <div className="mx-auto gap-8 flex items-center x:max-w-(--nextra-content-width) place-content-end p-4">
+                  <div className="group transition-all duration-300 ease-in-out w-64 focus-within:w-96">
+                    <Search
+                      emptyResult={dictionary.searchEmptyResult}
+                      errorText={dictionary.searchError}
+                      loading={dictionary.searchLoading}
+                      placeholder={dictionary.searchPlaceholder}
+                      className="searchinput" // Garante que o Search preencha o container
+                    />
+                  </div>
 
-                <div>{SocialLinks}</div>
-              </div>
-            </header>
-            <div>{children}</div>
-          </main>
-        </Layout>
-        <Toaster />
+                  <div>{SocialLinks}</div>
+                </div>
+              </header>
+              <div>{children}</div>
+            </main>
+          </Layout>
+          <Toaster />
+        </PostHogProvider>
       </BodyWithPageClass>
     </html>
   )
