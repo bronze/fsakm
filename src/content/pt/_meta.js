@@ -38,6 +38,10 @@ module.exports={
   blog: {
     title: "Blog",
     type: "page",
+    theme: {
+      sidebar: false,
+      typesetting: 'article'
+    }
   },
   contato: {
     title: "Contato",

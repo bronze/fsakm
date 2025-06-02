@@ -5,8 +5,23 @@ import {getPageMap} from "nextra/page-map"
 
 export const Blog: FC<{lang: string}> = async ({lang}) => {
   const pageMap = (await getPageMap(`/${lang}/blog`)) as unknown as MdxFile[]
-  return pageMap.map(page => {
-    if (page.name === "index") return
+
+  const filteredPages = pageMap.filter(page => page.name !== "index")
+
+  for (const page of filteredPages) {
+    console.log(
+      `[DEBUG] ${page.name} → ${page.frontMatter?.date} →`,
+      new Date(page.frontMatter?.date ?? 0).toISOString()
+    )
+  }
+
+  const sortedPages = filteredPages.sort((a, b) => {
+    const dateA = new Date(a.frontMatter?.date ?? 0).getTime()
+    const dateB = new Date(b.frontMatter?.date ?? 0).getTime()
+    return dateB - dateA
+  })
+
+  return sortedPages.map(page => {
     const {title, description, date} = page.frontMatter!
 
     return (

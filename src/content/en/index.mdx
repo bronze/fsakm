@@ -1,53 +1,146 @@
 ---
-title: Teste FSAKM
+title: FSAKM
+layout: "full"
 ---
 
-import {Steps} from "nextra/components";
+import Image from "next/image"
+import Link from "next/link"
+import {Gallery, GalleryItem} from "@/src/components/gallery"
+import Cards from "@/src/components/home/cards"
+import Hero from "@/src/components/home/hero"
+import {Button} from "@/src/components/ui/button"
+import {YouTubeEmbed} from "@next/third-parties/google"
 
-## Introdução ENGLISH
+import {Testimonial} from "@/src/components/home/testimonial"
 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+{/* em componente pra sair das limitações de layout do mdx */}
 
-## What is Nextra?
+<Hero />
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+## Quem disse que você não pode se defender?
 
-## Documentation
+<div className='grid lg:grid-cols-2 gap-6 mt-4'>
+  <div>
+    ### Krav Maga
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+    É a defesa pessoal criada em Israel por Imi Lichtenfeld, já adotada por forças de segurança e civis no
+    mundo inteiro. Tem o objetivo de dar a qualquer pessoa, independente de sexo, idade ou porte físico, a capacidade de
+    se defender contra qualquer tipo de agressão: armada ou desarmada, contra um ou vários agressores, em pé ou no chão.
 
-## Nextra Docs Starter
+  </div>
+  <div>
+      <YouTubeEmbed videoid="NNb7iYmZfR4"  />
+  </div>
+</div>
 
-This starter template includes the following features:
+<Cards />
 
-[**Live Demo →**](https://nextra-docs-starter.vercel.app)
+<h2 className="mt-24 text-center text-3xl uppercase">
+  {`Saber se defender desenvolve autoconfiança.`}
+  <br />
+  <span className="text-blue-500">{`Autoconfiança desenvolve coragem.`}</span>
+</h2>
 
-[**Check this on GitHub →**](https://github.com/phucbm/nextra-docs-starter)
+<div className="carousel mx-auto mb-24 py-8">
+  <Gallery>
+    <GalleryItem
+      src="/pt/images/home/galeria_1.jpg"
+      title="Defesa em situação de rua"
+    />
+    <GalleryItem
+      src="/pt/images/home/galeria_2.jpg"
+      title="Defesa de arma branca"
+    />
+    <GalleryItem
+      src="/pt/images/home/galeria_3.jpg"
+      title="Defesa dentro do carro"
+    />
+    <GalleryItem src="/pt/images/home/galeria_1.jpg" title="" />
+    <GalleryItem src="/pt/images/home/galeria_2.jpg" title="" />
+    <GalleryItem src="/pt/images/home/galeria_3.jpg" title="" />
+  </Gallery>
+</div>
 
-## Quick Start
+<div className='grid md:grid-cols-2 gap-6 mt-8'>
+  <div>
+    <Image
+    src="/pt/images/home/mestre-kobi_banner.png"
+    alt="Academias ao redor do mundo."
+    width={800}
+    height={400}
+    className="w-full h-auto"/>
+  </div>
+  <div>
+    <p className='text-center font-semibold text-3xl uppercase'>Grão Mestre Kobi, um dos primeiros alunos de Imi, <span className='text-red-500'>o criador do Krav Maga.</span></p>
 
-You can deploy this template on Vercel by clicking the button below
+    Kobi Lichtenstein foi um dos primeiros alunos de Imi, o criador do Krav Maga, com que aprendeu as técnicas, a filosofia e o caminho de vida desta arte. Israelense, ex-combatente do IDF, saiu de sua terra natal e introduziu o Krav Maga na América Latina. Atualmente, com a graduação de 8º dan, supervisiona a prática e a divulgação do Krav Maga em todo o continente.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fphucbm%2Fnextra-docs-starter)
+  </div>
+</div>
 
-Or you can follow the steps below to clone the repository and run it locally.
+## Onde treinar
 
-<Steps>
-    ### Clone this repository
+<div className="grid md:grid-cols-2 gap-6 mt-8">
+  <div className="grid place-items-center">
+    <div className="text-center">
+      <p className="text-left text-3xl text-balance my-8">Busque a academia de Krav Maga mais perto de você.</p>
 
-    Using the GitHub CLI:
-    ```bash
-    gh repo clone phucbm/nextra-docs-starter
-    ```
+        <Button asChild size="lg" className="bg-red-500 hover:cursor-pointer text-center text-xl"><Link href="/academias">Conheça nossas academias</Link></Button>
 
-    ### Install
-    ```bash
-    pnpm i
-    ```
+    </div>
 
-    ### Run the development server
-    ```bash
-    pnpm dev
-    ```
+  </div>
+  <div>
+<Image
+  src="/pt/images/home/mapa-home.png"
+  alt="Academias ao redor do mundo."
+  width={800}
+  height={400}
+  className="w-full h-auto"
+        />
+</div>
+</div>
 
-</Steps>
+<h2 className="my-24 text-center text-3xl uppercase">
+  {`Não é só defesa.`}
+  <br />
+  <span className="text-red-500">{`É sobre saber se defender.`}</span>
+</h2>
+
+<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+  <Testimonial
+    title="Evita-se o confronto quando é possível, mas dele não se foge quando é inevitável."
+    author="Kobi Lichtenstein"
+    bio="Grão Mestre de Krav Maga"
+  />
+  <Testimonial
+    title="É o caminho mais eficaz para imobilizar o agressor sem uso de armas letais."
+    author="Capitão do BOPE"
+    bio="Batalhão de Operações Especiais"
+  />
+  <Testimonial
+    title="Você entende que não é porque é menor ou não tem tanta força que alguém pode fazer o que quiser com você."
+    author="Fabiana Soares Vieira"
+    bio="Aluna, Krav Maga"
+  />
+  <Testimonial
+    title="Hoje ando tranquilo na rua, porque sei o que se passa ao meu redor e estou preparado para me defender."
+    author="Leandro Leibel"
+    bio="Aluno, Krav Maga"
+  />
+</div>
+
+<div className="mt-24 w-full text-center">
+  <h2 className="my-8 text-center text-3xl font-semibold uppercase">{`Pronto para começar?`}</h2>
+  {/* prettier-ignore */}
+  <Button asChild size="free" className="bg-red-500 hover:cursor-pointer text-center text-xl lg:py-4"><Link href="/academias">Busque um de nossos professores licenciados.</Link></Button>
+</div>
+
+<h2 className="my-24 text-center">
+  <span className="text-3xl uppercase">{`Newsletter.`}</span>
+  <br />
+  <span className="text-2xl">Inscreva-se para receber informações</span>
+</h2>
+
+{/* prettier-ignore */}
+{/* https://jasongerbes.com/blog/mdx-remove-unwanted-paragraph-tags */}
