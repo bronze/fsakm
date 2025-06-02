@@ -70,9 +70,9 @@ export function CardLink({
             <Button
               variant="default"
               size="lg"
-              className="bg-blue-600 group-hover:bg-blue-700 text-white font-semibold py-3 px-6 w-full @lg:w-fit transition-all duration-300  cursor-pointer">
+              className="bg-blue-600 group-hover:bg-blue-700 text-white font-semibold py-3 px-6 w-full @sm:w-fit transition-all duration-300  cursor-pointer">
               {buttonText}
-              <ArrowRight className="hidden @md:block ml-2" />
+              <ArrowRight className="hidden @sm:block ml-2" />
             </Button>
           )}
           {layout === "bottom" && (
