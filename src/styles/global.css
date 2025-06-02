@@ -221,3 +221,9 @@ p:has(+ ul) {
 p + ul {
   margin-top: 0;
 }
+.nextra-navbar {
+  z-index: 99 !important;
+}
+.nextra-mobile-nav {
+  z-index: 88 !important;
+}
