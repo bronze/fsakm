@@ -10,26 +10,19 @@ module.exports={
   },
   mestre_kobi: {
     type: "page",
-    title: 'Grão Mestre Kobi',
-    href: '/federacao/instrutores/grao-mestre-kobi'
+    title: "Grandmaster Kobi",
+    href: "/federacao/instrutores/grao-mestre-kobi"
   },
-  // "grao-mestre-kobi": {
-  //   title: "Grão Mestre Kobi",
-  //   type: "page",
-  //   theme: {
-  //     sidebar: false, // Hide navbar on this page
-  //   },
-  // },
   "krav-maga": {
     title: "Krav Maga",
     type: "page",
   },
   federacao: {
-    title: "Federação",
+    title: "Federation",
     type: "page",
   },
   academias: {
-    title: "Academias",
+    title: "Schools",
     type: "page",
     theme: {
       sidebar: true,
@@ -40,19 +33,19 @@ module.exports={
     type: "page",
     theme: {
       sidebar: false,
-      typesetting: 'article'
+      typesetting: "article"
     }
   },
   contato: {
-    title: "Contato",
+    title: "Contact",
     type: "page",
     theme: {
-      sidebar: false, // Hide navbar on this page
+      sidebar: false,
       layout: "full",
     },
   },
   "area-do-aluno": {
-    title: "Área do Aluno",
+    title: "Student Area",
     type: "page",
     href: "https://intranetfsakm.com.br/",
   },
