@@ -87,8 +87,9 @@ export default function KravMagaHero() {
           <div className="relative hidden lg:block">
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
               <Image
+                priority={true}
                 src="/pt/images/home/mestre_kobi-hero.png"
-                alt="Master Kobi demonstrating Krav Maga technique"
+                alt="Master Kobi"
                 fill
                 className="object-contain"
               />
