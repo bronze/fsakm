@@ -67,6 +67,7 @@ const SocialLinks = (
   <div className="grid grid-cols-3 gap-4">
     <a
       href="https://www.instagram.com/kravmaga_mestrekobi/"
+      title="Instagram"
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded group transition">
@@ -74,6 +75,7 @@ const SocialLinks = (
     </a>
     <a
       href="https://www.facebook.com/kravmagamestrekobi/"
+      title="Facebook"
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded group transition">
@@ -81,6 +83,7 @@ const SocialLinks = (
     </a>
     <a
       href="https://www.youtube.com/@kravmagamestrekobi/"
+      title="Youtube"
       target="_blank"
       rel="noopener noreferrer"
       className="flex items-center justify-center w-10 h-10 hover:bg-gray-200 dark:hover:bg-gray-700 rounded group transition ">
