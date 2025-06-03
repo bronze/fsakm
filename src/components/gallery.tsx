@@ -173,13 +173,17 @@ export function Gallery({children, dictionary}: GalleryProps) {
             </Button>
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex gap-2 h-6 items-end align-middle overflow-hidden">
             {Array.from({length: count}, (_, index) => (
               <button
                 key={index}
                 aria-label={`Ir para slide ${index + 1}${images?.[index]?.title ? `: ${images[index].title}` : ""}`}
+                style={{
+                  width: `${100 / count}%`,
+                }}
                 className={cn(
-                  "h-2 w-2 rounded-full transition-colors",
+                  "rounded-full transition-colors",
+                  "aspect-square h-full min-w-[8px] max-w-[24px] grow shrink",
                   index + 1 === current
                     ? "bg-primary"
                     : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
