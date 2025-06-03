@@ -1,7 +1,7 @@
 const es = {
   gallery: {
-    PreviousImage: "Previous Image",
-    NextImage: "Next Image",
+    PreviousImage: "Imagen anterior",
+    NextImage: "Imagen siguiente",
   },
   dark: "Oscuro",
   light: "Luz",
