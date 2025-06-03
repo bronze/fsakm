@@ -9,19 +9,10 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/src/components/ui/carousel"
-import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/src/components/ui/dialog"
+import {Dialog, DialogContent} from "@/src/components/ui/dialog"
 import {cn} from "@/src/lib/utils"
 import ClassNames from "embla-carousel-class-names"
-import {ChevronLeft, ChevronRight, X} from "lucide-react"
+import {ChevronLeft, ChevronRight} from "lucide-react"
 
 interface GalleryItemProps {
   src: string
@@ -32,6 +23,7 @@ interface GalleryItemProps {
 
 interface GalleryProps {
   children: React.ReactElement<Partial<GalleryItemProps>>[]
+  dictionary: any
 }
 
 interface GalleryContextType {
@@ -71,7 +63,7 @@ export function GalleryItem({src, title, index, galleryId}: GalleryItemProps) {
   )
 }
 
-export function Gallery({children}: GalleryProps) {
+export function Gallery({children, dictionary}: GalleryProps) {
   const galleryId = React.useId()
   const [lightboxOpen, setLightboxOpen] = React.useState(false)
   const [currentImageIndex, setCurrentImageIndex] = React.useState(0)
@@ -79,6 +71,9 @@ export function Gallery({children}: GalleryProps) {
   const [mainApi, setMainApi] = React.useState<CarouselApi>()
   const [current, setCurrent] = React.useState(0)
   const [count, setCount] = React.useState(0)
+
+  const previousLabel = dictionary?.gallery?.PreviousImage || "Imagem anterior"
+  const nextLabel = dictionary?.gallery?.NextImage || "Próxima imagem"
 
   const images = React.useMemo(() => {
     return React.Children.map(children, child => ({
@@ -117,7 +112,7 @@ export function Gallery({children}: GalleryProps) {
     const onSelect = () => {
       const selected = api.selectedScrollSnap()
       setCurrentImageIndex(selected)
-      mainApi?.scrollTo(selected) // sincroniza carousel principal
+      mainApi?.scrollTo(selected)
     }
 
     api.on("select", onSelect)
@@ -147,9 +142,6 @@ export function Gallery({children}: GalleryProps) {
               <CarouselItem
                 key={index}
                 className="slide pl-2 md:pl-4 basis-[60%] @lg:basis-[50%]  @2xl:basis-[40%] @4xl:basis-[25%]">
-                {/* @lg:bg-green-200 @2xl:bg-yellow-200 @4xl:bg-red-200 */}
-                {/* https://tailwindcss.com/docs/responsive-design#container-size-reference */}
-                {/* slide pl-2 md:pl-4 md:basis-2/3 lg:basis-1/2 */}
                 {React.cloneElement(child, {
                   index,
                   galleryId,
@@ -162,6 +154,7 @@ export function Gallery({children}: GalleryProps) {
         <div className="flex items-center justify-between mt-4">
           <div className="flex items-center gap-2">
             <Button
+              aria-label={previousLabel}
               variant="outline"
               size="icon"
               className="h-10 w-10 rounded-full"
@@ -170,6 +163,7 @@ export function Gallery({children}: GalleryProps) {
               <ChevronLeft className="h-4 w-4" />
             </Button>
             <Button
+              aria-label={nextLabel}
               variant="outline"
               size="icon"
               className="h-10 w-10 rounded-full"
@@ -183,6 +177,7 @@ export function Gallery({children}: GalleryProps) {
             {Array.from({length: count}, (_, index) => (
               <button
                 key={index}
+                aria-label={`Ir para slide ${index + 1}${images?.[index]?.title ? `: ${images[index].title}` : ""}`}
                 className={cn(
                   "h-2 w-2 rounded-full transition-colors",
                   index + 1 === current
@@ -197,21 +192,7 @@ export function Gallery({children}: GalleryProps) {
 
         <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
           <DialogContent className="max-w-7xl w-full p-0 bg-black/95 border-none">
-            {/* <DialogHeader>
-              <DialogTitle>Share link</DialogTitle>
-              <DialogDescription>
-                Anyone who has this link will be able to view this.
-              </DialogDescription>
-            </DialogHeader> */}
             <div className="relative w-full h-full flex items-center justify-center">
-              {/* <Button
-                variant="ghost"
-                size="icon"
-                className="absolute top-4 right-4 z-50 text-white hover:bg-white/20"
-                onClick={closeLightbox}>
-                <X className="h-6 w-6" />
-              </Button> */}
-
               <Carousel
                 setApi={setLightboxApi}
                 className="w-full h-full max-w-[90vw]"
@@ -242,6 +223,7 @@ export function Gallery({children}: GalleryProps) {
                 </CarouselContent>
 
                 <Button
+                  aria-label={previousLabel}
                   variant="ghost"
                   size="icon"
                   className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 h-12 w-12"
@@ -249,6 +231,7 @@ export function Gallery({children}: GalleryProps) {
                   <ChevronLeft className="h-8 w-8" />
                 </Button>
                 <Button
+                  aria-label={nextLabel}
                   variant="ghost"
                   size="icon"
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:bg-white/20 h-12 w-12"

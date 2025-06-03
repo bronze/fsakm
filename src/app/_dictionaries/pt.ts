@@ -1,6 +1,10 @@
 const pt = {
-  dark: "Dark",
-  light: "Light",
+  gallery: {
+    PreviousImage: "Imagem Anterior",
+    NextImage: "Próxima Imagem",
+  },
+  dark: "Escuro",
+  light: "Claro",
   system: "System",
   backToTop: "Rolagem para cima...",
   tocTitle: "Acesso rápido:",

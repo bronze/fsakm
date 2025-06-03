@@ -1,4 +1,8 @@
 const en = {
+  gallery: {
+    PreviousImage: "Previous Image",
+    NextImage: "Next Image",
+  },
   dark: "Dark",
   light: "Light",
   system: "System",
