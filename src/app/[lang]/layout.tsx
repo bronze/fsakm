@@ -125,7 +125,7 @@ function createFooter(dictionary) {
             {SocialLinks}
           </div>
           <div data-slot="footer-column" className="flex flex-col gap-4">
-            <h3 className="text-md pt-1 font-semibold">&nbsp;</h3>
+            <span className="text-md pt-1 font-semibold">&nbsp;</span>
             <a
               href="/federacao/instrutores/grao-mestre-kobi"
               className="text-muted-foreground text-sm">
