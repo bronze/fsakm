@@ -23,11 +23,18 @@ export function LanguageToggle() {
 
   const handleLanguageChange = (lang: string) => {
     const segments = pathname.split("/")
-    if (languages.some(l => l.code === segments[1])) {
+    const hasLocale = languages.some(l => l.code === segments[1])
+
+    if (lang === "pt") {
+      if (hasLocale) {
+        segments.splice(1, 1)
+      }
+    } else if (hasLocale) {
       segments[1] = lang
     } else {
       segments.splice(1, 0, lang)
     }
+
     const newPath = segments.join("/")
     // Set NEXT_LOCALE cookie for 1 year
     const date = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)

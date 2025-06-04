@@ -9,8 +9,7 @@ const DEFAULT_LOCALE = "pt"
 const MIDDLEWARE_HEADER = "X-From-Middleware"
 
 export function middleware(req: NextRequest) {
-  const url = req.nextUrl
-  const {pathname} = url
+  const {pathname} = req.nextUrl
 
   if (req.headers.get(MIDDLEWARE_HEADER)) {
     return NextResponse.next()
@@ -21,13 +20,18 @@ export function middleware(req: NextRequest) {
     return NextResponse.next()
   }
 
-  // Try to get the locale from the cookie
-  const cookieLocale = req.cookies.get("NEXT_LOCALE")?.value
+    if (locale === DEFAULT_LOCALE) {
+      return NextResponse.rewrite(url)
+    }
 
-  // Use cookie locale if valid, otherwise default
-  const locale = SUPPORTED_LOCALES.includes(cookieLocale ?? "")
-    ? cookieLocale
-    : DEFAULT_LOCALE
+    return NextResponse.redirect(url)
+  }
+
+  if (pathLocale === DEFAULT_LOCALE) {
+    const url = req.nextUrl.clone()
+    url.pathname = pathname.replace(`/${DEFAULT_LOCALE}`, "") || "/"
+    return NextResponse.redirect(url)
+  }
 
   url.pathname = `/${locale}${pathname}`
   url.locale = locale
