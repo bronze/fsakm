@@ -345,7 +345,7 @@ export default async function RootLayout({children, params}) {
             >
               <main className="w-full h-full flex flex-col">
                 <header className="w-full  ">
-                  <div className="mx-auto gap-8 flex items-center x:max-w-(--nextra-content-width) place-content-end p-4">
+                  <div className="mx-auto gap-8 flex items-center x:max-w-(--nextra-content-width) place-content-end pl-[max(env(safe-area-inset-left),1.5rem)] pr-[max(env(safe-area-inset-right),1.5rem)] py-2">
                     <div className="group transition-all duration-300 ease-in-out w-64 focus-within:w-96">
                       <Search
                         emptyResult={dictionary.searchEmptyResult}
@@ -355,7 +355,6 @@ export default async function RootLayout({children, params}) {
                         className="searchinput" // Garante que o Search preencha o container
                       />
                     </div>
-
                     <div>{SocialLinks}</div>
                   </div>
                 </header>

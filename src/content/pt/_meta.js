@@ -1,4 +1,18 @@
 module.exports={
+  company: {
+    title: 'Company',
+    type: 'menu',
+    items: {
+      about: {
+        title: 'About',
+        href: '/about'
+      },
+      contact: {
+        title: 'Contact Us',
+        href: 'mailto:hi@example.com'
+      }
+    }
+  },
   index: {
     type: "page",
     display: "hidden",
