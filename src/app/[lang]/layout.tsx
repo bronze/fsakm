@@ -126,91 +126,149 @@ function createFooter(dictionary) {
           </div>
           <div data-slot="footer-column" className="flex flex-col gap-4">
             <h3 className="text-md pt-1 font-semibold">&nbsp;</h3>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/federacao/instrutores/grao-mestre-kobi"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.graomestrekobi}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a href="/blog" className="text-muted-foreground text-sm">
               {dictionary.pages.blog}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a href="/contato" className="text-muted-foreground text-sm">
               {dictionary.pages.contato}
             </a>
           </div>
           <div data-slot="footer-column" className="flex flex-col gap-4">
             <h3 className="text-md pt-1 font-semibold">
-              {dictionary.pages.kravmaga.index}
+              <a href="/krav-maga" className="">
+                {dictionary.pages.kravmaga.index}
+              </a>
             </h3>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/krav-maga/criador"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.kravmaga.criador}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/krav-maga/historia"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.kravmaga.historia}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/krav-maga/linha-do-tempo"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.kravmaga.linhadotempo}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/krav-maga/faixas"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.kravmaga.faixas}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/krav-maga/tecnicas-especiais"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.kravmaga.tecnicasespeciais}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/krav-maga/israel"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.kravmaga.israel}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/krav-maga/militar"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.kravmaga.militar}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/krav-maga/galeria"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.kravmaga.galeria}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/krav-maga/midia"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.kravmaga.midia}
             </a>
           </div>
           <div data-slot="footer-column" className="flex flex-col gap-4">
             <h3 className="text-md pt-1 font-semibold">
-              {dictionary.pages.federacao.index}
+              <a href="/federacao/">{dictionary.pages.federacao.index}</a>
             </h3>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/federacao/instrutores"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.federacao.instrutores}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/federacao/formacao-de-instrutores"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.federacao.formacao}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/federacao/centro-de-treinamento"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.federacao.centrodetreinamento}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/federacao/seminarios-e-treinos-especiais"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.federacao.seminarios}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/federacao/palestras"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.federacao.palestras}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a href="/federacao/blog" className="text-muted-foreground text-sm">
               {dictionary.pages.blog}
             </a>
           </div>
           <div data-slot="footer-column" className="flex flex-col gap-4">
             <h3 className="text-md pt-1 font-semibold">
-              {dictionary.pages.academias.index}
+              <a href="/academias/">{dictionary.pages.academias.index}</a>
             </h3>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/academias/brasil"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.academias.brasil}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            {/* <span className="text-muted-foreground text-xs">
+              <div className="mx-auto ">
+                <div className="relative">
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-gray-300 dark:border-gray-700"></div>
+                  </div>
+                  <div className="relative flex justify-start">
+                    <span className="bg-gray-100 dark:bg-neutral-900 pr-1">
+                      {dictionary.pages.academias.outrospaises}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </span> */}
+            <a
+              href="/academias/argentina"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.academias.argentina}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/academias/canada"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.academias.canada}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/academias/mexico"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.academias.mexico}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a
+              href="/academias/portugal"
+              className="text-muted-foreground text-sm">
               {dictionary.pages.academias.portugal}
             </a>
-            <a href="#" className="text-muted-foreground text-sm">
+            <a href="/academias/usa" className="text-muted-foreground text-sm">
               {dictionary.pages.academias.usa}
             </a>
           </div>
