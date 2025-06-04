@@ -6,22 +6,19 @@ import {NextRequest, NextResponse} from "next/server"
 
 const SUPPORTED_LOCALES = ["pt", "en", "es"]
 const DEFAULT_LOCALE = "pt"
+const MIDDLEWARE_HEADER = "X-From-Middleware"
 
 export function middleware(req: NextRequest) {
   const {pathname} = req.nextUrl
 
-  const pathLocale = SUPPORTED_LOCALES.find(
-    l => pathname === `/${l}` || pathname.startsWith(`/${l}/`),
-  )
+  if (req.headers.get(MIDDLEWARE_HEADER)) {
+    return NextResponse.next()
+  }
 
-  if (!pathLocale) {
-    const cookieLocale = req.cookies.get("NEXT_LOCALE")?.value
-    const locale = SUPPORTED_LOCALES.includes(cookieLocale ?? "")
-      ? cookieLocale
-      : DEFAULT_LOCALE
-
-    const url = req.nextUrl.clone()
-    url.pathname = `/${locale}${pathname}`
+  // If the pathname already includes a locale, do nothing
+  if (SUPPORTED_LOCALES.some(lng => pathname.startsWith(`/${lng}`))) {
+    return NextResponse.next()
+  }
 
     if (locale === DEFAULT_LOCALE) {
       return NextResponse.rewrite(url)
@@ -36,7 +33,11 @@ export function middleware(req: NextRequest) {
     return NextResponse.redirect(url)
   }
 
-  return NextResponse.next()
+  url.pathname = `/${locale}${pathname}`
+  url.locale = locale
+  const res = NextResponse.rewrite(url)
+  res.headers.set(MIDDLEWARE_HEADER, "1")
+  return res
 }
 
 export const config = {
