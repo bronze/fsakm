@@ -92,8 +92,85 @@ const SocialLinks = (
     </a>
   </div>
 )
+const FooterLink = ({href, children}) => (
+  <a
+    href={href}
+    className="text-muted-foreground text-sm x:focus-visible:nextra-focus x:text-sm x:contrast-more:text-gray-700 x:contrast-more:dark:text-gray-100 x:whitespace-nowrap x:hover:text-gray-800 x:dark:hover:text-gray-200 x:ring-inset x:transition-colors x:aria-[current]:font-medium x:aria-[current]:subpixel-antialiased x:aria-[current]:text-current">
+    {children}
+  </a>
+)
 
 function createFooter(dictionary) {
+  const kravmagaLinks = [
+    {
+      href: "/krav-maga/criador",
+      label: dictionary.pages.kravmaga.criador,
+    },
+    {
+      href: "/krav-maga/historia",
+      label: dictionary.pages.kravmaga.historia,
+    },
+    {
+      href: "/krav-maga/linha-do-tempo",
+      label: dictionary.pages.kravmaga.linhadotempo,
+    },
+    {href: "/krav-maga/faixas", label: dictionary.pages.kravmaga.faixas},
+    {
+      href: "/krav-maga/tecnicas-especiais",
+      label: dictionary.pages.kravmaga.tecnicasespeciais,
+    },
+    {href: "/krav-maga/israel", label: dictionary.pages.kravmaga.israel},
+    {href: "/krav-maga/militar", label: dictionary.pages.kravmaga.militar},
+    {href: "/krav-maga/galeria", label: dictionary.pages.kravmaga.galeria},
+    {href: "/krav-maga/midia", label: dictionary.pages.kravmaga.midia},
+  ]
+  const federacaoLinks = [
+    {
+      href: "/federacao/instrutores",
+      label: dictionary.pages.federacao.instrutores,
+    },
+    {
+      href: "/federacao/formacao-de-instrutores",
+      label: dictionary.pages.federacao.formacao,
+    },
+    {
+      href: "/federacao/centro-de-treinamento",
+      label: dictionary.pages.federacao.centrodetreinamento,
+    },
+    {
+      href: "/federacao/seminarios-e-treinos-especiais",
+      label: dictionary.pages.federacao.seminarios,
+    },
+    {href: "/federacao/palestras", label: dictionary.pages.federacao.palestras},
+    {href: "/blog", label: dictionary.pages.blog},
+  ]
+  const academiaLinks = [
+    {
+      href: "/academias/brasil",
+      label: dictionary.pages.academias.brasil,
+    },
+    {
+      href: "/academias/argentina",
+      label: dictionary.pages.academias.argentina,
+    },
+    {
+      href: "/academias/canada",
+      label: dictionary.pages.academias.canada,
+    },
+    {
+      href: "/academias/mexico",
+      label: dictionary.pages.academias.mexico,
+    },
+    {
+      href: "/academias/portugal",
+      label: dictionary.pages.academias.portugal,
+    },
+    {
+      href: "/academias/usa",
+      label: dictionary.pages.academias.usa,
+    },
+  ]
+
   return (
     <Footer>
       <div data-slot="footer" className="text-foreground w-full">
@@ -126,107 +203,53 @@ function createFooter(dictionary) {
           </div>
           <div data-slot="footer-column" className="flex flex-col gap-4">
             <span className="text-md pt-1 font-semibold">&nbsp;</span>
-            <a
-              href="/federacao/instrutores/grao-mestre-kobi"
-              className="text-muted-foreground text-sm">
+            <FooterLink href="/federacao/instrutores/grao-mestre-kobi">
               {dictionary.pages.graomestrekobi}
-            </a>
-            <a href="/blog" className="text-muted-foreground text-sm">
-              {dictionary.pages.blog}
-            </a>
-            <a href="/contato" className="text-muted-foreground text-sm">
-              {dictionary.pages.contato}
-            </a>
+            </FooterLink>
+            <FooterLink href="/blog">{dictionary.pages.blog}</FooterLink>
+            <FooterLink href="/contato">{dictionary.pages.contato}</FooterLink>
           </div>
           <div data-slot="footer-column" className="flex flex-col gap-4">
             <h3 className="text-md pt-1 font-semibold">
-              <a href="/krav-maga" className="">
+              <a
+                href="/krav-maga"
+                className="hover:text-gray-500 dark:hover:text-gray-400">
                 {dictionary.pages.kravmaga.index}
               </a>
             </h3>
-            <a
-              href="/krav-maga/criador"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.kravmaga.criador}
-            </a>
-            <a
-              href="/krav-maga/historia"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.kravmaga.historia}
-            </a>
-            <a
-              href="/krav-maga/linha-do-tempo"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.kravmaga.linhadotempo}
-            </a>
-            <a
-              href="/krav-maga/faixas"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.kravmaga.faixas}
-            </a>
-            <a
-              href="/krav-maga/tecnicas-especiais"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.kravmaga.tecnicasespeciais}
-            </a>
-            <a
-              href="/krav-maga/israel"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.kravmaga.israel}
-            </a>
-            <a
-              href="/krav-maga/militar"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.kravmaga.militar}
-            </a>
-            <a
-              href="/krav-maga/galeria"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.kravmaga.galeria}
-            </a>
-            <a
-              href="/krav-maga/midia"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.kravmaga.midia}
-            </a>
+            {kravmagaLinks.map(link => (
+              <FooterLink key={link.href} href={link.href}>
+                {link.label}
+              </FooterLink>
+            ))}
           </div>
           <div data-slot="footer-column" className="flex flex-col gap-4">
             <h3 className="text-md pt-1 font-semibold">
-              <a href="/federacao/">{dictionary.pages.federacao.index}</a>
+              <a
+                href="/federacao/"
+                className="hover:text-gray-500 dark:hover:text-gray-400">
+                {dictionary.pages.federacao.index}
+              </a>
             </h3>
-            <a
-              href="/federacao/instrutores"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.federacao.instrutores}
-            </a>
-            <a
-              href="/federacao/formacao-de-instrutores"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.federacao.formacao}
-            </a>
-            <a
-              href="/federacao/centro-de-treinamento"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.federacao.centrodetreinamento}
-            </a>
-            <a
-              href="/federacao/seminarios-e-treinos-especiais"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.federacao.seminarios}
-            </a>
-            <a
-              href="/federacao/palestras"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.federacao.palestras}
-            </a>
-            <a href="/federacao/blog" className="text-muted-foreground text-sm">
-              {dictionary.pages.blog}
-            </a>
+            {federacaoLinks.map(link => (
+              <FooterLink key={link.href} href={link.href}>
+                {link.label}
+              </FooterLink>
+            ))}
           </div>
           <div data-slot="footer-column" className="flex flex-col gap-4">
             <h3 className="text-md pt-1 font-semibold">
-              <a href="/academias/">{dictionary.pages.academias.index}</a>
+              <a
+                href="/academias/"
+                className="hover:text-gray-500 dark:hover:text-gray-400">
+                {dictionary.pages.academias.index}
+              </a>
             </h3>
+            {academiaLinks.map(link => (
+              <FooterLink key={link.href} href={link.href}>
+                {link.label}
+              </FooterLink>
+            ))}
             <a
               href="/academias/brasil"
               className="text-muted-foreground text-sm">
@@ -248,29 +271,6 @@ function createFooter(dictionary) {
                 </div>
               </div>
             </span> */}
-            <a
-              href="/academias/argentina"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.academias.argentina}
-            </a>
-            <a
-              href="/academias/canada"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.academias.canada}
-            </a>
-            <a
-              href="/academias/mexico"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.academias.mexico}
-            </a>
-            <a
-              href="/academias/portugal"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.academias.portugal}
-            </a>
-            <a href="/academias/usa" className="text-muted-foreground text-sm">
-              {dictionary.pages.academias.usa}
-            </a>
           </div>
         </div>
         <div
