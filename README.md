@@ -78,4 +78,10 @@ https://www.shadcn-ui-blocks.com/blocks/hero-sections
 
 - Split Image Hero https://www.shadcn-ui-blocks.com/examples/hero-sections/paid/split-image-hero
 
-cool nav menu: https://www.shadcnblocks.com/block/navbar1
+cool nav menus:
+
+- https://www.shadcnblocks.com/block/navbar1
+
+- https://www.shadcnblocks.com/block/navbar5
+
+- https://www.shadcnblocks.com/block/navbar3
