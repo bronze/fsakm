@@ -250,11 +250,6 @@ function createFooter(dictionary) {
                 {link.label}
               </FooterLink>
             ))}
-            <a
-              href="/academias/brasil"
-              className="text-muted-foreground text-sm">
-              {dictionary.pages.academias.brasil}
-            </a>
             {/* <span className="text-muted-foreground text-xs">
               <div className="mx-auto ">
                 <div className="relative">
