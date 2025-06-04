@@ -222,8 +222,8 @@ p + ul {
   margin-top: 0;
 }
 .nextra-navbar {
-  z-index: 99 !important;
+  z-index: 40 !important;
 }
 .nextra-mobile-nav {
-  z-index: 88 !important;
+  z-index: 30 !important;
 }
