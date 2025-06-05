@@ -15,29 +15,37 @@ export function middleware(req: NextRequest) {
     return NextResponse.next()
   }
 
-  // If the pathname already includes a locale, do nothing
-  if (SUPPORTED_LOCALES.some(lng => pathname.startsWith(`/${lng}`))) {
-    return NextResponse.next()
-  }
+  const pathLocale = SUPPORTED_LOCALES.find(
+    l => pathname === `/${l}` || pathname.startsWith(`/${l}/`)
+  )
 
-    if (locale === DEFAULT_LOCALE) {
-      return NextResponse.rewrite(url)
-    }
+  if (!pathLocale) {
+    const cookieLocale = req.cookies.get("NEXT_LOCALE")?.value
+    const locale = SUPPORTED_LOCALES.includes(cookieLocale ?? "")
+      ? cookieLocale
+      : DEFAULT_LOCALE
 
-    return NextResponse.redirect(url)
+    const url = req.nextUrl.clone()
+    url.pathname = `/${locale}${pathname}`
+    url.locale = locale
+
+    const res =
+      locale === DEFAULT_LOCALE
+        ? NextResponse.rewrite(url)
+        : NextResponse.redirect(url)
+    res.headers.set(MIDDLEWARE_HEADER, "1")
+    return res
   }
 
   if (pathLocale === DEFAULT_LOCALE) {
     const url = req.nextUrl.clone()
     url.pathname = pathname.replace(`/${DEFAULT_LOCALE}`, "") || "/"
-    return NextResponse.redirect(url)
+    const res = NextResponse.redirect(url)
+    res.headers.set(MIDDLEWARE_HEADER, "1")
+    return res
   }
 
-  url.pathname = `/${locale}${pathname}`
-  url.locale = locale
-  const res = NextResponse.rewrite(url)
-  res.headers.set(MIDDLEWARE_HEADER, "1")
-  return res
+  return NextResponse.next()
 }
 
 export const config = {
