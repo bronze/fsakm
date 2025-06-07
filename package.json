@@ -1,7 +1,7 @@
 {
-  "name": "nextra-docs-template",
+  "name": "fsakm-astro",
   "version": "0.0.1",
-  "description": "Nextra docs template",
+  "description": "FSAKM website on Astrojs",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shuding/nextra-docs-template.git"
+    "url": "git+https://github.com/bronze/fsakm.git"
   },
-  "author": "Shu Ding <g@shud.in>",
+  "author": "Carlos Bronze <bronze@carlosbronze.com.br>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shuding/nextra-docs-template/issues"
+    "url": "https://github.com/bronze/fsakm/issues"
   },
   "homepage": "",
   "dependencies": {
