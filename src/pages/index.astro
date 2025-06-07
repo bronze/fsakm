@@ -1,11 +1,30 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import {GalleryItem} from "@/src-next-backup/components/gallery"
+import Gallery from "@/src-next-backup/components/GalleryWrapper"
+
+import Welcome from "../components/Welcome.astro"
+import Layout from "../layouts/Layout.astro"
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <Welcome />
 </Layout>
+<div class="carousel mx-auto mb-24 py-8">
+  <Gallery>
+    <GalleryItem
+      src="/pt/images/home/galeria_1.jpg"
+      title="Defense in a street situation"
+    />
+    <GalleryItem src="/pt/images/home/galeria_2.jpg" title="Knife defense" />
+    <GalleryItem src="/pt/images/home/galeria_3.jpg" title="Car defense" />
+    <GalleryItem
+      src="/pt/images/home/galeria_1.jpg"
+      title="Defense in a street situation"
+    />
+    <GalleryItem src="/pt/images/home/galeria_2.jpg" title="Knife defense" />
+    <GalleryItem src="/pt/images/home/galeria_3.jpg" title="Car defense" />
+  </Gallery>
+</div>

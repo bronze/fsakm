@@ -1,0 +1,92 @@
+---
+title: Botafogo
+---
+
+import Image from "next/image"
+import Link from "next/link"
+import {CardLink} from "@/src-next-backup/components/cardlink"
+import {Button} from "@/src/components/ui/button"
+import {GoogleMapsEmbed, YouTubeEmbed} from "@next/third-parties/google"
+
+# Botafogo
+
+<div className="mt-18 grid items-center gap-6 lg:grid-cols-3">
+  <div className="lg:col-span-2">
+    <YouTubeEmbed videoid="-4yX8WRkiOA" />
+  </div>
+  <div>
+    <h2 className="text-center text-3xl uppercase">
+      Agende uma aula{" "}
+      <span className="text-yellow-500">experimental gratuita</span>
+    </h2>
+    <div className="mt-6 w-full text-center">
+      <Button
+        asChild
+        size="lg"
+        className="bg-[#25d366] text-center text-xl hover:cursor-pointer hover:bg-[#128c7e]">
+        <Link href="https://wa.me/5521975978455">Entre em contato</Link>
+      </Button>
+    </div>
+  </div>
+</div>
+
+- Única academia autorizada pelo Grão Mestre Kobi da região.
+- Conheça o método de defesa pessoal mais eficiente do mundo.
+- Aprenda na maior Federação de Krav Maga do Mundo.
+- Mais de 1 milhão de alunos já treinaram em nossa federação.
+
+## Sede da FSAKM
+
+- Venha conhecer o Krav Maga e aprenda a se defender, independente do seu tamanho, sexo ou idade.
+- Instrutores supervisionados pelo Grão Mestre Kobi e licenciados pela Federação Sul Americana de Krav Maga.
+- Equipamentos especializados e fornecidos pela Federação Sul Americana de Krav Maga.
+- Espaço seguro, limpo e adequado para as aulas.
+
+## Grão Mestre
+
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+
+<CardLink
+  description="Grão Mestre Kobi"
+  image="/pt/images/federacao/instrutores/kobi-lichtenstein.png"
+  href="/federacao/instrutores/grao-mestre-kobi/"
+  layout="bottom"
+/>
+
+</div>
+
+## Instrutores
+
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+  <CardLink
+    description="Mestre Cláudio Oliveira"
+    image="/pt/images/federacao/instrutores/claudio-oliveira.jpg"
+    href="/federacao/instrutores/claudio-oliveira/"
+    layout="bottom"
+  />
+
+<CardLink
+  description="Mestre Marcio Hirszberg"
+  image="/pt/images/federacao/instrutores/marcio-hirszberg.jpg"
+  href="/federacao/instrutores/marcio-hirszberg/"
+  layout="bottom"
+/>
+
+<CardLink
+  description="Mestre Léo Miller"
+  image="/pt/images/federacao/instrutores/leo-miller.png"
+  href="/federacao/instrutores/leo-miller/"
+  layout="bottom"
+/>
+
+</div>
+
+## Localização
+
+<GoogleMapsEmbed
+  apiKey={process.env.GOOGLEMAPS_API_KEY}
+  height={400}
+  width="100%"
+  mode="place"
+  q="R. Sorocaba, 258 - Botafogo, Rio de Janeiro - RJ, 22271-110"
+/>

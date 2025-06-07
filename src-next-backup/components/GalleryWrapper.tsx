@@ -1,7 +1,7 @@
 import {getDictionary} from "@/src/app/_dictionaries/get-dictionary"
 import type {Locale} from "@/src/app/_dictionaries/i18n-config"
 
-import {Gallery} from "../../src/components/gallery"
+import {Gallery} from "./gallery"
 
 export default async function GalleryWrapper({
   children,
