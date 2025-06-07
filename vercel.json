@@ -1,4 +1,8 @@
 {
+
+    "framework": "astro",
+
+
   "rewrites": [
     {
       "source": "/ingest/static/:path*",
