@@ -1,0 +1,25 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+exports.id = "vendor-chunks/fault@2.0.1";
+exports.ids = ["vendor-chunks/fault@2.0.1"];
+exports.modules = {
+
+/***/ "(rsc)/./node_modules/.pnpm/fault@2.0.1/node_modules/fault/index.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/.pnpm/fault@2.0.1/node_modules/fault/index.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   create: () => (/* binding */ create),\n/* harmony export */   fault: () => (/* binding */ fault)\n/* harmony export */ });\n/* harmony import */ var format__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! format */ \"(rsc)/./node_modules/.pnpm/format@0.2.2/node_modules/format/format.js\");\n// @ts-expect-error\n\n\nconst fault = Object.assign(create(Error), {\n  eval: create(EvalError),\n  range: create(RangeError),\n  reference: create(ReferenceError),\n  syntax: create(SyntaxError),\n  type: create(TypeError),\n  uri: create(URIError)\n})\n\n/**\n * Create a new `EConstructor`, with the formatted `format` as a first argument.\n *\n * @template {Error} Fault\n * @template {new (reason: string) => Fault} Class\n * @param {Class} Constructor\n */\nfunction create(Constructor) {\n  /** @type {string} */\n  // @ts-expect-error\n  FormattedError.displayName = Constructor.displayName || Constructor.name\n\n  return FormattedError\n\n  /**\n   * Create an error with a printf-like formatted message.\n   *\n   * @param {string|null} [format]\n   *   Template string.\n   * @param {...unknown} values\n   *   Values to render in `format`.\n   * @returns {Fault}\n   */\n  function FormattedError(format, ...values) {\n    /** @type {string} */\n    const reason = format ? format__WEBPACK_IMPORTED_MODULE_0__(format, ...values) : format\n    return new Constructor(reason)\n  }\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9ub2RlX21vZHVsZXMvLnBucG0vZmF1bHRAMi4wLjEvbm9kZV9tb2R1bGVzL2ZhdWx0L2luZGV4LmpzIiwibWFwcGluZ3MiOiI7Ozs7OztBQUFBO0FBQzhCOztBQUV2QjtBQUNQO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBLENBQUM7O0FBRUQ7QUFDQTtBQUNBO0FBQ0EsY0FBYyxPQUFPO0FBQ3JCLGNBQWMsK0JBQStCO0FBQzdDLFdBQVcsT0FBTztBQUNsQjtBQUNPO0FBQ1AsYUFBYSxRQUFRO0FBQ3JCO0FBQ0E7O0FBRUE7O0FBRUE7QUFDQTtBQUNBO0FBQ0EsYUFBYSxhQUFhO0FBQzFCO0FBQ0EsYUFBYSxZQUFZO0FBQ3pCO0FBQ0EsZUFBZTtBQUNmO0FBQ0E7QUFDQSxlQUFlLFFBQVE7QUFDdkIsNEJBQTRCLG1DQUFTO0FBQ3JDO0FBQ0E7QUFDQSIsInNvdXJjZXMiOlsiL2hvbWUvYnJvbnplL2NvZGluZy9mc2FrbS9ub2RlX21vZHVsZXMvLnBucG0vZmF1bHRAMi4wLjEvbm9kZV9tb2R1bGVzL2ZhdWx0L2luZGV4LmpzIl0sInNvdXJjZXNDb250ZW50IjpbIi8vIEB0cy1leHBlY3QtZXJyb3JcbmltcG9ydCBmb3JtYXR0ZXIgZnJvbSAnZm9ybWF0J1xuXG5leHBvcnQgY29uc3QgZmF1bHQgPSBPYmplY3QuYXNzaWduKGNyZWF0ZShFcnJvciksIHtcbiAgZXZhbDogY3JlYXRlKEV2YWxFcnJvciksXG4gIHJhbmdlOiBjcmVhdGUoUmFuZ2VFcnJvciksXG4gIHJlZmVyZW5jZTogY3JlYXRlKFJlZmVyZW5jZUVycm9yKSxcbiAgc3ludGF4OiBjcmVhdGUoU3ludGF4RXJyb3IpLFxuICB0eXBlOiBjcmVhdGUoVHlwZUVycm9yKSxcbiAgdXJpOiBjcmVhdGUoVVJJRXJyb3IpXG59KVxuXG4vKipcbiAqIENyZWF0ZSBhIG5ldyBgRUNvbnN0cnVjdG9yYCwgd2l0aCB0aGUgZm9ybWF0dGVkIGBmb3JtYXRgIGFzIGEgZmlyc3QgYXJndW1lbnQuXG4gKlxuICogQHRlbXBsYXRlIHtFcnJvcn0gRmF1bHRcbiAqIEB0ZW1wbGF0ZSB7bmV3IChyZWFzb246IHN0cmluZykgPT4gRmF1bHR9IENsYXNzXG4gKiBAcGFyYW0ge0NsYXNzfSBDb25zdHJ1Y3RvclxuICovXG5leHBvcnQgZnVuY3Rpb24gY3JlYXRlKENvbnN0cnVjdG9yKSB7XG4gIC8qKiBAdHlwZSB7c3RyaW5nfSAqL1xuICAvLyBAdHMtZXhwZWN0LWVycm9yXG4gIEZvcm1hdHRlZEVycm9yLmRpc3BsYXlOYW1lID0gQ29uc3RydWN0b3IuZGlzcGxheU5hbWUgfHwgQ29uc3RydWN0b3IubmFtZVxuXG4gIHJldHVybiBGb3JtYXR0ZWRFcnJvclxuXG4gIC8qKlxuICAgKiBDcmVhdGUgYW4gZXJyb3Igd2l0aCBhIHByaW50Zi1saWtlIGZvcm1hdHRlZCBtZXNzYWdlLlxuICAgKlxuICAgKiBAcGFyYW0ge3N0cmluZ3xudWxsfSBbZm9ybWF0XVxuICAgKiAgIFRlbXBsYXRlIHN0cmluZy5cbiAgICogQHBhcmFtIHsuLi51bmtub3dufSB2YWx1ZXNcbiAgICogICBWYWx1ZXMgdG8gcmVuZGVyIGluIGBmb3JtYXRgLlxuICAgKiBAcmV0dXJucyB7RmF1bHR9XG4gICAqL1xuICBmdW5jdGlvbiBGb3JtYXR0ZWRFcnJvcihmb3JtYXQsIC4uLnZhbHVlcykge1xuICAgIC8qKiBAdHlwZSB7c3RyaW5nfSAqL1xuICAgIGNvbnN0IHJlYXNvbiA9IGZvcm1hdCA/IGZvcm1hdHRlcihmb3JtYXQsIC4uLnZhbHVlcykgOiBmb3JtYXRcbiAgICByZXR1cm4gbmV3IENvbnN0cnVjdG9yKHJlYXNvbilcbiAgfVxufVxuIl0sIm5hbWVzIjpbXSwiaWdub3JlTGlzdCI6WzBdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(rsc)/./node_modules/.pnpm/fault@2.0.1/node_modules/fault/index.js\n");
+
+/***/ })
+
+};
+;

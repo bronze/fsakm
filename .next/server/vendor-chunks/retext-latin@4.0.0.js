@@ -1,0 +1,25 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+exports.id = "vendor-chunks/retext-latin@4.0.0";
+exports.ids = ["vendor-chunks/retext-latin@4.0.0"];
+exports.modules = {
+
+/***/ "(rsc)/./node_modules/.pnpm/retext-latin@4.0.0/node_modules/retext-latin/lib/index.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/.pnpm/retext-latin@4.0.0/node_modules/retext-latin/lib/index.js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ retextLatin)\n/* harmony export */ });\n/* harmony import */ var parse_latin__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! parse-latin */ \"(rsc)/./node_modules/.pnpm/parse-latin@7.0.0/node_modules/parse-latin/lib/index.js\");\n/**\n * @typedef {import('nlcst').Root} Root\n */\n\n\n\n/**\n * Add support for parsing Latin-script natural language.\n *\n * @returns {undefined}\n *   Nothing.\n */\nfunction retextLatin() {\n  // @ts-expect-error -- TS in JSDoc doesn’t understand `this`.\n  // eslint-disable-next-line unicorn/no-this-assignment\n  const self = /** @type {import('unified').Processor<Root>} */ (this)\n\n  self.parser = parser\n\n  /** @type {import('unified').Parser<Root>} */\n  function parser(value) {\n    const parser = new parse_latin__WEBPACK_IMPORTED_MODULE_0__.ParseLatin()\n    add(parser.tokenizeParagraphPlugins, self.data('nlcstParagraphExtensions'))\n    add(parser.tokenizeRootPlugins, self.data('nlcstRootExtensions'))\n    add(parser.tokenizeSentencePlugins, self.data('nlcstSentenceExtensions'))\n    return parser.parse(value)\n  }\n}\n\n/**\n * @template T\n * @param {Array<T>} list\n * @param {Array<T> | undefined} values\n */\nfunction add(list, values) {\n  if (values) list.unshift(...values)\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9ub2RlX21vZHVsZXMvLnBucG0vcmV0ZXh0LWxhdGluQDQuMC4wL25vZGVfbW9kdWxlcy9yZXRleHQtbGF0aW4vbGliL2luZGV4LmpzIiwibWFwcGluZ3MiOiI7Ozs7O0FBQUE7QUFDQSxhQUFhLHNCQUFzQjtBQUNuQzs7QUFFc0M7O0FBRXRDO0FBQ0E7QUFDQTtBQUNBLGFBQWE7QUFDYjtBQUNBO0FBQ2U7QUFDZjtBQUNBO0FBQ0EsMEJBQTBCLG1DQUFtQzs7QUFFN0Q7O0FBRUEsYUFBYSxnQ0FBZ0M7QUFDN0M7QUFDQSx1QkFBdUIsbURBQVU7QUFDakM7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBO0FBQ0E7QUFDQSxXQUFXLFVBQVU7QUFDckIsV0FBVyxzQkFBc0I7QUFDakM7QUFDQTtBQUNBO0FBQ0EiLCJzb3VyY2VzIjpbIi9ob21lL2Jyb256ZS9jb2RpbmcvZnNha20vbm9kZV9tb2R1bGVzLy5wbnBtL3JldGV4dC1sYXRpbkA0LjAuMC9ub2RlX21vZHVsZXMvcmV0ZXh0LWxhdGluL2xpYi9pbmRleC5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEB0eXBlZGVmIHtpbXBvcnQoJ25sY3N0JykuUm9vdH0gUm9vdFxuICovXG5cbmltcG9ydCB7UGFyc2VMYXRpbn0gZnJvbSAncGFyc2UtbGF0aW4nXG5cbi8qKlxuICogQWRkIHN1cHBvcnQgZm9yIHBhcnNpbmcgTGF0aW4tc2NyaXB0IG5hdHVyYWwgbGFuZ3VhZ2UuXG4gKlxuICogQHJldHVybnMge3VuZGVmaW5lZH1cbiAqICAgTm90aGluZy5cbiAqL1xuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gcmV0ZXh0TGF0aW4oKSB7XG4gIC8vIEB0cy1leHBlY3QtZXJyb3IgLS0gVFMgaW4gSlNEb2MgZG9lc27igJl0IHVuZGVyc3RhbmQgYHRoaXNgLlxuICAvLyBlc2xpbnQtZGlzYWJsZS1uZXh0LWxpbmUgdW5pY29ybi9uby10aGlzLWFzc2lnbm1lbnRcbiAgY29uc3Qgc2VsZiA9IC8qKiBAdHlwZSB7aW1wb3J0KCd1bmlmaWVkJykuUHJvY2Vzc29yPFJvb3Q+fSAqLyAodGhpcylcblxuICBzZWxmLnBhcnNlciA9IHBhcnNlclxuXG4gIC8qKiBAdHlwZSB7aW1wb3J0KCd1bmlmaWVkJykuUGFyc2VyPFJvb3Q+fSAqL1xuICBmdW5jdGlvbiBwYXJzZXIodmFsdWUpIHtcbiAgICBjb25zdCBwYXJzZXIgPSBuZXcgUGFyc2VMYXRpbigpXG4gICAgYWRkKHBhcnNlci50b2tlbml6ZVBhcmFncmFwaFBsdWdpbnMsIHNlbGYuZGF0YSgnbmxjc3RQYXJhZ3JhcGhFeHRlbnNpb25zJykpXG4gICAgYWRkKHBhcnNlci50b2tlbml6ZVJvb3RQbHVnaW5zLCBzZWxmLmRhdGEoJ25sY3N0Um9vdEV4dGVuc2lvbnMnKSlcbiAgICBhZGQocGFyc2VyLnRva2VuaXplU2VudGVuY2VQbHVnaW5zLCBzZWxmLmRhdGEoJ25sY3N0U2VudGVuY2VFeHRlbnNpb25zJykpXG4gICAgcmV0dXJuIHBhcnNlci5wYXJzZSh2YWx1ZSlcbiAgfVxufVxuXG4vKipcbiAqIEB0ZW1wbGF0ZSBUXG4gKiBAcGFyYW0ge0FycmF5PFQ+fSBsaXN0XG4gKiBAcGFyYW0ge0FycmF5PFQ+IHwgdW5kZWZpbmVkfSB2YWx1ZXNcbiAqL1xuZnVuY3Rpb24gYWRkKGxpc3QsIHZhbHVlcykge1xuICBpZiAodmFsdWVzKSBsaXN0LnVuc2hpZnQoLi4udmFsdWVzKVxufVxuIl0sIm5hbWVzIjpbXSwiaWdub3JlTGlzdCI6WzBdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(rsc)/./node_modules/.pnpm/retext-latin@4.0.0/node_modules/retext-latin/lib/index.js\n");
+
+/***/ })
+
+};
+;
