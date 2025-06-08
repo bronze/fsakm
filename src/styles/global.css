@@ -2,7 +2,7 @@
 @plugin '@tailwindcss/typography';
 @plugin "tailwindcss-animate";
 
-@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 :root {
     --background: hsl(0 0% 100%);
@@ -55,7 +55,7 @@
     --font-mono: 'Roboto Mono', monospace;
     --font-cursive: 'Caveat', cursive;
 }
-.dark {
+:root[data-theme~='dark'] {
     --background: hsl(240 10% 3.9%);
     --foreground: hsl(0 0% 98%);
     --card: hsl(240 10% 3.9%);
