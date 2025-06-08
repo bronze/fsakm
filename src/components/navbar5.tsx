@@ -19,6 +19,7 @@ import {
     navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import {Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger} from '@/components/ui/sheet';
+import {ModeToggle} from '@/components/ModeToggle';
 
 const Navbar5 = () => {
     const features = [
@@ -116,6 +117,7 @@ const Navbar5 = () => {
                         </NavigationMenuList>
                     </NavigationMenu>
                     <div className="hidden items-center gap-4 lg:flex">
+                        <ModeToggle />
                         <Button variant="outline">Sign in</Button>
                         <Button>Start for free</Button>
                     </div>
