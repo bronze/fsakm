@@ -5,12 +5,10 @@ module.exports = {
     printWidth: 100,
     useTabs: false,
     tabWidth: 4,
-    trailingComma: 'all',
+    trailingComma: 'es5',
     bracketSpacing: false,
     bracketSameLine: true, // evita quebra antes do > em JSX
     arrowParens: 'avoid',
-    endOfLine: 'lf',
-    trailingComma: 'es5',
     importOrder: [
         '^(react/(.*)$)|^(react$)',
         '^(next/(.*)$)|^(next$)',
@@ -43,6 +41,15 @@ module.exports = {
             files: ['.*', '*.json', '*.md', '*.mdx', '*.toml', '*.yml'],
             options: {
                 useTabs: false,
+                tabWidth: 4, // Set 4 spaces for indentation
+            },
+        },
+        {
+            files: ['*.md'],
+            options: {
+                parser: 'mdx',
+                useTabs: false,
+                tabWidth: 4,
             },
         },
         {
