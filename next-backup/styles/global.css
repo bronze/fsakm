@@ -2,6 +2,7 @@
 
 /* Optional: import Nextra theme styles */
 @import "nextra-theme-docs/style.css";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *)); /* or nextra-theme-blog/style.css */
 
@@ -60,9 +61,9 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: var(--color-blue-500);
+  --primary: oklch(0.205 0 0);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: var(--color-red-500);
+  --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
@@ -87,21 +88,21 @@
   --sidebar-ring: oklch(0.708 0 0);
   /* --background: oklch(1 0 0); */
   --foreground: oklch(0.145 0 0);
-  --background: oklch(0.9851 0 0);
+  --background: oklch(1 0 0);
 }
 .dark {
   /* from shadcn */
   /* --background: oklch(0.145 0 0);  */
   --foreground: oklch(0.985 0 0);
   /* from nextra */
-  --background: oklch(0.1776 0 0);
+  --background: oklch(0.145 0 0);
   --card: oklch(0.205 0 0);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: var(--color-blue-500);
+  --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: var(--color-red-500);
+  --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
