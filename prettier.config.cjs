@@ -1,14 +1,14 @@
 module.exports = {
+    endOfLine: 'lf',
+    semi: true, // <- ponto e vírgula no final
+    singleQuote: true,
     printWidth: 100,
     useTabs: false,
     tabWidth: 4,
     trailingComma: 'all',
-    semi: true, // <- ponto e vírgula no final
-    singleQuote: true,
     bracketSpacing: false,
     bracketSameLine: true, // evita quebra antes do > em JSX
     arrowParens: 'avoid',
-    // printWidth: 120, // aumente conforme seu gosto
     endOfLine: 'lf',
     trailingComma: 'es5',
     importOrder: [
