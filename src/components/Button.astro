@@ -4,16 +4,16 @@
 ---
 
 <button
-    class="focus:ring-opacity-75 appearance-none rounded-lg bg-purple-500 px-4 py-2 font-semibold text-white shadow-md hover:bg-purple-700 focus:ring-2 focus:ring-purple-400 focus:outline-none">
+    class="button buttonAstro focus:ring-opacity-75 appearance-none rounded-lg bg-purple-500 px-4 py-2 font-semibold text-white shadow-md hover:bg-purple-700 focus:ring-2 focus:ring-purple-400 focus:outline-none">
     <slot />
 </button>
 
 <script>
     import confetti from 'canvas-confetti';
 
-    const button = document.body.querySelector('button');
+    const buttonAstro = document.body.querySelector('.buttonAstro');
 
-    if (button) {
-        button.addEventListener('click', () => confetti());
+    if (buttonAstro) {
+        buttonAstro.addEventListener('click', () => confetti());
     }
 </script>
