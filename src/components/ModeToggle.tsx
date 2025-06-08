@@ -2,44 +2,42 @@ import * as React from 'react';
 import {Moon, Sun} from 'lucide-react';
 
 import {Button} from '@/components/ui/button';
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
 
 export function ModeToggle() {
-    const [theme, setThemeState] = React.useState<'theme-light' | 'dark' | 'system'>('theme-light');
+    const [theme, setTheme] = React.useState<'light' | 'dark'>('light');
 
+    // Sincroniza com o atributo data-theme mesmo se for alterado por fora
     React.useEffect(() => {
-        const isDarkMode = document.documentElement.classList.contains('dark');
-        setThemeState(isDarkMode ? 'dark' : 'theme-light');
+        const html = document.documentElement;
+        const updateTheme = () => {
+            const current = html.getAttribute('data-theme');
+            if (current === 'dark' || current === 'light') {
+                setTheme(current);
+            }
+        };
+
+        updateTheme(); // chamada inicial
+
+        const observer = new MutationObserver(() => updateTheme());
+        observer.observe(html, {attributes: true, attributeFilter: ['data-theme']});
+
+        return () => observer.disconnect();
     }, []);
 
+    // Aplica data-theme sempre que o estado local mudar
     React.useEffect(() => {
-        const isDark =
-            theme === 'dark' ||
-            (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-        document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+        document.documentElement.setAttribute('data-theme', theme);
     }, [theme]);
 
+    const toggleTheme = () => {
+        setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+    };
+
     return (
-        <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
-                    <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-                    <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-                    <span className="sr-only">Toggle theme</span>
-                </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setThemeState('theme-light')}>
-                    Light
-                </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setThemeState('dark')}>Dark</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setThemeState('system')}>System</DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
+        <Button onClick={toggleTheme} variant="outline" size="icon">
+            <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">Toggle theme</span>
+        </Button>
     );
 }
