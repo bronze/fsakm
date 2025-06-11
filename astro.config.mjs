@@ -8,11 +8,22 @@ import {defineConfig} from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://fsakm-astro.cerlosbronze.com.br',
+    // base: '/docs',
+
     image: {
-        service: imageService(),
+        service: imageService({
+            // This can usually be auto-detected
+            fallbackService: 'astro', // astro or vercel?
+            placeholder: 'blurhash',
+            // This is the default
+            layout: 'constrained',
+        }),
     },
+
     vite: {
         plugins: [tailwindcss()],
     },
+
     integrations: [react(), icon(), mdx()],
 });
