@@ -1,9 +1,7 @@
 ---
 title: 'Markdown + Tailwind'
 layout: ../layouts/main.astro
-
 ---
-
 
 <div class="grid h-screen place-items-center content-center">
     <div class="rounded-lg bg-purple-500 px-4 py-2 font-semibold text-white shadow-md">

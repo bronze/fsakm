@@ -1,10 +1,8 @@
 ---
 import '../styles/global.css';
 
-import Themes from 'astro-themes';
-import {Image} from 'astro:assets';
-
-import {Navbar5} from '@/components/navbar5';
+import DefaultLayout from '@/layouts/DefaultLayout.astro';
+import {Image} from '@unpic/astro';
 
 import kravmagalogo1 from '../assets/kravmaga.png';
 // Component Imports
@@ -14,70 +12,56 @@ import Button from '../components/Button.astro';
 // https://docs.astro.build/basics/astro-components/
 ---
 
-<html lang="en">
-    <head>
-        <Themes />
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Astro + TailwindCSS</title>
-    </head>
-
-    <body>
-        <Navbar5 client:load />
-        <div class="container mx-auto">
-            <div class="grid w-full place-items-center content-center">
-                <button
-                    onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: 'light' }))">
-                    Light
-                </button>
-                <button
-                    onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))">
-                    Dark
-                </button>
-                <button
-                    onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: null }))">
-                    Clear theme
-                </button>
-            </div>
-
-            <div class="grid h-[30vh] place-items-center content-center">
-                <Button>Tailwind Button in Astro!</Button>
-            </div>
-            <div class="grid h-[30vh] grid-flow-col place-items-center content-center">
-                <Button class="">
-                    <a href="/markdown-page" class="p-4 underline">
-                        Markdown is also supported...
-                    </a>
-                </Button>
-                <Button class="">
-                    <a href="/mdx" class="p-4 underline"> MDX </a>
-                </Button>
-            </div>
+<DefaultLayout>
+    <div class="container mx-auto">
+        <div class="grid w-full place-items-center content-center">
+            <button
+                onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: 'light' }))">
+                Light
+            </button>
+            <button
+                onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))">
+                Dark
+            </button>
+            <button
+                onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: null }))">
+                Clear theme
+            </button>
         </div>
-        <div class="grid-cols-auto grid h-32 grid-flow-col gap-12">
-            <div>
-                <Image
-                    src={kravmagalogo1}
-                    alt="Krav Maga Logo"
-                    layout="constrained"
-                    class="h-auto w-full object-contain"
-                    width={300}
-                />
-            </div>
-            <div>
-                <Image src="/images/kravmaga.png" alt="Krav Maga Logo" width={300} height={300} />
-            </div>
-            <div>
-                <Image
-                    src="https://cdn.shopify.com/static/sample-images/bath.jpeg"
-                    layout="constrained"
-                    width={800}
-                    height={600}
-                    alt="A lovely bath"
-                />
-            </div>
+
+        <div class="grid h-[30vh] place-items-center content-center">
+            <Button>Tailwind Button in Astro!</Button>
         </div>
-    </body>
-</html>
+        <div class="grid h-[30vh] grid-flow-col place-items-center content-center">
+            <Button class="">
+                <a href="/markdown-page" class="p-4 underline"> Markdown is also supported... </a>
+            </Button>
+            <Button class="">
+                <a href="/mdx" class="p-4 underline"> MDX </a>
+            </Button>
+        </div>
+    </div>
+    <div class="grid-cols-auto grid h-32 grid-flow-col gap-12">
+        <div>
+            <Image
+                src={kravmagalogo1}
+                alt="Krav Maga Logo"
+                layout="constrained"
+                class="h-auto w-full object-contain"
+                width={300}
+            />
+        </div>
+        <div>
+            <Image src="/images/kravmaga.png" alt="Krav Maga Logo" width={300} height={300} />
+        </div>
+        <div>
+            <Image
+                src="https://cdn.shopify.com/static/sample-images/bath.jpeg"
+                layout="constrained"
+                width={800}
+                height={600}
+                alt="A lovely bath"
+            />
+        </div>
+    </div>
+</DefaultLayout>
