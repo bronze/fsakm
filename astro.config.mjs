@@ -9,13 +9,7 @@ import {defineConfig} from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
     image: {
-        service: imageService({
-            // This can usually be auto-detected
-            fallbackService: 'astro', // astro or vercel?
-            placeholder: 'blurhash',
-            // This is the default
-            layout: 'constrained',
-        }),
+        service: imageService(),
     },
     vite: {
         plugins: [tailwindcss()],
