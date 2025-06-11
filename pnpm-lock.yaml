@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@astrojs/mdx':
     specifier: ^4.3.0
-    version: 4.3.0(astro@5.9.1)
+    version: 4.3.0(astro@5.9.2)
   '@astrojs/react':
     specifier: ^4.3.0
     version: 4.3.0(@types/react-dom@19.1.6)(@types/react@19.1.6)(react-dom@19.1.0)(react@19.1.0)
@@ -39,8 +39,8 @@ dependencies:
     specifier: ^19.1.6
     version: 19.1.6(@types/react@19.1.6)
   astro:
-    specifier: ^5.9.1
-    version: 5.9.1(typescript@5.8.3)
+    specifier: ^5.9.2
+    version: 5.9.2(typescript@5.8.3)
   canvas-confetti:
     specifier: ^1.9.3
     version: 1.9.3
@@ -51,8 +51,8 @@ dependencies:
     specifier: ^2.1.1
     version: 2.1.1
   lucide-react:
-    specifier: ^0.513.0
-    version: 0.513.0(react@19.1.0)
+    specifier: ^0.514.0
+    version: 0.514.0(react@19.1.0)
   react:
     specifier: ^19.1.0
     version: 19.1.0
@@ -60,11 +60,11 @@ dependencies:
     specifier: ^19.1.0
     version: 19.1.0(react@19.1.0)
   tailwind-merge:
-    specifier: ^3.3.0
-    version: 3.3.0
+    specifier: ^3.3.1
+    version: 3.3.1
   tailwindcss:
-    specifier: ^4.1.3
-    version: 4.1.8
+    specifier: ^4.1.9
+    version: 4.1.9
 
 devDependencies:
   '@ianvs/prettier-plugin-sort-imports':
@@ -72,10 +72,10 @@ devDependencies:
     version: 4.4.2(prettier@3.5.3)
   '@tailwindcss/typography':
     specifier: ^0.5.16
-    version: 0.5.16(tailwindcss@4.1.8)
+    version: 0.5.16(tailwindcss@4.1.9)
   astro-themes:
     specifier: ^0.2.6
-    version: 0.2.6(astro@5.9.1)
+    version: 0.2.6(astro@5.9.2)
   prettier:
     specifier: ^3.5.3
     version: 3.5.3
@@ -90,7 +90,7 @@ devDependencies:
     version: 0.6.12(@ianvs/prettier-plugin-sort-imports@4.4.2)(prettier-plugin-astro@0.14.1)(prettier-plugin-organize-attributes@1.0.0)(prettier@3.5.3)
   tailwindcss-animate:
     specifier: ^1.0.7
-    version: 1.0.7(tailwindcss@4.1.8)
+    version: 1.0.7(tailwindcss@4.1.9)
   tw-animate-css:
     specifier: ^1.3.4
     version: 1.3.4
@@ -107,6 +107,10 @@ packages:
 
   /@astrojs/compiler@2.12.1:
     resolution: {integrity: sha512-WDSyVIiz7sNcJcCJxJFITu6XjfGhJ50Z0auyaWsrM+xb07IlhBLFtQuDkNy0caVHWNcKTM2LISAaHhgkRqGAVg==}
+    dev: true
+
+  /@astrojs/compiler@2.12.2:
+    resolution: {integrity: sha512-w2zfvhjNCkNMmMMOn5b0J8+OmUaBL1o40ipMvqcG6NRpdC+lKxmTi48DT8Xw0SzJ3AfmeFLB45zXZXtmbsjcgw==}
 
   /@astrojs/internal-helpers@0.6.1:
     resolution: {integrity: sha512-l5Pqf6uZu31aG+3Lv8nl/3s4DbUzdlxTWDof4pEpto6GUJNhhCbelVi9dEyurOVyqaelwmS9oSyOWOENSfgo9A==}
@@ -138,7 +142,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@astrojs/mdx@4.3.0(astro@5.9.1):
+  /@astrojs/mdx@4.3.0(astro@5.9.2):
     resolution: {integrity: sha512-OGX2KvPeBzjSSKhkCqrUoDMyzFcjKt5nTE5SFw3RdoLf0nrhyCXBQcCyclzWy1+P+XpOamn+p+hm1EhpCRyPxw==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0}
     peerDependencies:
@@ -147,7 +151,7 @@ packages:
       '@astrojs/markdown-remark': 6.3.2
       '@mdx-js/mdx': 3.1.0(acorn@8.14.1)
       acorn: 8.14.1
-      astro: 5.9.1(typescript@5.8.3)
+      astro: 5.9.2(typescript@5.8.3)
       es-module-lexer: 1.7.0
       estree-util-visit: 2.0.0
       hast-util-to-html: 9.0.5
@@ -1827,7 +1831,7 @@ packages:
       '@tailwindcss/oxide-win32-x64-msvc': 4.1.8
     dev: false
 
-  /@tailwindcss/typography@0.5.16(tailwindcss@4.1.8):
+  /@tailwindcss/typography@0.5.16(tailwindcss@4.1.9):
     resolution: {integrity: sha512-0wDLwCVF5V3x3b1SGXPCDcdsbDHMBe+lkFzBRaHeLvNi+nrrnZ1lA18u+OTWO8iSWU2GxUOCvlXtDuqftc1oiA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20 || >=4.0.0-beta.1'
@@ -1836,7 +1840,7 @@ packages:
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       postcss-selector-parser: 6.0.10
-      tailwindcss: 4.1.8
+      tailwindcss: 4.1.9
     dev: true
 
   /@tailwindcss/vite@4.1.8(vite@6.3.5):
@@ -2032,20 +2036,20 @@ packages:
     hasBin: true
     dev: false
 
-  /astro-themes@0.2.6(astro@5.9.1):
+  /astro-themes@0.2.6(astro@5.9.2):
     resolution: {integrity: sha512-rw/tB2967Ile85siw5J+L7VKBVYIb1qcUVceYleJpZQx1Ef9cdgZ5DNyvukkcpEBggc+274erubeVk0dF6qwmw==}
     peerDependencies:
       astro: '*'
     dependencies:
-      astro: 5.9.1(typescript@5.8.3)
+      astro: 5.9.2(typescript@5.8.3)
     dev: true
 
-  /astro@5.9.1(typescript@5.8.3):
-    resolution: {integrity: sha512-wxoJcTbuDZNFSv6EaL0PAlrp0Wx6VnOAULCXvy0scsV70oWMeUkdxuBxfO54JxO5Qgyvwj9h99y6E0elqOpGtA==}
+  /astro@5.9.2(typescript@5.8.3):
+    resolution: {integrity: sha512-K/zZlQOWMpamfLDOls5jvG7lrsjH1gkk3ESRZyZDCkVBtKHMF4LbjwCicm/iBb3mX3V/PerqRYzLbOy3/4JLCQ==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
     dependencies:
-      '@astrojs/compiler': 2.12.1
+      '@astrojs/compiler': 2.12.2
       '@astrojs/internal-helpers': 0.6.1
       '@astrojs/markdown-remark': 6.3.2
       '@astrojs/telemetry': 3.3.0
@@ -2990,8 +2994,8 @@ packages:
       yallist: 3.1.1
     dev: false
 
-  /lucide-react@0.513.0(react@19.1.0):
-    resolution: {integrity: sha512-CJZKq2g8Y8yN4Aq002GahSXbG2JpFv9kXwyiOAMvUBv7pxeOFHUWKB0mO7MiY4ZVFCV4aNjv2BJFq/z3DgKPQg==}
+  /lucide-react@0.514.0(react@19.1.0):
+    resolution: {integrity: sha512-HXD0OAMd+JM2xCjlwG1EGW9Nuab64dhjO3+MvdyD+pSUeOTBaVAPhQblKIYmmX4RyBYbdzW0VWnJpjJmxWGr6w==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
     dependencies:
@@ -4208,20 +4212,24 @@ packages:
       s.color: 0.0.15
     dev: true
 
-  /tailwind-merge@3.3.0:
-    resolution: {integrity: sha512-fyW/pEfcQSiigd5SNn0nApUOxx0zB/dm6UDU/rEwc2c3sX2smWUNbapHv+QRqLGVp9GWX3THIa7MUGPo+YkDzQ==}
+  /tailwind-merge@3.3.1:
+    resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
     dev: false
 
-  /tailwindcss-animate@1.0.7(tailwindcss@4.1.8):
+  /tailwindcss-animate@1.0.7(tailwindcss@4.1.9):
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
     peerDependencies:
       tailwindcss: '>=3.0.0 || insiders'
     dependencies:
-      tailwindcss: 4.1.8
+      tailwindcss: 4.1.9
     dev: true
 
   /tailwindcss@4.1.8:
     resolution: {integrity: sha512-kjeW8gjdxasbmFKpVGrGd5T4i40mV5J2Rasw48QARfYeQ8YS9x02ON9SFWax3Qf616rt4Cp3nVNIj6Hd1mP3og==}
+    dev: false
+
+  /tailwindcss@4.1.9:
+    resolution: {integrity: sha512-anBZRcvfNMsQdHB9XSGzAtIQWlhs49uK75jfkwrqjRUbjt4d7q9RE1wR1xWyfYZhLFnFX4ahWp88Au2lcEw5IQ==}
 
   /tapable@2.2.2:
     resolution: {integrity: sha512-Re10+NauLTMCudc7T5WLFLAwDhQ0JWdrMK+9B2M8zR5hRExKmsRDCBA7/aV/pNJFltmBFO5BAMlQFi/vq3nKOg==}
