@@ -19,9 +19,8 @@ import {
     navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import {Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger} from '@/components/ui/sheet';
-import ModesSwitch from '@/components/ModesSwitch.astro';
 
-import {ModeToggle} from './ModeToggle';
+import {ModeToggle} from './DarkModeToggle';
 
 const Navbar5 = () => {
     const features = [
