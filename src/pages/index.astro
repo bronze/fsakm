@@ -24,24 +24,36 @@ import Button from '../components/Button.astro';
 
     <body>
         <Navbar5 client:load />
-        <div class="grid w-full place-items-center content-center">
-            <button
-                onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: 'light' }))">
-                Light
-            </button>
-            <button
-                onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))">
-                Dark
-            </button>
-            <button
-                onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: null }))">
-                Clear theme
-            </button>
-        </div>
+        <div class="container mx-auto">
+            <div class="grid w-full place-items-center content-center">
+                <button
+                    onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: 'light' }))">
+                    Light
+                </button>
+                <button
+                    onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }))">
+                    Dark
+                </button>
+                <button
+                    onclick="document.dispatchEvent(new CustomEvent('set-theme', { detail: null }))">
+                    Clear theme
+                </button>
+            </div>
 
-        <div class="grid h-screen place-items-center content-center">
-            <Button>Tailwind Button in Astro!</Button>
-            <a href="/markdown-page" class="p-4 underline"> Markdown is also supported... </a>
+            <div class="grid h-[30vh] place-items-center content-center">
+                <Button>Tailwind Button in Astro!</Button>
+            </div>
+            <div
+                class="grid h-[30vh] auto-cols-auto grid-flow-col place-items-center content-center">
+                <Button class="">
+                    <a href="/markdown-page" class="p-4 underline">
+                        Markdown is also supported...
+                    </a>
+                </Button>
+                <Button class="">
+                    <a href="/mdx" class="p-4 underline"> MDX </a>
+                </Button>
+            </div>
         </div>
     </body>
 </html>
