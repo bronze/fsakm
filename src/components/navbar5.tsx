@@ -60,10 +60,8 @@ const Navbar5 = () => {
         <section className="py-4">
             <div className="container mx-auto">
                 <nav className="flex items-center justify-between">
-                    <a href="https://www.shadcnblocks.com" className="flex items-center gap-2">
-                        <span className="text-lg font-semibold tracking-tighter">
-                            Shadcnblocks.com
-                        </span>
+                    <a href="/" className="flex items-center gap-2">
+                        <span className="text-lg font-semibold tracking-tighter">Home</span>
                     </a>
                     <NavigationMenu className="hidden lg:block">
                         <NavigationMenuList>
@@ -114,8 +112,6 @@ const Navbar5 = () => {
                     </NavigationMenu>
                     <div className="hidden items-center gap-4 lg:flex">
                         <ModeToggle />
-                        <Button variant="outline">Sign in</Button>
-                        <Button>Start for free</Button>
                     </div>
                     <Sheet>
                         <SheetTrigger asChild className="lg:hidden">
