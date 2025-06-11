@@ -1,12 +1,14 @@
 ---
 import '../styles/global.css';
 
+import {Image} from '@unpic/astro';
 import Themes from 'astro-themes';
 
 import {Navbar5} from '@/components/navbar5';
 
 // Component Imports
 import Button from '../components/Button.astro';
+import kravmagalogo1 from './kravmaga.png';
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
@@ -52,6 +54,29 @@ import Button from '../components/Button.astro';
                 <Button class="">
                     <a href="/mdx" class="p-4 underline"> MDX </a>
                 </Button>
+            </div>
+        </div>
+        <div class="grid-cols-auto grid h-32 grid-flow-col gap-12">
+            <div>
+                <Image
+                    src={kravmagalogo1}
+                    alt="Krav Maga Logo"
+                    layout="constrained"
+                    class="h-auto w-full object-contain"
+                    width={300}
+                />
+            </div>
+            <div>
+                <Image src="/images/kravmaga.png" alt="Krav Maga Logo" width={300} />
+            </div>
+            <div>
+                <Image
+                    src="https://cdn.shopify.com/static/sample-images/bath.jpeg"
+                    layout="constrained"
+                    width={800}
+                    height={600}
+                    alt="A lovely bath"
+                />
             </div>
         </div>
     </body>
