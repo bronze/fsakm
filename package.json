@@ -7,7 +7,8 @@
         "build": "astro build",
         "preview": "astro preview",
         "astro": "astro",
-        "format": "prettier --write ."
+        "format": "prettier --write .",
+        "nuke": "rm -rf node_modules && rm -rf .astro/cache && pnpm install"
     },
     "dependencies": {
         "@astrojs/mdx": "^4.3.0",
