@@ -8,7 +8,7 @@
         "preview": "astro preview",
         "astro": "astro",
         "format": "prettier --write .",
-        "nuke": "rm -rf node_modules && rm -rf .astro/cache && pnpm install"
+        "nuke": "rm -rf node_modules && rm -rf .astro/cache && rm -rf .vercel/cache && pnpm install"
     },
     "dependencies": {
         "@astrojs/mdx": "^4.3.0",
