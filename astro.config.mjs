@@ -10,6 +10,7 @@ import {defineConfig} from 'astro/config';
 export default defineConfig({
     site: 'https://fsakm-astro.cerlosbronze.com.br',
     // base: '/docs',
+    base: process.env.NODE_ENV === 'production' ? '/' : '/',
 
     image: {
         service: imageService({
