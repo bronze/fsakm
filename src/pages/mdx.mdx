@@ -1,18 +1,27 @@
 ---
 title: 'Markdown + Tailwind'
 layout: ../layouts/main.astro
-
 ---
 
+import {YouTube} from 'astro-embed';
 
-<div class="grid h-screen place-items-center content-center">
+<div class="grid h-dvh place-items-center content-center container mx-auto">
     <div class="rounded-lg bg-purple-500 px-4 py-2 font-semibold text-white shadow-md">
-        Tailwind classes also work in Markdown!
+        MDX baby
     </div>
-    <a
-        href="/"
-        class="p-4 underline transition-colors duration-200 ease-in-out hover:text-purple-500">
+
+    <a href="/" class="p-4 underline transition-colors duration-200 ease-in-out hover:text-purple-500">
         Go home
     </a>
+
+    <div class="grid grid-cols-auto grid-flow-col h-32 w-full gap-16">
+        <div>
+            <YouTube id="TtRtkTzHVBU" />
+        </div>
+        <div>
+            <YouTube id="TtRtkTzHVBU" />
+        </div>
+
+    </div>
+
 </div>
-<YouTube id="https://youtu.be/xtTy5nKay_Y" />
