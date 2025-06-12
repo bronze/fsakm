@@ -9,6 +9,7 @@ import {defineConfig} from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
+    base: '/',
     experimental: {
         responsiveImages: true,
     },
@@ -17,7 +18,13 @@ export default defineConfig({
         // Used for all Markdown images; not configurable per-image
         // Used for all `<Image />` and `<Picture />` components unless overridden with a prop
         experimentalLayout: 'constrained',
-        service: imageService(),
+        service: imageService({
+            // This can usually be auto-detected
+            fallbackService: 'astro',
+            placeholder: 'blurhash',
+            // This is the default
+            layout: 'constrained',
+        }),
     },
 
     // site: 'https://fsakm-astro.carlosbronze.com.br',
@@ -28,7 +35,8 @@ export default defineConfig({
     },
 
     integrations: [react(), icon(), mdx()],
+    output: 'static',
     adapter: vercel({
-        imageService: true,
+        imageService: false,
     }),
 });
