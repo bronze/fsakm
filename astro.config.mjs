@@ -26,6 +26,6 @@ export default defineConfig({
     },
     integrations: [react(), icon(), mdx()],
     adapter: vercel({
-        imageService: true,
+        imageService: false,
     }),
 });
