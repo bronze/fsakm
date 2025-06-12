@@ -40,29 +40,32 @@ import Button from '../components/Button.astro';
                 <a href="/mdx" class="p-4 underline"> MDX </a>
             </Button>
         </div>
-    </div>
-    <div class="grid-cols-auto grid h-32 grid-flow-col gap-12">
-        <div>
-            <Image
-                src={kravmagalogo1}
-                {...import.meta.env.PROD ? {cdn: 'vercel'} : {}}
-                alt="Krav Maga Logo"
-                layout="constrained"
-                width="300"
-                height="300"
-            />
-        </div>
-        <div>
-            <Image src="/images/kravmaga.png" alt="Krav Maga Logo" width="300" height="300" />
-        </div>
-        <div>
-            <Image
-                src="https://cdn.shopify.com/static/sample-images/bath.jpeg"
-                layout="constrained"
-                width="300"
-                height="300"
-                alt="A lovely bath"
-            />
+        <div class="grid-cols-auto grid h-32 grid-flow-col gap-8">
+            <div class="mx-auto">
+                Imported image
+                <Image
+                    src={kravmagalogo1}
+                    {...import.meta.env.PROD ? {cdn: 'vercel'} : {}}
+                    alt="Krav Maga Logo"
+                    layout="constrained"
+                    width="300"
+                    height="300"
+                />
+            </div>
+            <div class="mx-auto">
+                /public image
+                <Image src="/images/kravmaga.png" alt="Krav Maga Logo" width="300" height="300" />
+            </div>
+            <div class="mx-auto">
+                external image
+                <Image
+                    src="https://cdn.shopify.com/static/sample-images/bath.jpeg"
+                    layout="constrained"
+                    width="300"
+                    height="300"
+                    alt="A lovely bath"
+                />
+            </div>
         </div>
     </div>
 </DefaultLayout>
