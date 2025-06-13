@@ -9,6 +9,7 @@ import kravmagalogo1 from '../assets/astro.jpg';
 // Component Imports
 import Button from '../components/Button.astro';
 
+const isDev = import.meta.env.DEV;
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
@@ -60,6 +61,7 @@ import Button from '../components/Button.astro';
                 /public image
                 <Image
                     src="/static/images/astro.jpg"
+                    {...isDev ? {fallback: 'astro'} : {}}
                     width={640}
                     height={300}
                     alt="Image test"
