@@ -9,7 +9,6 @@ import {defineConfig} from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-    base: '/',
     experimental: {
         responsiveImages: true,
     },
@@ -37,6 +36,6 @@ export default defineConfig({
     integrations: [react(), icon(), mdx()],
     output: 'static',
     adapter: vercel({
-        imageService: false,
+        imageService: false, // ⚠️ ESSENCIAL: desativa o otimizador da Vercel
     }),
 });
