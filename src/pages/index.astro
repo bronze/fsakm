@@ -46,7 +46,7 @@ import Button from '../components/Button.astro';
                 Imported image
                 <Image
                     src={kravmagalogo1}
-                    {...import.meta.env.PROD ? {cdn: 'vercel'} : {}}
+                    {...import.meta.env.PROD ? {} : {}}
                     width={640}
                     breakpoints={[
                         16, 32, 64, 128, 192, 256, 384, 512, 640, 750, 828, 960, 1024, 1080, 1280,
@@ -58,6 +58,14 @@ import Button from '../components/Button.astro';
             </div>
             <div class="mx-auto">
                 /public image
+                <Image
+                    src="/static/images/astro.jpg"
+                    width={640}
+                    height={300}
+                    alt="Image test"
+                    layout="constrained"
+                />
+
                 <Image
                     src="/static/images/astro.jpg"
                     alt="Image test"
