@@ -19,7 +19,7 @@ export default defineConfig({
         experimentalLayout: 'constrained',
         service: imageService({
             // This can usually be auto-detected
-            // fallbackService: 'astro',
+            fallbackService: 'astro',
             placeholder: 'blurhash',
             // This is the default
             layout: 'constrained',
