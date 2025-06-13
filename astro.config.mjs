@@ -7,6 +7,8 @@ import {imageService} from '@unpic/astro/service';
 import icon from 'astro-icon';
 import {defineConfig} from 'astro/config';
 
+const isProd = process.env.NODE_ENV === 'production';
+
 // https://astro.build/config
 export default defineConfig({
     experimental: {
@@ -20,6 +22,7 @@ export default defineConfig({
         service: imageService({
             // This can usually be auto-detected
             // fallbackService: 'astro',
+            ...(isProd ? {} : {fallbackService: 'astro'}),
             placeholder: 'blurhash',
             // This is the default
             layout: 'constrained',

@@ -1,0 +1,30 @@
+---
+import {Image} from '@unpic/astro';
+
+const {
+    src,
+    width,
+    height,
+    alt = '',
+    layout = 'constrained',
+    breakpoints = [
+        16, 32, 64, 128, 192, 256, 384, 512, 640, 750, 828, 960, 1024, 1080, 1280, 1668, 1920, 2048,
+        2560, 3200, 3840,
+    ],
+    ...rest
+} = Astro.props;
+
+const isDev = import.meta.env.DEV;
+const isLocal = typeof src === 'string' && src.startsWith('/');
+const fallback = isDev && isLocal ? 'astro' : undefined;
+---
+
+<Image
+    src={src}
+    width={width}
+    height={height}
+    alt={alt}
+    layout={layout}
+    breakpoints={breakpoints}
+    {...rest}
+/>

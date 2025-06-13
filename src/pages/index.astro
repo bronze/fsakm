@@ -2,14 +2,12 @@
 import '../styles/global.css';
 
 import DefaultLayout from '@/layouts/DefaultLayout.astro';
-// import {Image} from 'astro:assets';
 import {Image} from '@unpic/astro';
 
 import kravmagalogo1 from '../assets/astro.jpg';
 // Component Imports
 import Button from '../components/Button.astro';
 
-const isDev = import.meta.env.DEV;
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
@@ -47,7 +45,7 @@ const isDev = import.meta.env.DEV;
                 Imported image
                 <Image
                     src={kravmagalogo1}
-                    {...import.meta.env.PROD ? {} : {}}
+                    {...import.meta.env.PROD ? {} : {cdn: 'astro'}}
                     width={640}
                     breakpoints={[
                         16, 32, 64, 128, 192, 256, 384, 512, 640, 750, 828, 960, 1024, 1080, 1280,
@@ -61,7 +59,6 @@ const isDev = import.meta.env.DEV;
                 /public image
                 <Image
                     src="/static/images/astro.jpg"
-                    {...isDev ? {fallback: 'astro'} : {}}
                     width={640}
                     height={300}
                     alt="Image test"
