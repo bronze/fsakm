@@ -67,3 +67,7 @@ For complete setup instructions, please see our [Tailwind Integration Guide](htt
 # Astro
 
 https://docs.astro.build/en/guides/fonts/#register-fonts-in-tailwind
+
+https://github.com/ascorbic/unpic-img/issues/757
+
+https://github.com/ascorbic/unpic-img/discussions/786

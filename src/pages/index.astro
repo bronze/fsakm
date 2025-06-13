@@ -47,15 +47,27 @@ import Button from '../components/Button.astro';
                 <Image
                     src={kravmagalogo1}
                     {...import.meta.env.PROD ? {cdn: 'vercel'} : {}}
-                    width={128}
-                    breakpoints={[128, 256, 320, 640, 960, 1280]}
+                    width={640}
+                    breakpoints={[
+                        16, 32, 64, 128, 192, 256, 384, 512, 640, 750, 828, 960, 1024, 1080, 1280,
+                        1668, 1920, 2048, 2560, 3200, 3840,
+                    ]}
                     alt="Image test"
                     layout="constrained"
                 />
             </div>
             <div class="mx-auto">
                 /public image
-                <Image src="/static/images/astro.jpg" alt="Image test" width={300} height={300} />
+                <Image
+                    src="/static/images/astro.jpg"
+                    alt="Image test"
+                    width={640}
+                    height={300}
+                    breakpoints={[
+                        16, 32, 64, 128, 192, 256, 384, 512, 640, 750, 828, 960, 1024, 1080, 1280,
+                        1668, 1920, 2048, 2560, 3200, 3840,
+                    ]}
+                />
             </div>
             <div class="mx-auto">
                 external image
@@ -63,6 +75,10 @@ import Button from '../components/Button.astro';
                     src="https://cdn.shopify.com/static/sample-images/bath.jpeg"
                     layout="constrained"
                     width={128}
+                    breakpoints={[
+                        16, 32, 64, 128, 192, 256, 384, 512, 640, 750, 828, 960, 1024, 1080, 1280,
+                        1668, 1920, 2048, 2560, 3200, 3840,
+                    ]}
                     alt="A lovely bath"
                 />
             </div>
